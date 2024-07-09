@@ -1,0 +1,26 @@
+.header {
+  position: sticky;
+  top: 0;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  z-index: 10;
+}
+
+.ul {
+  display: flex;
+  margin-right: 3.5rem;
+}
+
+.li {
+  margin-right: 2rem;
+  list-style-type: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
