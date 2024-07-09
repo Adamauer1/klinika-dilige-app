@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 50.95rem;
+  padding-top: 1.25rem;
+  flex-wrap: nowrap;
+  gap: 7rem;
+}
+
+.infoContainer {
+  margin-left: 8rem;
+  margin-top: 2.5rem;
+}
+
+.h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 4rem;
+}
+
+.formContainer {
+  max-width: 500px;
+  background-color: lightblue;
+  border-width: 1px;
+  border-style: solid;
+  border-color: slategray;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 2.5rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: slategray;
+  padding-left: 0.75rem;
+}
+
+.formTextArea {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  height: 11rem;
+  padding-left: 0.75rem;
+  padding-top: 0.25rem;
+  border-width: 1px;
+  border-style: solid;
+  border-color: slategray;
+}
+
+.formSubmit {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  height: 3rem;
+  background-color: white;
+}
+
+.imageContainer {
+  position: relative;
+  width: 1000px;
+  overflow: hidden;
+  margin-top: 1.75rem;
+}
