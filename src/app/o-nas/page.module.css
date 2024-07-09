@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 50.95rem;
+  padding-top: 1.25rem;
+  flex-wrap: nowrap;
+}
+
+.containerLeft {
+  flex: 1;
+  margin-left: 8rem;
+  margin-top: 2.5rem;
+}
+
+.containerLeft h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+
+.container h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.containerLeft p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.containerRight {
+  flex: 0.75;
+  position: relative;
+  width: 1000px;
+  overflow: hidden;
+  margin-top: 1.75rem;
+}
