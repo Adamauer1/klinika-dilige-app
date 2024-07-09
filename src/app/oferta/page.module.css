@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  width: 100vw;
+  /* height: 50.95rem; */
+  height: 100vh;
+  padding-top: 1.25rem;
+  flex-wrap: nowrap;
+}
+
+.containerLeft {
+  width: 66.6666%;
+}
+
+.containerLeft h1 {
+  font-size: 3.75rem;
+  line-height: 1;
+  padding-left: 3.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.containerLeft ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  column-gap: 0.25rem;
+  row-gap: 3rem;
+}
+
+.containerLeft li {
+  place-self: center;
+  text-align: center;
+  list-style-type: none;
+}
+
+.containerLeft li div {
+  background-color: black;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 3rem;
+  place-self: center;
+}
+
+.containerLeft li p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 0.75rem;
+}
+
+.containerRight {
+  position: relative;
+  height: 90%;
+  width: 1000px;
+  overflow: hidden;
+}
