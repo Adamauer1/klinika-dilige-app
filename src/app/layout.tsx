@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
@@ -7,6 +7,7 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Klinika Dilige",
@@ -23,7 +24,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={inter.className}>
+      <body className={poppins.className}>
         <MantineProvider>
           <Header />
           {children}

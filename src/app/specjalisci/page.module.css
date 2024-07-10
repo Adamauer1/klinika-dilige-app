@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  width: 90vw;
+  padding-left: 10%;
+  height: 100vh;
+  padding-top: 1.25rem;
+  flex-wrap: nowrap;
+}
+
+.containerLeft {
+  flex: 1;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 66.666%;
+  height: 83.3333%;
+}
+
+.imageContainer {
+  position: relative;
+  width: 83.3333%;
+  height: 83.3333%;
+}
+
+.containerRight {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+.containerRight h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
