@@ -27,22 +27,22 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.link} href={"o-nas"}>
+              <Link className={styles.link} href={"/o-nas"}>
                 O nas
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.link} href={"specjalisci"}>
+              <Link className={styles.link} href={"/specjalisci"}>
                 Specjaliści
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.link} href={"aktualnosci"}>
+              <Link className={styles.link} href={"/aktualnosci"}>
                 Aktualności
               </Link>
             </li>
             <li className={styles.li}>
-              <Link className={styles.link} href={"kontakt"}>
+              <Link className={styles.link} href={"/kontakt"}>
                 Kontakt
               </Link>
             </li>
