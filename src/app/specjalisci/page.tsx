@@ -1,6 +1,6 @@
 "use client";
-//import Image from "next/image";
-import stockTwo from "/public/stockTwo.jpg";
+import NextImage from "next/image";
+//import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/specjalisci/page.module.css";
 import Link from "next/link";
 import {
@@ -12,12 +12,27 @@ import {
   Text,
   rem,
   Paper,
+  Select,
 } from "@mantine/core";
 import { useState } from "react";
+
+interface person {
+  id: number;
+  name: string;
+  specjalisci: string[] | [];
+  plec: string;
+  image: string;
+}
+
+const infoData: person[] = [
+  { id: 1, name: "Jan Kowalski", specjalisci: [], plec: "", image: "" },
+];
+
 export default function Specjalisci() {
   const [officeValue, setOfficeValue] = useState("");
   const [specValue, setSpecValue] = useState("");
   const [genderValue, setGenderValue] = useState("");
+  const [data, setData] = useState([]);
 
   const createPapers = () => {
     return Array.from({ length: 10 }).map((_, index) => (
@@ -25,51 +40,112 @@ export default function Specjalisci() {
         key={index}
         style={{
           width: 400,
-          height: 500,
+          height: 550,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
         <Image
+          component={NextImage}
           style={{ borderRadius: 20 }}
-          src={"/stockThree.jpg"}
+          src={"/Zdjęcia dilige/dilige jpg/DSC09948.jpg"}
           alt="image"
-          h={450}
-          w={"100%"}
+          height={"500"}
+          width={"400"}
         />
         <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
       </Paper>
     ));
   };
 
+  const noPapers = () => {
+    return (
+      <div>
+        <Text>No results found</Text>
+      </div>
+    );
+  };
+
   return (
     <>
-      <Link href={"/specjalisci/1"}>Test</Link>
+      {/* <Link href={"/specjalisci/1"}>Test</Link> */}
       <main>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
             width: "100vw",
           }}
         >
-          <h1>Search for Specjalisci</h1>
-          <div style={{ display: "flex", width: "40%", paddingBottom: 50 }}>
-            <Autocomplete
-              styles={{
-                root: {
-                  width: "100%",
-                  height: "100%",
-                },
-                // wrapper: { height: "3rem", width: "100%" },
-              }}
-              placeholder="Search"
-              data={["React", "Angular", "Vue", "Svelte"]}
-              defaultDropdownOpened={false}
-            />
-            <button>Search</button>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "100%",
+              paddingBottom: 50,
+            }}
+          >
+            <h1>Search for Specjalisci</h1>
+            <div style={{ display: "flex", width: "40%", paddingBottom: 5 }}>
+              <Autocomplete
+                styles={{
+                  root: {
+                    width: "100%",
+                    height: "100%",
+                  },
+                  // wrapper: { height: "3rem", width: "100%" },
+                }}
+                placeholder="Search"
+                data={["React", "Angular", "Vue", "Svelte"]}
+                defaultDropdownOpened={false}
+              />
+              <button>Search</button>
+            </div>
+            <div style={{ display: "flex" }}>
+              {/* <div>
+                <h2>GABINET</h2>
+                <Select
+                  placeholder="GABINET"
+                  data={[
+                    "Psychiatra",
+                    "Psycholog",
+                    "Psychoterapeuta",
+                    "Terapeuta uzależnień",
+                    "Psychoseksualna",
+                    "EEG biofeedback",
+                  ]}
+                />
+              </div> */}
+              <div>
+                {/* <h2>SPECJALIZACJA</h2> */}
+                <Select
+                  placeholder="SPECJALIZACJA"
+                  data={[
+                    "Psychiatra",
+                    "Psycholog",
+                    "Pedagog Specjalny",
+                    "Neuroterapeuta",
+                    "Psychoterapeuta",
+                    "Psychoterapia Uzależnień",
+                    "Terapeuta Środowiskowy",
+                    "Specjalista Terapii Uzależnień",
+                    "Pedagog",
+                    "Socjoterapeuta",
+                    "Psychoseksualna",
+                    "Terapeuta Uzależnień",
+                    "EEG Biofeedback",
+                  ]}
+                />
+              </div>
+              <div>
+                {/* <h2>PŁEĆ</h2> */}
+                <Select placeholder="PŁEĆ" data={["Mężczyzna", "Kobieta"]} />
+              </div>
+            </div>
           </div>
           {/* <div>
             <div>
@@ -120,7 +196,14 @@ export default function Specjalisci() {
               </div>
             </div>
           </div> */}
-          <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: 20,
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             {/* <Paper
               style={{
                 width: 250,
@@ -139,6 +222,7 @@ export default function Specjalisci() {
               />
               <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
             </Paper> */}
+            {/* {data.length != 0 ? createPapers() : noPapers()} */}
             {createPapers()}
           </div>
         </div>
