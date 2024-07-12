@@ -3,41 +3,196 @@ import NextImage from "next/image";
 //import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/specjalisci/page.module.css";
 import Link from "next/link";
-import {
-  Autocomplete,
-  Card,
-  Image,
-  Group,
-  Radio,
-  Text,
-  rem,
-  Paper,
-  Select,
-} from "@mantine/core";
+import { Autocomplete, Image, Text, Paper, Select } from "@mantine/core";
 import { useState } from "react";
 
 interface person {
   id: number;
   name: string;
-  specjalisci: string[] | [];
+  specjalisci: string[];
   plec: string;
   image: string;
+  link: string;
 }
 
+const names: string[] = [
+  "Klaudia Bakunowska",
+  "Tomasz Grąźlewski",
+  "Agata Handzlik",
+  "Agata Bąba Kubiś",
+  "Jolanta Kucharska-Mazur",
+  "Jacek Kurpisz",
+  "Alicja Kusztykiewicz",
+  "Aleksandra Mazur",
+  "Mirosława Pankiewicz",
+  "Artur Reginia",
+  "Krzysztof Rudkowski",
+  "Ewelina Skierczyńska",
+  "Agnieszka Słuczanowska",
+  "Daria Suchecka",
+];
+
 const infoData: person[] = [
-  { id: 1, name: "Jan Kowalski", specjalisci: [], plec: "", image: "" },
+  {
+    id: 1,
+    name: "Klaudia Bakunowska",
+    specjalisci: [],
+    plec: "",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 2,
+    name: "Tomasz Grąźlewski",
+    specjalisci: ["psychiatra"],
+    plec: "Mężczyzna",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 3,
+    name: "Agata Handzlik",
+    specjalisci: [
+      "specjalista terapii uzależnień",
+      "pedagog",
+      "socjoterapeuta",
+    ],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 4,
+    name: "Agata Bąba Kubiś",
+    specjalisci: ["psychiatra"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 5,
+    name: "Jolanta Kucharska-Mazur",
+    specjalisci: ["psychiatra"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: `5-jolanta-kucharska-mazur`,
+  },
+  {
+    id: 6,
+    name: "Jacek Kurpisz",
+    specjalisci: ["psycholog", "psychoseksuolog"],
+    plec: "Mężczyzna",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 7,
+    name: "Alicja Kusztykiewicz",
+    specjalisci: ["psychoterapia uzależnień", "terapeuta środowiskowy"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 8,
+    name: "Aleksandra Mazur",
+    specjalisci: [],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 9,
+    name: "Mirosława Pankiewicz",
+    specjalisci: ["psycholog"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 10,
+    name: "Artur Reginia",
+    specjalisci: ["psychiatra"],
+    plec: "Mężczyzna",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 11,
+    name: "Krzysztof Rudkowski",
+    specjalisci: ["psychiatra"],
+    plec: "Mężczyzna",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 12,
+    name: "Ewelina Skierczyńska",
+    specjalisci: ["psycholog"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 13,
+    name: "Agnieszka Słuczanowska",
+    specjalisci: ["pedagog specjalny", "neuroterapeuta", "psychoterapeuta"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
+  {
+    id: 14,
+    name: "Daria Suchecka",
+    specjalisci: ["psycholog"],
+    plec: "Kobieta",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "",
+  },
 ];
 
 export default function Specjalisci() {
-  const [officeValue, setOfficeValue] = useState("");
-  const [specValue, setSpecValue] = useState("");
-  const [genderValue, setGenderValue] = useState("");
-  const [data, setData] = useState([]);
+  const [searchValue, setSearchValue] = useState<string | undefined>();
+  const [specValue, setSpecValue] = useState<string | null>();
+  const [genderValue, setGenderValue] = useState<string | null>();
+  const [data, setData] = useState(infoData);
+
+  const handleFilterData = () => {
+    let newData = infoData;
+    console.log(newData);
+    if (specValue) {
+      console.log("t1");
+      newData = newData.filter((person) =>
+        person.specjalisci.includes(specValue.toLowerCase() as string)
+      );
+    }
+    if (genderValue) {
+      console.log("t2");
+      newData = newData.filter((person) => person.plec == genderValue);
+    }
+
+    if (searchValue) {
+      console.log("t3");
+      const regex = RegExp(searchValue, "i");
+      newData = newData.filter((person) => regex.test(person.name));
+    }
+    console.log(searchValue);
+    console.log(specValue);
+    console.log(genderValue);
+    console.log(newData);
+    setData(newData);
+  };
+
+  const handleFilterReset = () => {
+    setGenderValue(null);
+    setSpecValue(null);
+    setSearchValue("");
+  };
 
   const createPapers = () => {
-    return Array.from({ length: 10 }).map((_, index) => (
+    return data.map((person) => (
       <Paper
-        key={index}
+        key={person.id}
         style={{
           width: 400,
           height: 550,
@@ -49,14 +204,36 @@ export default function Specjalisci() {
         <Image
           component={NextImage}
           style={{ borderRadius: 20 }}
-          src={"/Zdjęcia dilige/dilige jpg/DSC09948.jpg"}
+          src={person.image}
           alt="image"
           height={"500"}
           width={"400"}
         />
-        <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
+        <Text styles={{ root: { margin: 10 } }}>{person.name}</Text>
       </Paper>
     ));
+    // return Array.from({ length: 10 }).map((_, index) => (
+    //   <Paper
+    //     key={index}
+    //     style={{
+    //       width: 400,
+    //       height: 550,
+    //       display: "flex",
+    //       flexDirection: "column",
+    //       alignItems: "center",
+    //     }}
+    //   >
+    //     <Image
+    //       component={NextImage}
+    //       style={{ borderRadius: 20 }}
+    //       src={"/Zdjęcia dilige/dilige jpg/DSC09948.jpg"}
+    //       alt="image"
+    //       height={"500"}
+    //       width={"400"}
+    //     />
+    //     <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
+    //   </Paper>
+    //));
   };
 
   const noPapers = () => {
@@ -69,7 +246,7 @@ export default function Specjalisci() {
 
   return (
     <>
-      {/* <Link href={"/specjalisci/1"}>Test</Link> */}
+      {/* <Link href={"/specjalisci/1-jolanta-kucharska-mazur"}>Test</Link> */}
       <main>
         <div
           style={{
@@ -100,30 +277,21 @@ export default function Specjalisci() {
                   // wrapper: { height: "3rem", width: "100%" },
                 }}
                 placeholder="Search"
-                data={["React", "Angular", "Vue", "Svelte"]}
+                data={names}
+                value={searchValue}
+                onChange={setSearchValue}
                 defaultDropdownOpened={false}
+                withScrollArea={false}
               />
-              <button>Search</button>
+              <button onClick={handleFilterData}>Search</button>
             </div>
             <div style={{ display: "flex" }}>
-              {/* <div>
-                <h2>GABINET</h2>
-                <Select
-                  placeholder="GABINET"
-                  data={[
-                    "Psychiatra",
-                    "Psycholog",
-                    "Psychoterapeuta",
-                    "Terapeuta uzależnień",
-                    "Psychoseksualna",
-                    "EEG biofeedback",
-                  ]}
-                />
-              </div> */}
               <div>
                 {/* <h2>SPECJALIZACJA</h2> */}
                 <Select
                   placeholder="SPECJALIZACJA"
+                  value={specValue}
+                  onChange={setSpecValue}
                   data={[
                     "Psychiatra",
                     "Psycholog",
@@ -135,7 +303,7 @@ export default function Specjalisci() {
                     "Specjalista Terapii Uzależnień",
                     "Pedagog",
                     "Socjoterapeuta",
-                    "Psychoseksualna",
+                    "Psychoseksuolog",
                     "Terapeuta Uzależnień",
                     "EEG Biofeedback",
                   ]}
@@ -143,59 +311,16 @@ export default function Specjalisci() {
               </div>
               <div>
                 {/* <h2>PŁEĆ</h2> */}
-                <Select placeholder="PŁEĆ" data={["Mężczyzna", "Kobieta"]} />
+                <Select
+                  placeholder="PŁEĆ"
+                  value={genderValue}
+                  onChange={setGenderValue}
+                  data={["Mężczyzna", "Kobieta"]}
+                />
               </div>
+              <button onClick={handleFilterReset}>Reset</button>
             </div>
           </div>
-          {/* <div>
-            <div>
-              <div>Wyszukiwanie...</div>
-              <div>
-                <h2>GABINET</h2>
-                <Radio.Group value={officeValue} onChange={setOfficeValue}>
-                  <Radio value="psychiatra" label="Psychiatra"></Radio>
-                  <Radio value="psycholog" label="Psycholog"></Radio>
-                  <Radio
-                    value="Psychoterapeuta"
-                    label="Psychoterapeuta"
-                  ></Radio>
-                  <Radio value="" label="Terapeuta uzależnień"></Radio>
-                  <Radio value="" label="Psychoseksuolog"></Radio>
-                  <Radio value="" label="EEG biofeedback"></Radio>
-                </Radio.Group>
-              </div>
-              <div>
-                <h2>SPECJALIZACJA</h2>
-                <Radio.Group value={specValue} onChange={setSpecValue}>
-                  <Radio value="" label="psychiatra"></Radio>
-                  <Radio value="" label="psycholog"></Radio>
-                  <Radio value="" label="pedagog specjalny"></Radio>
-                  <Radio value="" label="neuroterapeuta"></Radio>
-                  <Radio value="" label="psychoterapeuta"></Radio>
-                  <Radio value="" label="psychoterapia uzależnień"></Radio>
-                  <Radio value="" label="terapeuta środowiskowy"></Radio>
-                  <Radio
-                    value=""
-                    label="specjalista terapii uzależnień"
-                  ></Radio>
-                  <Radio value="" label="pedagog"></Radio>
-                  <Radio value="" label="socjoterapeuta"></Radio>
-                  <Radio value="" label="psychoseksuolog"></Radio>
-                </Radio.Group>
-              </div>
-              <div>
-                <h2>PŁEĆ</h2>
-                <Radio.Group value={genderValue} onChange={setGenderValue}>
-                  <Radio value="" label="Mężczyzna"></Radio>
-                  <Radio value="" label="Kobieta"></Radio>
-                </Radio.Group>
-              </div>
-              <div>
-                <button>Search</button>
-                <button>Reset</button>
-              </div>
-            </div>
-          </div> */}
           <div
             style={{
               display: "flex",
@@ -204,26 +329,8 @@ export default function Specjalisci() {
               justifyContent: "center",
             }}
           >
-            {/* <Paper
-              style={{
-                width: 250,
-                height: 250,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Image
-                style={{ borderRadius: 20 }}
-                src={"/stockThree.jpg"}
-                alt="image"
-                h={250}
-                w={"100%"}
-              />
-              <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
-            </Paper> */}
-            {/* {data.length != 0 ? createPapers() : noPapers()} */}
-            {createPapers()}
+            {data.length != 0 ? createPapers() : noPapers()}
+            {/* {createPapers()} */}
           </div>
         </div>
       </main>

@@ -8,7 +8,7 @@ export default function SpecjalisciPage({
 }) {
   return (
     <>
-      {/* <div>{params.id}</div> */}
+      <div>{params.id}</div>
       <main className="" style={{}}>
         <div className={styles.container}>
           <div className={styles.containerLeft}>
