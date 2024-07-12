@@ -10,11 +10,11 @@ const Footer = () => {
       <div className={styles.footer}>
         <div className={styles.section}>
           <Image
-            className="mb-3"
+            className=""
             src="/logo.png"
             alt="Logo"
             width={180}
-            height={37}
+            height={80}
             priority
           />
           <p className={styles.p}>ul. Parkowa 5A/1 71-600 Szczecin</p>
@@ -25,7 +25,7 @@ const Footer = () => {
           <p className={styles.p}>Infolinia - +48 501 023 653</p>
           <p className={styles.p}>kontakt@klinikadilige.pl</p>
         </div>
-        <div className="mt-10">
+        <div className={styles.section}>
           <h3 className={styles.title}>Godziny otwarcia</h3>
           <p className={styles.p}>Poniedziałek : od 14.00</p>
           <p className={styles.p}>Wtorek : od 14.00</p>
@@ -33,7 +33,7 @@ const Footer = () => {
           <p className={styles.p}>Czwartek : od 14.00</p>
           <p className={styles.p}>Piątek : od 14.00</p>
         </div>
-        <div className="mt-10">
+        <div className={styles.section}>
           <h3 className={styles.title}>Na skróty</h3>
           <nav>
             <ul className={styles.ul}>
