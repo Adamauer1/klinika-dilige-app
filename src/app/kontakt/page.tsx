@@ -1,9 +1,35 @@
+"use client";
 import Image from "next/image";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/kontakt/page.module.css";
+import { useForm } from "@mantine/form";
 export default function Kontakt() {
   let test: string =
     "mt-4 ml-4 mr-4 h-10 border border-solid border-slate-600 pl-3";
+  // const form = useForm({
+  //   mode: "uncontrolled",
+  //   initialValues: { name: "", email: "", topic: "" },
+  // });
+  const form = useForm({
+    mode: "uncontrolled",
+    initialValues: {
+      name: "",
+      email: "",
+      topic: "",
+      message: "",
+      captcha: false,
+      privacy: false,
+    },
+
+    validate: {
+      name: (value) => (value.length != 0 ? null : "Need Name"),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+      topic: (value) => (value.length != 0 ? null : "Need Topic"),
+      message: (value) => (value.length != 0 ? null : "Need Message"),
+      captcha: (value) => (value !== false ? null : "Required"),
+      privacy: (value) => (value !== false ? null : "Required"),
+    },
+  });
   return (
     <main className="" style={{}}>
       <div className={styles.container}>
@@ -20,14 +46,19 @@ export default function Kontakt() {
           <p>kontakt@klinikadilige.pl</p>
           <p>+48 501 023 653</p>
         </div>
-        <div>
+        <div className={styles.formOuterContainer}>
           <div className={styles.formContainer}>
             <form className={styles.form}>
               <input
                 className={styles.formInput}
                 placeholder="imię i nazwisko"
               ></input>
-              <input className={styles.formInput} placeholder="Email"></input>
+              <input
+                className={styles.formInput}
+                placeholder="Email"
+                key={form.key("email")}
+                {...form.getInputProps("email")}
+              ></input>
               <input className={styles.formInput} placeholder="Temat"></input>
               <textarea
                 className={styles.formTextArea}

@@ -4,12 +4,13 @@
   height: 50.95rem;
   padding-top: 1.25rem;
   flex-wrap: nowrap;
-  gap: 7rem;
+  gap: 4rem;
 }
 
 .infoContainer {
-  margin-left: 8rem;
+  margin-left: 4rem;
   margin-top: 2.5rem;
+  flex: 35%;
 }
 
 .h1 {
@@ -18,8 +19,13 @@
   margin-bottom: 4rem;
 }
 
+.formOuterContainer {
+  flex: 30%;
+}
+
 .formContainer {
-  max-width: 500px;
+  /* max-width: 500px; */
+  /* flex: 33.33%; */
   background-color: lightblue;
   border-width: 1px;
   border-style: solid;
@@ -29,6 +35,7 @@
 .form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .formInput {
@@ -64,6 +71,7 @@
 }
 
 .imageContainer {
+  flex: 30%;
   position: relative;
   width: 1000px;
   overflow: hidden;
