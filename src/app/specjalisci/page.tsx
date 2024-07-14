@@ -39,7 +39,7 @@ const infoData: person[] = [
     specjalisci: [],
     plec: "",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "1-klaudia-bakunowska",
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const infoData: person[] = [
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "2-tomasz-grazlewski",
   },
   {
     id: 3,
@@ -59,7 +59,7 @@ const infoData: person[] = [
     ],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "3-agata-handzlik",
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const infoData: person[] = [
     specjalisci: ["psychiatra"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "4-agata-baba-kubis",
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ const infoData: person[] = [
     specjalisci: ["psycholog", "psychoseksuolog"],
     plec: "Mężczyzna",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "6-jacek-kurpisz",
   },
   {
     id: 7,
@@ -91,7 +91,7 @@ const infoData: person[] = [
     specjalisci: ["psychoterapia uzależnień", "terapeuta środowiskowy"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "7-alicja-kusztykiewicz",
   },
   {
     id: 8,
@@ -99,7 +99,7 @@ const infoData: person[] = [
     specjalisci: [],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "8-aleksandra-mazur",
   },
   {
     id: 9,
@@ -107,7 +107,7 @@ const infoData: person[] = [
     specjalisci: ["psycholog"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "9-mirosława-pankiewicz",
   },
   {
     id: 10,
@@ -115,7 +115,7 @@ const infoData: person[] = [
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "10-artur-reginia",
   },
   {
     id: 11,
@@ -123,7 +123,7 @@ const infoData: person[] = [
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "11-krzysztof-rudkowski",
   },
   {
     id: 12,
@@ -131,7 +131,7 @@ const infoData: person[] = [
     specjalisci: ["psycholog"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "12-ewelina-skierczynska",
   },
   {
     id: 13,
@@ -139,7 +139,7 @@ const infoData: person[] = [
     specjalisci: ["pedagog specjalny", "neuroterapeuta", "psychoterapeuta"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "13-agnieszka-sluczanowska",
   },
   {
     id: 14,
@@ -147,7 +147,7 @@ const infoData: person[] = [
     specjalisci: ["psycholog"],
     plec: "Kobieta",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-    link: "",
+    link: "14-daria-suchecka",
   },
 ];
 
@@ -192,48 +192,33 @@ export default function Specjalisci() {
   const createPapers = () => {
     return data.map((person) => (
       <Paper
+        // component={Link}
+        // href={`/specjalisci/${person.link}`}
         key={person.id}
-        style={{
-          width: 400,
-          height: 550,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+        className={styles.dataPaper}
+        // style={{
+        //   width: 400,
+        //   height: 550,
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   alignItems: "center",
+        // }}
       >
-        <Image
-          component={NextImage}
-          style={{ borderRadius: 20 }}
-          src={person.image}
-          alt="image"
-          height={"500"}
-          width={"400"}
-        />
+        <div className={styles.dataImage}>
+          <button className={styles.dataProfileButton}>Profile</button>
+          <Image
+            component={NextImage}
+            // className={styles.dataImage}
+            // style={{ borderRadius: 20 }}
+            src={person.image}
+            alt="image"
+            height={"500"}
+            width={"400"}
+          />
+        </div>
         <Text styles={{ root: { margin: 10 } }}>{person.name}</Text>
       </Paper>
     ));
-    // return Array.from({ length: 10 }).map((_, index) => (
-    //   <Paper
-    //     key={index}
-    //     style={{
-    //       width: 400,
-    //       height: 550,
-    //       display: "flex",
-    //       flexDirection: "column",
-    //       alignItems: "center",
-    //     }}
-    //   >
-    //     <Image
-    //       component={NextImage}
-    //       style={{ borderRadius: 20 }}
-    //       src={"/Zdjęcia dilige/dilige jpg/DSC09948.jpg"}
-    //       alt="image"
-    //       height={"500"}
-    //       width={"400"}
-    //     />
-    //     <Text styles={{ root: { margin: 10 } }}>Jan Kowalski</Text>
-    //   </Paper>
-    //));
   };
 
   const noPapers = () => {
@@ -249,25 +234,30 @@ export default function Specjalisci() {
       {/* <Link href={"/specjalisci/1-jolanta-kucharska-mazur"}>Test</Link> */}
       <main>
         <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100vw",
-          }}
+          className={styles.container}
+          // style={{
+          //   display: "flex",
+          //   flexDirection: "column",
+          //   alignItems: "center",
+          //   justifyContent: "center",
+          //   width: "100vw",
+          // }}
         >
           <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              width: "100%",
-              paddingBottom: 50,
-            }}
+            // style={{
+            //   display: "flex",
+            //   flexDirection: "column",
+            //   alignItems: "center",
+            //   width: "100%",
+            //   paddingBottom: 50,
+            // }}
+            className={styles.searchContainer}
           >
             <h1>Search for Specjalisci</h1>
-            <div style={{ display: "flex", width: "40%", paddingBottom: 5 }}>
+            <div
+              className={styles.searchInputContainer}
+              //style={{ display: "flex", width: "40%", paddingBottom: 5 }}
+            >
               <Autocomplete
                 styles={{
                   root: {
@@ -285,7 +275,10 @@ export default function Specjalisci() {
               />
               <button onClick={handleFilterData}>Search</button>
             </div>
-            <div style={{ display: "flex" }}>
+            <div
+              className={styles.filterContainer}
+              //style={{ display: "flex" }}
+            >
               <div>
                 {/* <h2>SPECJALIZACJA</h2> */}
                 <Select
@@ -322,12 +315,13 @@ export default function Specjalisci() {
             </div>
           </div>
           <div
-            style={{
-              display: "flex",
-              gap: 20,
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
+            className={styles.dataContainer}
+            // style={{
+            //   display: "flex",
+            //   gap: 20,
+            //   flexWrap: "wrap",
+            //   justifyContent: "center",
+            // }}
           >
             {data.length != 0 ? createPapers() : noPapers()}
             {/* {createPapers()} */}
@@ -335,55 +329,5 @@ export default function Specjalisci() {
         </div>
       </main>
     </>
-    // <main className="" style={{}}>
-    //   <div className={styles.container}>
-    //     <div className={styles.containerLeft}>
-    //       <div className={styles.infoContainer}>
-    //         <div className={styles.imageContainer}>
-    //           <Image
-    //             className=""
-    //             src="/stockThree.jpg"
-    //             alt="Logo"
-    //             fill={true}
-    //             style={{}}
-    //           />
-    //         </div>
-    //         <h2>Jan Kowalski</h2>
-    //         <h3>Prof. dr hab. n. med. i n. zdr.</h3>
-    //       </div>
-    //     </div>
-    //     <div className={styles.containerRight}>
-    //       <div>
-    //         <h1 className="text-4xl pb-10">O specjaliście</h1>
-    //         <p>
-    //           Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur,
-    //           specjalista psychiatra, specjalista psychiatrii środowiskowej.{" "}
-    //           <br />
-    //           <br />
-    //           Kieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad
-    //           20 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz
-    //           Wydziału Nauk o Zdrowiu PUM. <br />
-    //           <br />
-    //           Obroniła pracę habilitacyjną pod tytułem:&quot;Poszukiwanie nowych
-    //           markerów pierwszego epizodu psychotycznego - ocena mobilizacji
-    //           komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz
-    //           poziomu czynników osoczowych wpływających na ich przemieszczanie
-    //           się&quot;, której efektem jest europejski patent na metodę
-    //           wykrywania pierwszych epizodów psychotycznych. Autorka i
-    //           współautorka 130 monografii i artykułów naukowych, publikowanych w
-    //           czasopismach krajowych i zagranicznych, o łącznym IF 67,7. <br />{" "}
-    //           <br />
-    //           Członek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa
-    //           Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego
-    //           Towarzystwa Psychiatrycznego, członek European Psychiatric
-    //           Association i Członek założyciel Polskiego Towarzystwa Badań nad
-    //           Uzależnieniami. <br />
-    //           <br /> Miłośniczka żeglarstwa, nurkowania, podróży i wędrówek
-    //           górskich.
-    //         </p>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </main>
   );
 }

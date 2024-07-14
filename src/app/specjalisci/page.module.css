@@ -1,36 +1,59 @@
-/* .container {
+.container {
   display: flex;
-  width: 90vw;
-  padding-left: 10%;
-  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  width: 95vw;
+  padding-left: 5vw;
+  /* height: 100vh; */
   padding-top: 1.25rem;
   flex-wrap: nowrap;
 }
 
-.containerLeft {
-  flex: 1;
-}
-
-.infoContainer {
+.searchContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.searchInputContainer {
+  display: flex;
+  width: 40%;
+  padding-bottom: 5px;
+}
+
+.filterContainer {
+  display: flex;
+}
+
+.dataContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 66.666%;
-  height: 83.3333%;
 }
 
-.imageContainer {
+.dataPaper {
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dataImage {
   position: relative;
-  width: 83.3333%;
-  height: 83.3333%;
+  border-radius: 20px;
+  transition: filter 0.3s ease;
 }
 
-.containerRight {
-  flex: 1;
-  padding-right: 2.5rem;
+.dataImage:hover {
+  filter: blur(3px);
 }
 
-.containerRight h1 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-} */
+.dataProfileButton {
+  position: absolute;
+  top: 45%;
+  filter: blur(0);
+}
