@@ -204,11 +204,11 @@ export default function Specjalisci() {
         //   alignItems: "center",
         // }}
       >
-        <div className={styles.dataImage}>
+        <div className={styles.dataImageContainer}>
           <button className={styles.dataProfileButton}>Profile</button>
           <Image
             component={NextImage}
-            // className={styles.dataImage}
+            className={styles.dataImage}
             // style={{ borderRadius: 20 }}
             src={person.image}
             alt="image"

@@ -42,18 +42,37 @@
   align-items: center;
 }
 
-.dataImage {
+.dataImageContainer {
   position: relative;
-  border-radius: 20px;
-  transition: filter 0.3s ease;
+  display: inline-block;
 }
 
-.dataImage:hover {
-  filter: blur(3px);
+.dataImage {
+  border-radius: 20px;
+  transition: filter 0.3s ease;
+  display: block;
+}
+
+.dataImageContainer:hover .dataImage {
+  filter: blur(2.5px);
 }
 
 .dataProfileButton {
+  z-index: 10;
   position: absolute;
-  top: 45%;
-  filter: blur(0);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.dataImageContainer:hover .dataProfileButton,
+.dataProfileButton:hover {
+  opacity: 1;
+}
+
+.dataProfileButton:hover ~ .dataImage {
+  filter: blur(2.5px);
 }
