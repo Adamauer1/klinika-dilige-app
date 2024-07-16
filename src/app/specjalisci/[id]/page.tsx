@@ -1,14 +1,23 @@
 import Image from "next/image";
 import styles from "@/app/specjalisci/[id]/page.module.css";
+import { infoData } from "@/data/data";
 
 export default function SpecjalisciPage({
   params,
 }: {
   params: { id: string };
 }) {
+  const extractId = () => {
+    return parseInt(params.id.split("-")[0]);
+  };
+  const findInfoFromId = () => {
+    return infoData.find((person) => person.id == extractId());
+  };
+  let data = findInfoFromId();
+  // console.log(data);
   return (
     <>
-      <div>{params.id}</div>
+      {/* <div>{data?.id}</div> */}
       <main className="" style={{}}>
         <div className={styles.container}>
           <div className={styles.containerLeft}>
@@ -16,13 +25,13 @@ export default function SpecjalisciPage({
               <div className={styles.imageContainer}>
                 <Image
                   className=""
-                  src="/stockThree.jpg"
+                  src={data?.image}
                   alt="Logo"
                   fill={true}
                   style={{}}
                 />
               </div>
-              <h2>Jan Kowalski</h2>
+              <h2>{data?.name}</h2>
               <h3>Prof. dr hab. n. med. i n. zdr.</h3>
             </div>
           </div>
