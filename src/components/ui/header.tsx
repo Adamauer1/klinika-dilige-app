@@ -50,7 +50,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <Divider style={{ root: { position: "sticky", zIndex: 10 } }} />
+        <Divider />
       </div>
     </>
   );

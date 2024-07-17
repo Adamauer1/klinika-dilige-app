@@ -21,6 +21,7 @@
 
 .formOuterContainer {
   flex: 30%;
+  align-self: center;
 }
 
 .formContainer {

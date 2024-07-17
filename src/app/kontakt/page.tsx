@@ -3,6 +3,13 @@ import Image from "next/image";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/kontakt/page.module.css";
 import { useForm } from "@mantine/form";
+import {
+  IconMail,
+  IconMapPin,
+  IconPhone,
+  IconPhoto,
+} from "@tabler/icons-react";
+import { rem, ThemeIcon } from "@mantine/core";
 export default function Kontakt() {
   let test: string =
     "mt-4 ml-4 mr-4 h-10 border border-solid border-slate-600 pl-3";
@@ -39,12 +46,29 @@ export default function Kontakt() {
             Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz również
             za pomocą formularza wysłać prośbę o kontakt z naszej strony.
           </p>
-          <p>
-            ul. Parkowa 5A/1 <br /> 71-600 Szczecin
-          </p>
-          <p>ul. Piłsudskiego 20/2 70-462 Szczecin</p>
-          <p>kontakt@klinikadilige.pl</p>
-          <p>+48 501 023 653</p>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconMapPin size={40} stroke={1} />
+            {/* <ThemeIcon>
+              <IconPhoto />
+            </ThemeIcon> */}
+            <p>
+              ul. Parkowa 5A/1 <br /> 71-600 Szczecin
+            </p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconMapPin size={40} stroke={1} />
+            <p>
+              ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
+            </p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconMail size={40} stroke={1} />
+            <p>kontakt@klinikadilige.pl</p>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <IconPhone size={40} stroke={1} />
+            <p>+48 501 023 653</p>
+          </div>
         </div>
         <div className={styles.formOuterContainer}>
           <div className={styles.formContainer}>
