@@ -1,12 +1,18 @@
 .header {
   position: sticky;
   top: 0;
-  height: 6rem;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  background-color: white;
+  z-index: 10;
+}
+
+.headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  z-index: 10;
+  height: 6rem;
 }
 
 .ul {

@@ -12,10 +12,12 @@ import {
   Button,
   UnstyledButton,
   ActionIcon,
+  rem,
 } from "@mantine/core";
 import { useState } from "react";
 
 import { names, infoData } from "@/data/data";
+import { IconSearch } from "@tabler/icons-react";
 
 // interface person {
 //   id: number;
@@ -280,17 +282,37 @@ export default function Specjalisci() {
                 styles={{
                   root: {
                     width: "100%",
-                    height: "100%",
+                    height: 45,
+                  },
+                  input: {
+                    borderRadius: "30px",
+                    // borderTopLeftRadius: "30px",
+                    // borderBottomLeftRadius: "30px",
+                    height: 45,
                   },
                   section: {
                     width: 100,
-                    paddingRight: 10,
+                    // paddingRight: 10,
                   },
                   // wrapper: { height: "3rem", width: "100%" },
                 }}
                 rightSection={
-                  <ActionIcon onClick={handleFilterData} style={{ width: 100 }}>
-                    Search
+                  <ActionIcon
+                    onClick={handleFilterData}
+                    variant="filled"
+                    color="#7cc1d8"
+                    styles={{
+                      root: {
+                        height: 45,
+                        width: "100%",
+                        borderTopRightRadius: 30,
+                        borderBottomRightRadius: 30,
+                      },
+                      icon: { height: 45 },
+                    }}
+                  >
+                    {/* <IconSearch size={36} /> */}
+                    <IconSearch />
                   </ActionIcon>
                 }
                 placeholder="Search"
@@ -300,6 +322,23 @@ export default function Specjalisci() {
                 defaultDropdownOpened={false}
                 withScrollArea={false}
               />
+              {/* <div>
+                <UnstyledButton>
+                  <IconSearch
+                    style={{ width: rem(1), height: rem(1) }}
+                  ></IconSearch>
+                </UnstyledButton>
+              </div> */}
+              {/* <ActionIcon
+                onClick={handleFilterData}
+                styles={{
+                  root: { height: 45 },
+                  icon: { height: 45 },
+                }}
+              >
+                <IconSearch size={36} />
+                <IconSearch style={{ height: 45, width: 45 }} />
+              </ActionIcon> */}
               {/* <button onClick={handleFilterData}>Search</button> */}
             </div>
             <div

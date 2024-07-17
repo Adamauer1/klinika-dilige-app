@@ -99,3 +99,7 @@
 .dataProfileButton:hover ~ .dataImage {
   filter: blur(2.5px);
 }
+
+.test {
+  height: 100%;
+}
