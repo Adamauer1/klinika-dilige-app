@@ -6,16 +6,18 @@ import { Image } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
-const images: string[] = [
-  "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
-];
+// const images: string[] = [
+//   "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+//   "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
+//   "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+//   "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
+// ];
+
+import { personImages } from "../data/data";
 
 export default function Home() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
-  const slides = images.map((image, index) => (
+  const slides = personImages.map((image, index) => (
     <Carousel.Slide key={index}>
       <Image
         // component={NextImage}

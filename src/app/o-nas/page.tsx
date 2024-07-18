@@ -27,7 +27,7 @@ export default function ONas() {
               Wieloletnie doświadczenie poparte gruntowną wiedzą to największe
               atuty specjalistów Kliniki Dilige.
             </p>
-            <button>Specjaliści</button>
+            <button className={styles.button}>Specjaliści</button>
           </div>
         </div>
         <div className={styles.containerRight}>

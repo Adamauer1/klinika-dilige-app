@@ -9,14 +9,15 @@ import {
   IconPhone,
   IconPhoto,
 } from "@tabler/icons-react";
-import { rem, ThemeIcon } from "@mantine/core";
+import {
+  Button,
+  Checkbox,
+  Group,
+  rem,
+  TextInput,
+  ThemeIcon,
+} from "@mantine/core";
 export default function Kontakt() {
-  let test: string =
-    "mt-4 ml-4 mr-4 h-10 border border-solid border-slate-600 pl-3";
-  // const form = useForm({
-  //   mode: "uncontrolled",
-  //   initialValues: { name: "", email: "", topic: "" },
-  // });
   const form = useForm({
     mode: "uncontrolled",
     initialValues: {
@@ -24,8 +25,8 @@ export default function Kontakt() {
       email: "",
       topic: "",
       message: "",
+      termsOfService: false,
       captcha: false,
-      privacy: false,
     },
 
     validate: {
@@ -33,8 +34,6 @@ export default function Kontakt() {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
       topic: (value) => (value.length != 0 ? null : "Need Topic"),
       message: (value) => (value.length != 0 ? null : "Need Message"),
-      captcha: (value) => (value !== false ? null : "Required"),
-      privacy: (value) => (value !== false ? null : "Required"),
     },
   });
   return (
@@ -72,23 +71,52 @@ export default function Kontakt() {
         </div>
         <div className={styles.formOuterContainer}>
           <div className={styles.formContainer}>
-            <form className={styles.form}>
+            <form
+              className={styles.form}
+              onSubmit={form.onSubmit((values) => console.log(values))}
+            >
               <input
                 className={styles.formInput}
                 placeholder="imię i nazwisko"
+                key={form.key("name")}
+                {...form.getInputProps("name")}
               ></input>
+              {/* <TextInput
+                withAsterisk
+                label="Email"
+                placeholder="your@email.com"
+                key={form.key("email")}
+                {...form.getInputProps("email")}
+              /> */}
               <input
                 className={styles.formInput}
                 placeholder="Email"
                 key={form.key("email")}
                 {...form.getInputProps("email")}
               ></input>
-              <input className={styles.formInput} placeholder="Temat"></input>
+              <input
+                className={styles.formInput}
+                placeholder="Temat"
+                key={form.key("topic")}
+                {...form.getInputProps("topic")}
+              ></input>
               <textarea
                 className={styles.formTextArea}
                 placeholder="Treść wiadomości"
+                key={form.key("message")}
+                {...form.getInputProps("message")}
               ></textarea>
-              <button className={styles.formSubmit}>Submit</button>
+
+              <Checkbox
+                mt="md"
+                label="I agree to sell my privacy"
+                key={form.key("termsOfService")}
+                {...form.getInputProps("termsOfService", { type: "checkbox" })}
+              />
+              <Button type="submit">Submit</Button>
+              {/* <Group justify="flex-end" mt="md">
+                <Button type="submit">Submit</Button>
+              </Group> */}
             </form>
           </div>
         </div>

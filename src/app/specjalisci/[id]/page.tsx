@@ -1,6 +1,7 @@
-import Image from "next/image";
+import NextImage from "next/image";
+import { Image } from "@mantine/core";
 import styles from "@/app/specjalisci/[id]/page.module.css";
-import { infoData } from "@/data/data";
+import { infoData } from "../../../data/data";
 
 export default function SpecjalisciPage({
   params,
@@ -24,21 +25,37 @@ export default function SpecjalisciPage({
             <div className={styles.infoContainer}>
               <div className={styles.imageContainer}>
                 <Image
+                  //component={NextImage}
+                  src={data?.image}
+                  // width={3738}
+                  // height={4983}
+                  alt="person"
+                  // fill={true}
+                />
+                {/* <Image
                   className=""
                   src={data?.image}
                   alt="Logo"
                   fill={true}
+                  sizes="lg"
                   style={{}}
-                />
+                /> */}
               </div>
               <h2>{data?.name}</h2>
-              <h3>Prof. dr hab. n. med. i n. zdr.</h3>
+              {/* <h3>Prof. dr hab. n. med. i n. zdr.</h3> */}
+              <h3>{data?.title}</h3>
             </div>
           </div>
           <div className={styles.containerRight}>
             <div>
               <h1 className="text-4xl pb-10">O specjaliście</h1>
-              <p>
+              {data?.desc.split("\n").map((text, index) => (
+                <p key={index}>
+                  {text}
+                  <br />
+                </p>
+              ))}
+              {/* <p>
                 Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur,
                 specjalista psychiatra, specjalista psychiatrii środowiskowej.{" "}
                 <br />
@@ -63,7 +80,7 @@ export default function SpecjalisciPage({
                 Uzależnieniami. <br />
                 <br /> Miłośniczka żeglarstwa, nurkowania, podróży i wędrówek
                 górskich.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

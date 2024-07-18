@@ -27,10 +27,10 @@
 .formContainer {
   /* max-width: 500px; */
   /* flex: 33.33%; */
-  background-color: lightblue;
-  border-width: 1px;
+  background-color: rgb(236, 235, 235);
+  border-width: 2px;
   border-style: solid;
-  border-color: slategray;
+  border-color: black;
 }
 
 .form {

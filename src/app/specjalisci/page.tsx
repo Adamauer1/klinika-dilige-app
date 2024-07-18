@@ -16,7 +16,7 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 
-import { names, infoData } from "@/data/data";
+import { names, infoData } from "../../data/data";
 import { IconSearch } from "@tabler/icons-react";
 
 // interface person {
