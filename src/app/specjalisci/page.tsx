@@ -14,165 +14,24 @@ import {
   ActionIcon,
   rem,
 } from "@mantine/core";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { names, infoData } from "../../data/data";
 import { IconSearch } from "@tabler/icons-react";
 
-// interface person {
-//   id: number;
-//   name: string;
-//   specjalisci: string[];
-//   plec: string;
-//   image: string;
-//   link: string;
-// }
-
-// const names: string[] = [
-//   "Klaudia Bakunowska",
-//   "Tomasz Grąźlewski",
-//   "Agata Handzlik",
-//   "Agata Bąba Kubiś",
-//   "Jolanta Kucharska-Mazur",
-//   "Jacek Kurpisz",
-//   "Alicja Kusztykiewicz",
-//   "Aleksandra Mazur",
-//   "Mirosława Pankiewicz",
-//   "Artur Reginia",
-//   "Krzysztof Rudkowski",
-//   "Ewelina Skierczyńska",
-//   "Agnieszka Słuczanowska",
-//   "Daria Suchecka",
-// ];
-
-// const infoData: person[] = [
-//   {
-//     id: 1,
-//     name: "Klaudia Bakunowska",
-//     specjalisci: ["Psycholog", "Psychoterapeuta"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09913.jpg",
-//     link: "1-klaudia-bakunowska",
-//   },
-//   {
-//     id: 2,
-//     name: "Tomasz Grąźlewski",
-//     specjalisci: ["psychiatra"],
-//     plec: "Mężczyzna",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09857.jpg",
-//     link: "2-tomasz-grazlewski",
-//   },
-//   {
-//     id: 3,
-//     name: "Agata Handzlik",
-//     specjalisci: [
-//       "specjalista terapii uzależnień",
-//       "pedagog",
-//       "socjoterapeuta",
-//     ],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09977.jpg",
-//     link: "3-agata-handzlik",
-//   },
-//   {
-//     id: 4,
-//     name: "Agata Bąba Kubiś",
-//     specjalisci: ["psychiatra"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09989.jpg",
-//     link: "4-agata-baba-kubis",
-//   },
-//   {
-//     id: 5,
-//     name: "Jolanta Kucharska-Mazur",
-//     specjalisci: ["psychiatra"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-//     link: `5-jolanta-kucharska-mazur`,
-//   },
-//   {
-//     id: 6,
-//     name: "Jacek Kurpisz",
-//     specjalisci: ["psycholog", "psychoseksuolog"],
-//     plec: "Mężczyzna",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09953.jpg",
-//     link: "6-jacek-kurpisz",
-//   },
-//   {
-//     id: 7,
-//     name: "Alicja Kusztykiewicz",
-//     specjalisci: ["psychoterapia uzależnień", "terapeuta środowiskowy"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09810.jpg",
-//     link: "7-alicja-kusztykiewicz",
-//   },
-//   {
-//     id: 8,
-//     name: "Aleksandra Mazur",
-//     specjalisci: [],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09847.jpg",
-//     link: "8-aleksandra-mazur",
-//   },
-//   {
-//     id: 9,
-//     name: "Mirosława Pankiewicz",
-//     specjalisci: ["psycholog"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09924.jpg",
-//     link: "9-mirosława-pankiewicz",
-//   },
-//   {
-//     id: 10,
-//     name: "Artur Reginia",
-//     specjalisci: ["psychiatra"],
-//     plec: "Mężczyzna",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09741.jpg",
-//     link: "10-artur-reginia",
-//   },
-//   {
-//     id: 11,
-//     name: "Krzysztof Rudkowski",
-//     specjalisci: ["psychiatra"],
-//     plec: "Mężczyzna",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC00027.jpg",
-//     link: "11-krzysztof-rudkowski",
-//   },
-//   {
-//     id: 12,
-//     name: "Ewelina Skierczyńska",
-//     specjalisci: ["psycholog"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09726.jpg",
-//     link: "12-ewelina-skierczynska",
-//   },
-//   {
-//     id: 13,
-//     name: "Agnieszka Słuczanowska",
-//     specjalisci: ["pedagog specjalny", "neuroterapeuta", "psychoterapeuta"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09784.jpg",
-//     link: "13-agnieszka-sluczanowska",
-//   },
-//   {
-//     id: 14,
-//     name: "Daria Suchecka",
-//     specjalisci: ["psycholog"],
-//     plec: "Kobieta",
-//     image: "/Zdjęcia dilige/dilige jpg/DSC09908.jpg",
-//     link: "14-daria-suchecka",
-//   },
-// ];
-
-export default function Specjalisci() {
+export default function Specjalisci(params: {
+  searchParams: any;
+  params: any;
+}) {
   const [searchValue, setSearchValue] = useState<string | undefined>();
-  const [specValue, setSpecValue] = useState<string | null>();
+  const [specValue, setSpecValue] = useState<string | null>(
+    params.searchParams.spec
+  );
   const [genderValue, setGenderValue] = useState<string | null>();
-  const [data, setData] = useState(infoData);
-
+  //console.log(specValue);
   const handleFilterData = () => {
     let newData = infoData;
-    console.log(newData);
+    //console.log(newData);
     if (specValue) {
       console.log("t1");
       newData = newData.filter((person) =>
@@ -189,12 +48,15 @@ export default function Specjalisci() {
       const regex = RegExp(searchValue, "i");
       newData = newData.filter((person) => regex.test(person.name));
     }
-    console.log(searchValue);
-    console.log(specValue);
-    console.log(genderValue);
+    //console.log(searchValue);
+    //console.log(specValue);
+    //console.log(genderValue);
     console.log(newData);
-    setData(newData);
+    // setData(newData);
+    return newData;
   };
+
+  const [data, setData] = useState(handleFilterData());
 
   const handleFilterReset = () => {
     setGenderValue(null);
@@ -298,7 +160,10 @@ export default function Specjalisci() {
                 }}
                 rightSection={
                   <ActionIcon
-                    onClick={handleFilterData}
+                    //onClick={handleFilterData}
+                    onClick={() => {
+                      setData(handleFilterData());
+                    }}
                     variant="filled"
                     color="#7cc1d8"
                     styles={{
@@ -346,9 +211,10 @@ export default function Specjalisci() {
               //style={{ display: "flex" }}
             >
               <div>
-                {/* <h2>SPECJALIZACJA</h2> */}
+                {/* <h2>{specValue}</h2> */}
                 <Select
                   placeholder="SPECJALIZACJA"
+                  defaultValue={specValue}
                   value={specValue}
                   onChange={setSpecValue}
                   data={[

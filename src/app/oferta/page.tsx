@@ -1,6 +1,7 @@
 import Image from "next/image";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/oferta/page.module.css";
+import Link from "next/link";
 
 export default function Oferta() {
   return (
@@ -10,27 +11,39 @@ export default function Oferta() {
           <h1>Co oferujemy?</h1>
           <ul>
             <li className=" place-self-center text-center">
-              <div></div>
-              <p>Psychiatria</p>
+              <Link href={"/oferta/psychiatra"}>
+                <div></div>
+              </Link>
+              <p>Psychiatra</p>
             </li>
             <li>
-              <div></div>
+              <Link href={"/oferta/psychologia"}>
+                <div></div>
+              </Link>
               <p>Psychologia</p>
             </li>
             <li>
-              <div></div>
+              <Link href={"/oferta/psychoterapia"}>
+                <div></div>
+              </Link>
               <p>Psychoterapia</p>
             </li>
             <li>
-              <div></div>
+              <Link href={"/oferta/psychoseksuologia"}>
+                <div></div>
+              </Link>
               <p>Psychoseksuologia</p>
             </li>
             <li>
-              <div></div>
+              <Link href={"/oferta/terapia-uzaleznien"}>
+                <div></div>
+              </Link>
               <p>Terapia uzależnień</p>
             </li>
             <li>
-              <div></div>
+              <Link href={"/oferta/terapia-grupowa"}>
+                <div></div>
+              </Link>
               <p>Terapia grupowa</p>
             </li>
           </ul>
