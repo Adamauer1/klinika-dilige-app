@@ -1,14 +1,24 @@
 .footer {
   display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  margin-left: 11rem;
+  flex-direction: column;
+  /* align-items: center; */
+  text-align: center;
+  /* position: relative; */
+  /* justify-content: space-evenly; */
+  /* margin-left: 11rem;
   margin-right: 11rem;
   margin-top: 2.5rem;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.125rem; */
   background-color: black;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+  /* border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem; */
+}
+
+@media (min-width: 48em) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .section {
