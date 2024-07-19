@@ -2,7 +2,7 @@
 import NextImage from "next/image";
 import styles from "./page.module.css";
 import { Carousel } from "@mantine/carousel";
-import { Image } from "@mantine/core";
+import { AppShell, Image } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -29,7 +29,7 @@ export default function Home() {
     </Carousel.Slide>
   ));
   return (
-    <main>
+    <>
       <div className={styles.backgroundImageContainer}>
         <NextImage
           className={styles.backgroundImage}
@@ -70,6 +70,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </>
   );
 }
