@@ -14,7 +14,7 @@
 .containerLeft h1 {
   font-size: 3.75rem;
   line-height: 1;
-  padding-left: 3.5rem;
+  padding-left: 10rem;
   padding-bottom: 1.25rem;
 }
 
@@ -30,10 +30,11 @@
   place-self: center;
   text-align: center;
   list-style-type: none;
+  border-width: 30px;
 }
 
 .containerLeft li div {
-  background-color: black;
+  /* background-color: black; */
   width: 16rem;
   height: 16rem;
   border-radius: 3rem;

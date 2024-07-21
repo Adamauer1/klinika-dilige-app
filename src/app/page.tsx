@@ -47,6 +47,8 @@ export default function Home() {
             c="white"
             textWrap="balance"
             // ml={rem(200)}
+            mt={rem(30)}
+            mb={rem(50)}
             classNames={{ root: styles.h1 }}
             styles={
               {
@@ -64,7 +66,13 @@ export default function Home() {
           <div className={styles.imageOuterContainer}>
             <div className={styles.imageContainer}>
               <Carousel
-                m={{ base: rem(20), md: rem(30), lg: rem(30), xl: rem(50) }}
+                m={{
+                  base: rem(20),
+                  xs: rem(30),
+                  md: rem(40),
+                  lg: rem(40),
+                  xl: rem(40),
+                }}
                 styles={{
                   root: { height: "100%" },
                   viewport: { height: "100%" },
@@ -104,15 +112,16 @@ export default function Home() {
         />
       </div>
       <Group
-        visibleFrom="md"
+        visibleFrom="lg"
         justify="space-between"
         gap={"xl"}
         align="center"
+        wrap="nowrap"
         styles={{ root: { height: "100vh" } }}
       >
         {displayContent()}
       </Group>
-      <Stack hiddenFrom="md">{displayContent()}</Stack>
+      <Stack hiddenFrom="lg">{displayContent()}</Stack>
       {/* <div className={styles.container}>
         <div className={styles.containerLeft}>
           <Title order={1} c={{ base: "black", md: "white" }} size="h1">

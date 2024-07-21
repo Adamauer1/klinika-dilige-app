@@ -2,13 +2,14 @@
   position: fixed;
   z-index: -10;
   top: 0;
-  /* width: 100vw; */
+  width: 100vw;
   height: 100vh;
 }
 
 .backgroundImage {
   filter: brightness(0.65);
   height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -23,7 +24,7 @@
 
 .containerLeft {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: center; */
   /* flex-basis: 60%; */
   /* flex: 1; */
@@ -71,15 +72,18 @@
 
 @media screen and (min-width: 36em) {
   .h1 {
-    /* width: 50%; */
+    font-size: 3rem;
   }
 }
 
 @media screen and (min-width: 48em) {
+  .h1 {
+    font-size: 3.5rem;
+  }
 }
 
 @media screen and (min-width: 62em) {
-  .backgroundImageContainer {
+  /* .backgroundImageContainer {
     position: fixed;
   }
   .container {
@@ -88,11 +92,27 @@
   }
   .h1 {
     color: white;
-  }
+  } */
 }
 
 @media screen and (min-width: 75em) {
+  .containerLeft {
+    width: 50%;
+  }
+  .containerRight {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 88em) {
+  .h1 {
+    font-size: 6rem;
+    width: 50%;
+    line-height: 10rem;
+  }
+
+  .imageOuterContainer {
+    height: 60%;
+    width: 60%;
+  }
 }

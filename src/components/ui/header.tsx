@@ -23,14 +23,18 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <div className={styles.headerContainer}>
-          <Image
-            className=""
-            src="/logo.png"
-            alt="Logo"
-            width={180}
-            height={80}
-            // priority
-          />
+          <Link href={"/"}>
+            <Image
+              className=""
+              src="/logo.png"
+              alt="Logo"
+              w={{ base: 120, md: 180, lg: 180, xl: 180 }}
+              h={{ base: 60, md: 80, lg: 80, xl: 80 }}
+              // width={180}
+              // height={80}
+              // priority
+            />
+          </Link>
           <nav>
             <Group
               visibleFrom="md"
@@ -82,6 +86,7 @@ const Header = () => {
               opened={burgerOpened}
               onClick={burgerToggle}
               hiddenFrom="md"
+              mr={rem(10)}
             />
             <Drawer
               opened={burgerOpened}

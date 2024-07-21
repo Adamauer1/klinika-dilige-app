@@ -14,7 +14,7 @@
   border-top-right-radius: 1.5rem; */
 }
 
-@media (min-width: 48em) {
+@media (min-width: 74em) {
   .footer {
     flex-direction: row;
     justify-content: space-evenly;

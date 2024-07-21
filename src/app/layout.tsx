@@ -38,7 +38,7 @@ export default function RootLayout({
           <AppShell
             // layout="alt"
             withBorder={false}
-            header={{ height: 80 }}
+            header={{ height: { base: 60, md: 80, lg: 80, xl: 80 } }}
             // footer={{ height: 400 }}
           >
             <AppShellHeader>
