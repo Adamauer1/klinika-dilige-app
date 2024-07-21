@@ -8,6 +8,7 @@ import {
   AppShellHeader,
   AppShellMain,
   ColorSchemeScript,
+  createTheme,
   MantineProvider,
 } from "@mantine/core";
 import "@mantine/carousel/styles.css";
@@ -43,7 +44,7 @@ export default function RootLayout({
             <AppShellHeader>
               <Header />
             </AppShellHeader>
-            <AppShellMain>{children}</AppShellMain>
+            <AppShellMain style={{}}>{children}</AppShellMain>
             <AppShellFooter style={{ position: "relative" }}>
               <Footer />
             </AppShellFooter>
