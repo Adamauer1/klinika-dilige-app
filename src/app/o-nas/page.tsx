@@ -20,10 +20,10 @@ export default function ONas() {
               umiejętności i kompetencje. Zachęcamy do zapoznania się z naszą
               ofertą.
             </p>
-            <p>„Dilige et quod vis fac”</p>
+            {/* <p>„Dilige et quod vis fac”</p>
             <p style={{ marginBottom: "2.5rem" }}>
               „Miłuj i czyń, co chcesz” - św.Augustyn
-            </p>
+            </p> */}
             <h3>Doświadczenie i wiedza</h3>
             <p style={{ width: "50%", marginBottom: "2.5rem" }}>
               Wieloletnie doświadczenie poparte gruntowną wiedzą to największe

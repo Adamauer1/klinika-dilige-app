@@ -10,6 +10,7 @@ import {
   rem,
   Stack,
   Title,
+  Text,
 } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -47,7 +48,7 @@ export default function Home() {
             c="white"
             textWrap="balance"
             // ml={rem(200)}
-            mt={rem(30)}
+            // mt={rem(10)}
             mb={rem(50)}
             classNames={{ root: styles.h1 }}
             styles={
@@ -58,6 +59,10 @@ export default function Home() {
           >
             Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
           </Title>
+          <Text c={"white"}>
+            „Dilige et quod vis fac” <br /> „Miłuj i czyń, co chcesz” -
+            św.Augustyn
+          </Text>
           {/* <h1 className={styles.h1}>
             Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
           </h1> */}

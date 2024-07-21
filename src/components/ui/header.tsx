@@ -75,7 +75,7 @@ const Header = () => {
               </Text>
               <Text
                 component={Link}
-                href={"/Kontakt"}
+                href={"/kontakt"}
                 size={"lg"}
                 styles={{ root: { color: "black", fontWeight: "bold" } }}
               >

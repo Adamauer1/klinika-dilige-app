@@ -105,10 +105,16 @@
 }
 
 @media screen and (min-width: 88em) {
+  .containerLeft {
+    flex-direction: column;
+    padding-left: 10rem;
+  }
+
   .h1 {
-    font-size: 6rem;
+    font-size: 4rem;
     width: 50%;
-    line-height: 10rem;
+    line-height: 8rem;
+    text-align: start;
   }
 
   .imageOuterContainer {
