@@ -11,6 +11,7 @@ import {
   Stack,
   Title,
   Text,
+  Flex,
 } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -48,8 +49,8 @@ export default function Home() {
             c="white"
             textWrap="balance"
             // ml={rem(200)}
-            mt={rem(-70)}
-            mb={rem(30)}
+            // mt={rem(-70)}
+            mb={{ base: rem(10) }}
             classNames={{ root: styles.h1 }}
             styles={
               {
@@ -59,7 +60,7 @@ export default function Home() {
           >
             Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
           </Title>
-          <Text c={"white"} size="xl">
+          <Text c={"white"} size="xl" classNames={{ root: styles.text }}>
             „Dilige et quod vis fac” <br /> „Miłuj i czyń, co chcesz” -
             św.Augustyn
           </Text>
@@ -85,6 +86,8 @@ export default function Home() {
                 loop={true}
                 plugins={[autoplay.current]}
                 withControls={false}
+                onMouseEnter={autoplay.current.stop}
+                onMouseLeave={autoplay.current.reset}
               >
                 {slides}
               </Carousel>
@@ -116,17 +119,25 @@ export default function Home() {
           classNames={{ root: styles.backgroundImage }}
         />
       </div>
-      <Group
+      <Flex
+        direction={{ base: "column", lg: "row", xl: "row" }}
+        justify={{ lg: "space-between", xl: "space-between" }}
+        align={{ lg: "center", xl: "center" }}
+        wrap={{ lg: "nowrap", xl: "nowrap" }}
+      >
+        {displayContent()}
+      </Flex>
+      {/* <Group
         visibleFrom="lg"
         justify="space-between"
-        gap={"xl"}
+        //gap={"xl"}
         align="center"
         wrap="nowrap"
-        styles={{ root: { height: "100vh" } }}
+        //classNames={{ root: styles.containerLeft }}
       >
         {displayContent()}
       </Group>
-      <Stack hiddenFrom="lg">{displayContent()}</Stack>
+      <Stack hiddenFrom="lg">{displayContent()}</Stack> */}
       {/* <div className={styles.container}>
         <div className={styles.containerLeft}>
           <Title order={1} c={{ base: "black", md: "white" }} size="h1">
