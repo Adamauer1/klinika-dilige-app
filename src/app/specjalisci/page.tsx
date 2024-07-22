@@ -13,6 +13,7 @@ import {
   UnstyledButton,
   ActionIcon,
   rem,
+  AppShell,
 } from "@mantine/core";
 import { useState, useEffect } from "react";
 
@@ -114,7 +115,7 @@ export default function Specjalisci(params: {
   return (
     <>
       {/* <Link href={"/specjalisci/1-jolanta-kucharska-mazur"}>Test</Link> */}
-      <main>
+      <>
         <div
           className={styles.container}
           // style={{
@@ -259,7 +260,7 @@ export default function Specjalisci(params: {
             {/* {createPapers()} */}
           </div>
         </div>
-      </main>
+      </>
     </>
   );
 }

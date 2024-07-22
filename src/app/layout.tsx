@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
-import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import {
+  AppShell,
+  AppShellFooter,
+  AppShellHeader,
+  AppShellMain,
+  ColorSchemeScript,
+  createTheme,
+  MantineProvider,
+} from "@mantine/core";
 import "@mantine/carousel/styles.css";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
@@ -27,9 +35,20 @@ export default function RootLayout({
       </head>
       <body className={poppins.className}>
         <MantineProvider>
-          <Header />
-          {children}
-          <Footer />
+          <AppShell
+            // layout="alt"
+            withBorder={false}
+            header={{ height: { base: 60, md: 80, lg: 80, xl: 80 } }}
+            // footer={{ height: 400 }}
+          >
+            <AppShellHeader>
+              <Header />
+            </AppShellHeader>
+            <AppShellMain style={{}}>{children}</AppShellMain>
+            <AppShellFooter style={{ position: "relative" }}>
+              <Footer />
+            </AppShellFooter>
+          </AppShell>
         </MantineProvider>
       </body>
     </html>

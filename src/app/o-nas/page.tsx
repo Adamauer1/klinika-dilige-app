@@ -1,6 +1,8 @@
 import Image from "next/image";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/o-nas/page.module.css";
+import { Button, UnstyledButton } from "@mantine/core";
+import Link from "next/link";
 
 export default function ONas() {
   return (
@@ -18,16 +20,23 @@ export default function ONas() {
               umiejętności i kompetencje. Zachęcamy do zapoznania się z naszą
               ofertą.
             </p>
-            <p>„Dilige et quod vis fac”</p>
+            {/* <p>„Dilige et quod vis fac”</p>
             <p style={{ marginBottom: "2.5rem" }}>
               „Miłuj i czyń, co chcesz” - św.Augustyn
-            </p>
+            </p> */}
             <h3>Doświadczenie i wiedza</h3>
             <p style={{ width: "50%", marginBottom: "2.5rem" }}>
               Wieloletnie doświadczenie poparte gruntowną wiedzą to największe
               atuty specjalistów Kliniki Dilige.
             </p>
-            <button className={styles.button}>Specjaliści</button>
+            <UnstyledButton
+              component={Link}
+              href={"/specjalisci"}
+              className={styles.button}
+            >
+              Specjaliści
+            </UnstyledButton>
+            {/* <button className={styles.button}>Specjaliści</button> */}
           </div>
         </div>
         <div className={styles.containerRight}>

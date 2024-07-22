@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/styles/footer.module.css";
+import { AppShell } from "@mantine/core";
 
 const Footer = () => {
   let pStyle: string = "pb-1 text-base text-white";
@@ -70,15 +72,6 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        {/* <div className="mt-10">
-        <h3 className={h3Style}>Poradnie</h3>
-        <p className={pStyle}>Psychiatra</p>
-        <p className={pStyle}>Psycholog</p>
-        <p className={pStyle}>Psychoterapeuta</p>
-        <p className={pStyle}>Terapeuta uzależnień</p>
-        <p className={pStyle}>Psychoseksuolog</p>
-        <p className={`${pStyle} mb-10`}>EEG biofeedback</p>
-      </div> */}
       </div>
     </>
   );

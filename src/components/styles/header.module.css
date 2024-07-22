@@ -1,5 +1,5 @@
 .header {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   /* display: flex;
   justify-content: space-between;
@@ -12,7 +12,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 6rem;
+  /* height: 6rem; */
+}
+
+@media (min-width: 30em) {
 }
 
 .ul {

@@ -2,7 +2,16 @@
 import NextImage from "next/image";
 import styles from "./page.module.css";
 import { Carousel } from "@mantine/carousel";
-import { Image } from "@mantine/core";
+import {
+  AppShell,
+  BackgroundImage,
+  Group,
+  Image,
+  rem,
+  Stack,
+  Title,
+  Text,
+} from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -28,27 +37,47 @@ export default function Home() {
       />
     </Carousel.Slide>
   ));
-  return (
-    <main>
-      <div className={styles.backgroundImageContainer}>
-        <NextImage
-          className={styles.backgroundImage}
-          src="/stockOne.jpg"
-          alt="Logo"
-          fill
-          // style={{ zIndex: -10 }}
-        />
-      </div>
-      <div className={styles.container}>
+
+  const displayContent = () => {
+    return (
+      <>
         <div className={styles.containerLeft}>
-          <h1 className={styles.h1}>
+          <Title
+            order={1}
+            //c={{ base: "black", md: "white" }}
+            c="white"
+            textWrap="balance"
+            // ml={rem(200)}
+            mt={rem(-70)}
+            mb={rem(30)}
+            classNames={{ root: styles.h1 }}
+            styles={
+              {
+                // root: { fontSize: rem(120), lineHeight: rem(250) },
+              }
+            }
+          >
             Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
-          </h1>
+          </Title>
+          <Text c={"white"} size="xl">
+            „Dilige et quod vis fac” <br /> „Miłuj i czyń, co chcesz” -
+            św.Augustyn
+          </Text>
+          {/* <h1 className={styles.h1}>
+            Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
+          </h1> */}
         </div>
         <div className={styles.containerRight}>
           <div className={styles.imageOuterContainer}>
             <div className={styles.imageContainer}>
               <Carousel
+                m={{
+                  base: rem(20),
+                  xs: rem(30),
+                  md: rem(40),
+                  lg: rem(40),
+                  xl: rem(40),
+                }}
                 styles={{
                   root: { height: "100%" },
                   viewport: { height: "100%" },
@@ -59,17 +88,73 @@ export default function Home() {
               >
                 {slides}
               </Carousel>
-              {/* <Image
-                className=""
-                src="/stockThree.jpg"
-                alt="Logo"
-                fill={true}
-                style={{}}
-              /> */}
             </div>
           </div>
         </div>
+      </>
+    );
+  };
+  return (
+    <>
+      <div className={styles.backgroundImageContainer}>
+        {/* <BackgroundImage src="/stockOne.jpg" /> */}
+        {/* <NextImage
+          className={styles.backgroundImage}
+          src="/stockOne.jpg"
+          alt="Logo"
+          fill
+          // style={{ zIndex: -10 }}
+        /> */}
+        <Image
+          src={"/stockOne.jpg"}
+          alt="background"
+          //
+          // w={{ base: 200, sm: 400, lg: 500 }}
+          //w={"auto"}
+          //h={533}
+          //visibleFrom="md"
+          classNames={{ root: styles.backgroundImage }}
+        />
       </div>
-    </main>
+      <Group
+        visibleFrom="lg"
+        justify="space-between"
+        gap={"xl"}
+        align="center"
+        wrap="nowrap"
+        styles={{ root: { height: "100vh" } }}
+      >
+        {displayContent()}
+      </Group>
+      <Stack hiddenFrom="lg">{displayContent()}</Stack>
+      {/* <div className={styles.container}>
+        <div className={styles.containerLeft}>
+          <Title order={1} c={{ base: "black", md: "white" }} size="h1">
+            Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
+          </Title>
+          <h1 className={styles.h1}>
+            Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
+          </h1>
+        </div>
+        <div className={styles.containerRight}>
+          <div className={styles.imageOuterContainer}>
+            <div className={styles.imageContainer}>
+              <Carousel
+                m={{ md: rem(30), lg: rem(30), xl: rem(50) }}
+                styles={{
+                  root: { height: "100%" },
+                  viewport: { height: "100%" },
+                }}
+                loop={true}
+                plugins={[autoplay.current]}
+                withControls={false}
+              >
+                {slides}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </div> */}
+    </>
   );
 }
