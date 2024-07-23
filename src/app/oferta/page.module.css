@@ -8,14 +8,26 @@
 }
 
 .containerLeft {
-  width: 66.6666%;
+  /* width: 66.6666%; */
 }
 
-.containerLeft h1 {
+/* .containerLeft h1 {
   font-size: 3.75rem;
   line-height: 1;
   padding-left: 10rem;
   padding-bottom: 1.25rem;
+} */
+
+.title {
+  text-align: center;
+  /* font-size: 3.75rem;
+  line-height: 1;
+  padding-left: 10rem;
+  padding-bottom: 1.25rem; */
+}
+
+.text {
+  text-align: center;
 }
 
 .containerLeft ul {
@@ -49,7 +61,43 @@
 
 .containerRight {
   position: relative;
-  height: 90%;
-  width: 1000px;
+  /* height: 90%; */
+  /* width: 1000px; */
   overflow: hidden;
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+}
+
+/* 992px */
+@media screen and (min-width: 62em) {
+}
+
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .containerLeft {
+    flex: 0.6;
+  }
+  .containerRight {
+    flex: 0.4;
+    height: 100vh;
+  }
+  .title {
+    text-align: start;
+  }
+}
+
+/* 1408px */
+@media screen and (min-width: 88em) {
+  .title {
+    text-align: start;
+  }
 }

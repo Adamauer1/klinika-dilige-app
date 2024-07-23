@@ -60,7 +60,7 @@ export default function Home() {
           >
             Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
           </Title>
-          <Text c={"white"} size="xl" classNames={{ root: styles.text }}>
+          <Text c={"white"} size={"xl"} classNames={{ root: styles.text }}>
             „Dilige et quod vis fac” <br /> „Miłuj i czyń, co chcesz” -
             św.Augustyn
           </Text>
