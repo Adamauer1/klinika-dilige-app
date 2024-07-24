@@ -7,32 +7,39 @@
 }
 
 .containerLeft {
-  flex: 1;
+  /* flex: 1;
   margin-left: 8rem;
-  margin-top: 2.5rem;
+  margin-top: 2.5rem; */
+  padding: 2rem;
+  text-wrap: balance;
+  text-align: center;
 }
 
 .containerLeft h1 {
-  font-size: 3rem;
+  /* font-size: 3rem;
   line-height: 1;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem; */
 }
 
 .container h3 {
-  font-size: 1.25rem;
+  /* font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; */
 }
 
 .containerLeft p {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  /* font-size: 1.25rem;
+  line-height: 1.75rem; */
+  /* text-align: center; */
 }
 
 .button {
+  align-self: center;
+  text-align: center;
   cursor: pointer;
   padding: 1.3em 3em;
+  /* margin-bottom: 3em; */
   font-size: 12px;
   /* text-transform: uppercase; */
   letter-spacing: 2.5px;
@@ -54,9 +61,62 @@
 }
 
 .containerRight {
-  flex: 0.75;
+  /* flex: 0.75; */
   position: relative;
-  width: 1000px;
+  /* width: 1000px; */
   overflow: hidden;
-  margin-top: 1.75rem;
+  /* margin-top: 1.75rem; */
+  /* height: 100%; */
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+}
+
+/* 992px */
+@media screen and (min-width: 62em) {
+}
+
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .containerLeft {
+    flex: 0.5;
+    text-align: start;
+    /* padding-top: 3rem; */
+    /* margin-left: 5rem; */
+    padding-left: 5rem;
+  }
+  .containerRight {
+    flex: 0.5;
+  }
+  .button {
+    /* height: 5rem; */
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.75rem;
+  }
+}
+
+/* 1408px */
+@media screen and (min-width: 88em) {
+  .containerLeft {
+    flex: 0.5;
+    text-align: start;
+    /* padding-top: 2rem; */
+    /* margin-left: 5rem; */
+    padding-left: 5rem;
+  }
+  .containerRight {
+    flex: 0.5;
+  }
+  .button {
+    /* height: 5rem; */
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.75rem;
+  }
 }

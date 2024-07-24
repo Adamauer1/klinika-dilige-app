@@ -69,7 +69,7 @@ export default function Oferta() {
         </Flex>
         <div className={styles.containerRight}>
           <Image
-            className="brightness-75"
+            // className="brightness-75"
             src={"/stockTwo.jpg"}
             alt="Logo"
             width={"100%"}
