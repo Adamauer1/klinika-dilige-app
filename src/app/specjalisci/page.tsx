@@ -14,6 +14,9 @@ import {
   ActionIcon,
   rem,
   AppShell,
+  Flex,
+  Title,
+  SimpleGrid,
 } from "@mantine/core";
 import { useState, useEffect } from "react";
 
@@ -66,136 +69,251 @@ export default function Specjalisci(params: {
   };
 
   const createPapers = () => {
-    return data.map((person) => (
-      <Paper
-        // component={Link}
-        // href={`/specjalisci/${person.link}`}
-        key={person.id}
-        className={styles.dataPaper}
-        // style={{
-        //   width: 400,
-        //   height: 550,
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        // }}
+    return (
+      <SimpleGrid
+        cols={{ base: 1, sm: 2, md: 3, lg: 4 }}
+        verticalSpacing={{ base: rem(20) }}
+        style={{ alignItems: "center" }}
       >
-        <div className={styles.dataImageContainer}>
-          <UnstyledButton
-            component={Link}
-            href={`/specjalisci/${person.link}`}
-            className={styles.dataProfileButton}
+        {data.map((person) => (
+          <Paper
+            // component={Link}
+            // href={`/specjalisci/${person.link}`}
+            key={person.id}
+            className={styles.dataPaper}
+            // style={{
+            //   width: 400,
+            //   height: 550,
+            //   display: "flex",
+            //   flexDirection: "column",
+            //   alignItems: "center",
+            // }}
           >
-            Profile
-          </UnstyledButton>
-          {/* <button className={styles.dataProfileButton}>Profile</button> */}
-          <Image
-            component={NextImage}
-            className={styles.dataImage}
-            // style={{ borderRadius: 20 }}
-            src={person.image}
-            alt="image"
-            height={"500"}
-            width={"400"}
-          />
-        </div>
-        <Text styles={{ root: { margin: 10 } }}>{person.name}</Text>
-      </Paper>
-    ));
+            <div className={styles.dataImageContainer}>
+              <UnstyledButton
+                component={Link}
+                href={`/specjalisci/${person.link}`}
+                className={styles.dataProfileButton}
+              >
+                Profile
+              </UnstyledButton>
+              {/* <button className={styles.dataProfileButton}>Profile</button> */}
+              <Image
+                // component={NextImage}
+                className={styles.dataImage}
+                // style={{ borderRadius: 20 }}
+                src={person.image}
+                alt="image"
+                // height={"500"}
+                // width={"400"}
+              />
+            </div>
+            <Text styles={{ root: { margin: 10 } }}>{person.name}</Text>
+          </Paper>
+        ))}
+      </SimpleGrid>
+    );
   };
 
   const noPapers = () => {
-    return (
-      <div>
-        <Text>No results found</Text>
-      </div>
-    );
+    return <Text ta={"center"}>No results found</Text>;
   };
 
   return (
     <>
       {/* <Link href={"/specjalisci/1-jolanta-kucharska-mazur"}>Test</Link> */}
-      <>
+      <Flex direction={"column"} justify={"center"} p={{ base: rem(20) }}>
+        <Flex
+          direction={"column"}
+          pb={{ base: rem(30) }}
+          justify={"center"}
+          align={"center"}
+        >
+          <Title order={1} ta={"center"} textWrap="balance">
+            Search for Specjalisci
+          </Title>
+          {/* <Flex> */}
+          <Autocomplete
+            classNames={{
+              root: styles.autoComplete_Root,
+              input: styles.autoComplete_Input,
+              section: styles.autoComplete_Section,
+            }}
+            styles={{
+              // root: {
+              //   width: "100%",
+              //   height: 45,
+              // },
+              input: {
+                borderRadius: "30px",
+                // borderTopLeftRadius: "30px",
+                // borderBottomLeftRadius: "30px",
+                height: 45,
+              },
+              section: {
+                // width: 100,
+                // paddingRight: 10,
+                // borderTopRightRadius: 30,
+              },
+              // wrapper: { height: "3rem", width: "100%" },
+            }}
+            rightSection={
+              <ActionIcon
+                //onClick={handleFilterData}
+                onClick={() => {
+                  setData(handleFilterData());
+                }}
+                variant="filled"
+                color="#7cc1d8"
+                classNames={{
+                  root: styles.actionIconRoot,
+                  icon: styles.actionIconIcon,
+                }}
+                styles={{
+                  root: {
+                    borderTopRightRadius: 30,
+                    borderBottomRightRadius: 30,
+                  },
+                }}
+              >
+                {/* <IconSearch size={36} /> */}
+                <IconSearch />
+              </ActionIcon>
+            }
+            placeholder="Search"
+            data={names}
+            value={searchValue}
+            onChange={setSearchValue}
+            defaultDropdownOpened={false}
+            withScrollArea={false}
+          />
+          {/* </Flex> */}
+          <Flex justify={"center"}>
+            <div>
+              {/* <h2>{specValue}</h2> */}
+              <Select
+                placeholder="SPECJALIZACJA"
+                defaultValue={specValue}
+                value={specValue}
+                onChange={setSpecValue}
+                data={[
+                  "Psychiatra",
+                  "Psycholog",
+                  "Pedagog Specjalny",
+                  "Neuroterapeuta",
+                  "Psychoterapeuta",
+                  "Psychoterapia Uzależnień",
+                  "Terapeuta Środowiskowy",
+                  "Specjalista Terapii Uzależnień",
+                  "Pedagog",
+                  "Socjoterapeuta",
+                  "Psychoseksuolog",
+                  "Terapeuta Uzależnień",
+                  "EEG Biofeedback",
+                ]}
+              />
+            </div>
+            <div>
+              {/* <h2>PŁEĆ</h2> */}
+              <Select
+                placeholder="PŁEĆ"
+                value={genderValue}
+                onChange={setGenderValue}
+                data={["Mężczyzna", "Kobieta"]}
+              />
+            </div>
+            <button onClick={handleFilterReset}>Reset</button>
+          </Flex>
+        </Flex>
+        {data.length != 0 ? createPapers() : noPapers()}
+        {/* <SimpleGrid
+          cols={{ base: 1, sm: 2, md: 3, lg: 4 }}
+          verticalSpacing={{ base: rem(20) }}
+          style={{ alignItems: "center" }}
+        >
+          {data.length != 0 ? createPapers() : noPapers()}
+        </SimpleGrid> */}
+      </Flex>
+      {/* <div
+        className={styles.container}
+        // style={{
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   alignItems: "center",
+        //   justifyContent: "center",
+        //   width: "100vw",
+        // }}
+      >
         <div
-          className={styles.container}
           // style={{
           //   display: "flex",
           //   flexDirection: "column",
           //   alignItems: "center",
-          //   justifyContent: "center",
-          //   width: "100vw",
+          //   width: "100%",
+          //   paddingBottom: 50,
           // }}
+          className={styles.searchContainer}
         >
+          <h1>Search for Specjalisci</h1>
           <div
-            // style={{
-            //   display: "flex",
-            //   flexDirection: "column",
-            //   alignItems: "center",
-            //   width: "100%",
-            //   paddingBottom: 50,
-            // }}
-            className={styles.searchContainer}
+            className={styles.searchInputContainer}
+            //style={{ display: "flex", width: "40%", paddingBottom: 5 }}
           >
-            <h1>Search for Specjalisci</h1>
-            <div
-              className={styles.searchInputContainer}
-              //style={{ display: "flex", width: "40%", paddingBottom: 5 }}
-            >
-              <Autocomplete
-                styles={{
-                  root: {
-                    width: "100%",
-                    height: 45,
-                  },
-                  input: {
-                    borderRadius: "30px",
-                    // borderTopLeftRadius: "30px",
-                    // borderBottomLeftRadius: "30px",
-                    height: 45,
-                  },
-                  section: {
-                    width: 100,
-                    // paddingRight: 10,
-                  },
-                  // wrapper: { height: "3rem", width: "100%" },
-                }}
-                rightSection={
-                  <ActionIcon
-                    //onClick={handleFilterData}
-                    onClick={() => {
-                      setData(handleFilterData());
-                    }}
-                    variant="filled"
-                    color="#7cc1d8"
-                    styles={{
-                      root: {
-                        height: 45,
-                        width: "100%",
-                        borderTopRightRadius: 30,
-                        borderBottomRightRadius: 30,
-                      },
-                      icon: { height: 45 },
-                    }}
-                  >
-                    {/* <IconSearch size={36} /> */}
-                    <IconSearch />
-                  </ActionIcon>
-                }
-                placeholder="Search"
-                data={names}
-                value={searchValue}
-                onChange={setSearchValue}
-                defaultDropdownOpened={false}
-                withScrollArea={false}
-              />
-              {/* <div>
+            <Autocomplete
+              styles={{
+                root: {
+                  width: "100%",
+                  height: 45,
+                },
+                input: {
+                  borderRadius: "30px",
+                  // borderTopLeftRadius: "30px",
+                  // borderBottomLeftRadius: "30px",
+                  height: 45,
+                },
+                section: {
+                  width: 100,
+                  // paddingRight: 10,
+                },
+                // wrapper: { height: "3rem", width: "100%" },
+              }}
+              rightSection={
+                <ActionIcon
+                  //onClick={handleFilterData}
+                  onClick={() => {
+                    setData(handleFilterData());
+                  }}
+                  variant="filled"
+                  color="#7cc1d8"
+                  styles={{
+                    root: {
+                      height: 45,
+                      width: "100%",
+                      borderTopRightRadius: 30,
+                      borderBottomRightRadius: 30,
+                    },
+                    icon: { height: 45 },
+                  }}
+                >
+                  <IconSearch size={36} />
+                  <IconSearch />
+                </ActionIcon>
+              }
+              placeholder="Search"
+              data={names}
+              value={searchValue}
+              onChange={setSearchValue}
+              defaultDropdownOpened={false}
+              withScrollArea={false}
+            />
+            <div>
                 <UnstyledButton>
                   <IconSearch
                     style={{ width: rem(1), height: rem(1) }}
                   ></IconSearch>
                 </UnstyledButton>
-              </div> */}
-              {/* <ActionIcon
+              </div>
+            <ActionIcon
                 onClick={handleFilterData}
                 styles={{
                   root: { height: 45 },
@@ -204,63 +322,62 @@ export default function Specjalisci(params: {
               >
                 <IconSearch size={36} />
                 <IconSearch style={{ height: 45, width: 45 }} />
-              </ActionIcon> */}
-              {/* <button onClick={handleFilterData}>Search</button> */}
-            </div>
-            <div
-              className={styles.filterContainer}
-              //style={{ display: "flex" }}
-            >
-              <div>
-                {/* <h2>{specValue}</h2> */}
-                <Select
-                  placeholder="SPECJALIZACJA"
-                  defaultValue={specValue}
-                  value={specValue}
-                  onChange={setSpecValue}
-                  data={[
-                    "Psychiatra",
-                    "Psycholog",
-                    "Pedagog Specjalny",
-                    "Neuroterapeuta",
-                    "Psychoterapeuta",
-                    "Psychoterapia Uzależnień",
-                    "Terapeuta Środowiskowy",
-                    "Specjalista Terapii Uzależnień",
-                    "Pedagog",
-                    "Socjoterapeuta",
-                    "Psychoseksuolog",
-                    "Terapeuta Uzależnień",
-                    "EEG Biofeedback",
-                  ]}
-                />
-              </div>
-              <div>
-                {/* <h2>PŁEĆ</h2> */}
-                <Select
-                  placeholder="PŁEĆ"
-                  value={genderValue}
-                  onChange={setGenderValue}
-                  data={["Mężczyzna", "Kobieta"]}
-                />
-              </div>
-              <button onClick={handleFilterReset}>Reset</button>
-            </div>
+              </ActionIcon>
+            <button onClick={handleFilterData}>Search</button>
           </div>
           <div
-            className={styles.dataContainer}
-            // style={{
-            //   display: "flex",
-            //   gap: 20,
-            //   flexWrap: "wrap",
-            //   justifyContent: "center",
-            // }}
+            className={styles.filterContainer}
+            //style={{ display: "flex" }}
           >
-            {data.length != 0 ? createPapers() : noPapers()}
-            {/* {createPapers()} */}
+            <div>
+              <h2>{specValue}</h2>
+              <Select
+                placeholder="SPECJALIZACJA"
+                defaultValue={specValue}
+                value={specValue}
+                onChange={setSpecValue}
+                data={[
+                  "Psychiatra",
+                  "Psycholog",
+                  "Pedagog Specjalny",
+                  "Neuroterapeuta",
+                  "Psychoterapeuta",
+                  "Psychoterapia Uzależnień",
+                  "Terapeuta Środowiskowy",
+                  "Specjalista Terapii Uzależnień",
+                  "Pedagog",
+                  "Socjoterapeuta",
+                  "Psychoseksuolog",
+                  "Terapeuta Uzależnień",
+                  "EEG Biofeedback",
+                ]}
+              />
+            </div>
+            <div>
+              <h2>PŁEĆ</h2>
+              <Select
+                placeholder="PŁEĆ"
+                value={genderValue}
+                onChange={setGenderValue}
+                data={["Mężczyzna", "Kobieta"]}
+              />
+            </div>
+            <button onClick={handleFilterReset}>Reset</button>
           </div>
         </div>
-      </>
+        <div
+          className={styles.dataContainer}
+          // style={{
+          //   display: "flex",
+          //   gap: 20,
+          //   flexWrap: "wrap",
+          //   justifyContent: "center",
+          // }}
+        >
+          {data.length != 0 ? createPapers() : noPapers()}
+          {createPapers()}
+        </div>
+      </div> */}
     </>
   );
 }

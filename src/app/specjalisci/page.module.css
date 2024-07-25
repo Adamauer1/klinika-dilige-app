@@ -23,6 +23,33 @@
   padding-bottom: 5px;
 }
 
+.autoComplete_Root {
+  width: 100%;
+  height: 45;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.autoComplete_Input {
+  border-radius: 30px;
+  height: 45;
+}
+
+.autoComplete_Section {
+  width: 3rem;
+  /* width: 100%;
+  height: 45; */
+}
+
+.actionIconRoot {
+  height: 100%;
+  width: 100%;
+}
+
+.actionIconIcon {
+  height: "100%";
+}
+
 .filterContainer {
   display: flex;
 }
@@ -35,8 +62,9 @@
 }
 
 .dataPaper {
-  width: 400px;
-  height: 550px;
+  /* width: 400px; */
+  /* height: 550px; */
+  /* height: 25rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,4 +130,38 @@
 
 .test {
   height: 100%;
+}
+/* 576px */
+@media screen and (min-width: 36em) {
+}
+/* 768px */
+@media screen and (min-width: 48em) {
+  .autoComplete_Root {
+    width: 70%;
+  }
+  .autoComplete_Section {
+    width: 4rem;
+    /* width: 100%;
+    height: 45; */
+  }
+}
+/* 992px */
+@media screen and (min-width: 62em) {
+  .autoComplete_Section {
+    width: 5rem;
+    /* width: 100%;
+    height: 45; */
+  }
+}
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .autoComplete_Root {
+    width: 60%;
+  }
+}
+/* 1408px */
+@media screen and (min-width: 88em) {
+  .autoComplete_Root {
+    width: 50%;
+  }
 }
