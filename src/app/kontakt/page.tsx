@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import NextImage from "next/image";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/kontakt/page.module.css";
 import { useForm } from "@mantine/form";
@@ -12,10 +12,15 @@ import {
 import {
   Button,
   Checkbox,
+  Flex,
   Group,
   rem,
+  Text,
   TextInput,
   ThemeIcon,
+  Title,
+  Image,
+  SimpleGrid,
 } from "@mantine/core";
 export default function Kontakt() {
   const form = useForm({
@@ -37,8 +42,134 @@ export default function Kontakt() {
     },
   });
   return (
-    <main className="" style={{}}>
-      <div className={styles.container}>
+    <>
+      <Flex
+        direction={{ base: "column", lg: "row", xl: "row" }}
+        h={{ lg: "100vh" }}
+
+        // align={{ base: "center" }}
+      >
+        <Flex
+          direction={{ base: "column", lg: "row", xl: "row" }}
+          p={{ base: rem(20), lg: rem(60) }}
+          gap={{ lg: rem(50) }}
+          flex={{ lg: 0.8, xl: 0.8 }}
+          justify={{ xl: "space-around" }}
+          styles={{ root: { alignSelf: "center" } }}
+        >
+          <Flex
+            direction={{ base: "column" }}
+            align={{ base: "center", lg: "start" }}
+            gap={{ base: rem(20) }}
+            pb={{ base: rem(40), lg: 0 }}
+            classNames={{ root: styles.infoContainer }}
+            // flex={{ lg: 0.5, xl: 0.5 }}
+            //styles={{ root: { width: "40%" } }}
+          >
+            <Title
+              fz={{ lg: rem(60) }}
+              pb={{ lg: rem(30) }}
+              // pt={{ lg: rem(60) }}
+            >
+              Kontakt
+            </Title>
+            <Text
+              ta={{ base: "center", lg: "start" }}
+              fz={{ lg: rem(15) }}
+              className={styles.text}
+            >
+              Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
+              również za pomocą formularza wysłać prośbę o kontakt z naszej
+              strony.
+            </Text>
+            <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, lg: 1, xl: 1 }}>
+              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                <IconMapPin size={40} stroke={1} />
+                <p>
+                  ul. Parkowa 5A/1 <br /> 71-600 Szczecin
+                </p>
+              </Flex>
+              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                <IconMapPin size={40} stroke={1} />
+                <p>
+                  ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
+                </p>
+              </Flex>
+              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                <IconMail size={40} stroke={1} />
+                <p>kontakt@klinikadilige.pl</p>
+              </Flex>
+              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                <IconPhone size={40} stroke={1} />
+                <p>+48 501 023 653</p>
+              </Flex>
+            </SimpleGrid>
+          </Flex>
+          <div className={styles.formOuterContainer}>
+            <div className={styles.formContainer}>
+              <form
+                className={styles.form}
+                onSubmit={form.onSubmit((values) => console.log(values))}
+              >
+                <input
+                  className={styles.formInput}
+                  placeholder="imię i nazwisko"
+                  key={form.key("name")}
+                  {...form.getInputProps("name")}
+                ></input>
+                {/* <TextInput
+                withAsterisk
+                label="Email"
+                placeholder="your@email.com"
+                key={form.key("email")}
+                {...form.getInputProps("email")}
+              /> */}
+                <input
+                  className={styles.formInput}
+                  placeholder="Email"
+                  key={form.key("email")}
+                  {...form.getInputProps("email")}
+                ></input>
+                <input
+                  className={styles.formInput}
+                  placeholder="Temat"
+                  key={form.key("topic")}
+                  {...form.getInputProps("topic")}
+                ></input>
+                <textarea
+                  className={styles.formTextArea}
+                  placeholder="Treść wiadomości"
+                  key={form.key("message")}
+                  {...form.getInputProps("message")}
+                ></textarea>
+
+                <Checkbox
+                  mt="md"
+                  label="I agree to sell my privacy"
+                  key={form.key("termsOfService")}
+                  {...form.getInputProps("termsOfService", {
+                    type: "checkbox",
+                  })}
+                />
+                <Button type="submit">Submit</Button>
+                {/* <Group justify="flex-end" mt="md">
+                <Button type="submit">Submit</Button>
+              </Group> */}
+              </form>
+            </div>
+          </div>
+        </Flex>
+        <div className={styles.imageContainer}>
+          <Image
+            className="brightness-75"
+            src={"/stockTwo.jpg"}
+            alt="Logo"
+            width={"100%"}
+            height={"100%"}
+          />
+        </div>
+      </Flex>
+      {/* <div className={styles.container}>
         <div className={styles.infoContainer}>
           <h1 className={styles.h1}>Kontakt</h1>
           <p>
@@ -47,9 +178,9 @@ export default function Kontakt() {
           </p>
           <div style={{ display: "flex", alignItems: "center" }}>
             <IconMapPin size={40} stroke={1} />
-            {/* <ThemeIcon>
+            <ThemeIcon>
               <IconPhoto />
-            </ThemeIcon> */}
+            </ThemeIcon>
             <p>
               ul. Parkowa 5A/1 <br /> 71-600 Szczecin
             </p>
@@ -81,13 +212,13 @@ export default function Kontakt() {
                 key={form.key("name")}
                 {...form.getInputProps("name")}
               ></input>
-              {/* <TextInput
+              <TextInput
                 withAsterisk
                 label="Email"
                 placeholder="your@email.com"
                 key={form.key("email")}
                 {...form.getInputProps("email")}
-              /> */}
+              />
               <input
                 className={styles.formInput}
                 placeholder="Email"
@@ -114,9 +245,9 @@ export default function Kontakt() {
                 {...form.getInputProps("termsOfService", { type: "checkbox" })}
               />
               <Button type="submit">Submit</Button>
-              {/* <Group justify="flex-end" mt="md">
+              <Group justify="flex-end" mt="md">
                 <Button type="submit">Submit</Button>
-              </Group> */}
+              </Group>
             </form>
           </div>
         </div>
@@ -129,7 +260,7 @@ export default function Kontakt() {
             style={{ objectFit: "cover" }}
           />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className=" fixed z-[-10] top-0 w-screen h-screen">
         <Image
@@ -250,6 +381,6 @@ export default function Kontakt() {
           <button className="ml-4 mr-4 mb-6 h-12 bg-white">Submit</button>
         </form>
       </div> */}
-    </main>
+    </>
   );
 }

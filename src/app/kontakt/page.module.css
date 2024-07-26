@@ -8,20 +8,23 @@
 }
 
 .infoContainer {
-  margin-left: 4rem;
+  /* margin-left: 4rem;
   margin-top: 2.5rem;
-  flex: 35%;
+  flex: 35%; */
+}
+
+.text {
 }
 
 .h1 {
-  font-size: 3rem;
+  /* font-size: 3rem;
   line-height: 1;
-  margin-bottom: 4rem;
+  margin-bottom: 4rem; */
 }
 
 .formOuterContainer {
-  flex: 30%;
-  align-self: center;
+  /* flex: 30%;
+  align-self: center; */
 }
 
 .formContainer {
@@ -72,9 +75,39 @@
 }
 
 .imageContainer {
-  flex: 30%;
+  position: relative;
+  /* width: 1000px; */
+  overflow: hidden;
+  /* flex: 30%;
   position: relative;
   width: 1000px;
   overflow: hidden;
-  margin-top: 1.75rem;
+  margin-top: 1.75rem; */
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+}
+/* 768px */
+@media screen and (min-width: 48em) {
+}
+/* 992px */
+@media screen and (min-width: 62em) {
+}
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .infoContainer {
+    width: 30%;
+  }
+  .imageContainer {
+    flex: 0.2;
+  }
+  .formOuterContainer {
+    width: 30rem;
+
+    align-self: center;
+  }
+}
+/* 1408px */
+@media screen and (min-width: 88em) {
 }

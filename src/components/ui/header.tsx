@@ -163,7 +163,7 @@ const Header = () => {
                   <Divider />
                   <Text
                     component={Link}
-                    href={"/Kontakt"}
+                    href={"/kontakt"}
                     size={"lg"}
                     styles={{
                       root: {
