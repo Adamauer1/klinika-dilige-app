@@ -1,4 +1,4 @@
-"use client";
+//"use client"; //don't think I need this
 import {
   AppShell,
   Burger,
@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import NextImage from "next/image";
 import Link from "next/link";
-import styles from "@/components/styles/header.module.css";
+import styles from "@/components/styles/Header.module.css";
 import { useDisclosure } from "@mantine/hooks";
 const Header = () => {
   const [burgerOpened, { toggle: burgerToggle }] = useDisclosure();
