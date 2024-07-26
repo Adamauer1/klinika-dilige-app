@@ -23,19 +23,22 @@ import Autoplay from "embla-carousel-autoplay";
 //   "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
 // ];
 
-import { personImages } from "../data/data";
+import { personBasic } from "../data/data";
+import Link from "next/link";
 
 export default function Home() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
-  const slides = personImages.map((image, index) => (
+  const slides = personBasic.map((person, index) => (
     <Carousel.Slide key={index}>
-      <Image
-        // component={NextImage}
-        src={image}
-        alt="person"
-        // width={"100%"}
-        // height={"100%"}
-      />
+      <Link href={person.link}>
+        <Image
+          // component={NextImage}
+          src={person.image}
+          alt={person.name}
+          // width={"100%"}
+          // height={"100%"}
+        />
+      </Link>
     </Carousel.Slide>
   ));
 

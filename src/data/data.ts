@@ -9,6 +9,12 @@ interface personPaper {
   link: string;
 }
 
+interface PersonBasic {
+  name: string;
+  image: string;
+  link: string;
+}
+
 const names: string[] = [
   "Klaudia Bakunowska",
   "Tomasz Grąźlewski",
@@ -26,21 +32,77 @@ const names: string[] = [
   "Daria Suchecka",
 ];
 
-const personImages: string[] = [
-  "/Zdjęcia dilige/dilige jpg/DSC09913.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09857.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09977.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09989.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09953.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09810.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09847.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09924.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09741.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC00027.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09726.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09784.jpg",
-  "/Zdjęcia dilige/dilige jpg/DSC09908.jpg",
+const personBasic: PersonBasic[] = [
+  {
+    name: "Klaudia Bakunowska",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09913.jpg",
+    link: "/specjalisci/1-klaudia-bakunowska",
+  },
+  {
+    name: "Tomasz Grąźlewski",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09857.jpg",
+    link: "/specjalisci/2-tomasz-grazlewski",
+  },
+  {
+    name: "Agata Handzlik",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09977.jpg",
+    link: "/specjalisci/3-agata-handzlik",
+  },
+  {
+    name: "Agata Bąba Kubiś",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09989.jpg",
+    link: "/specjalisci/4-agata-baba-kubis",
+  },
+  {
+    name: "Jolanta Kucharska-Mazur",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
+    link: "/specjalisci/5-jolanta-kucharska-mazur",
+  },
+  {
+    name: "Jacek Kurpisz",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09953.jpg",
+    link: "/specjalisci/6-jacek-kurpisz",
+  },
+  {
+    name: "Alicja Kusztykiewicz",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09810.jpg",
+    link: "/specjalisci/7-alicja-kusztykiewicz",
+  },
+  {
+    name: "Aleksandra Mazur",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09847.jpg",
+    link: "/specjalisci/8-aleksandra-mazur",
+  },
+  {
+    name: "Mirosława Pankiewicz",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09924.jpg",
+    link: "/specjalisci/9-mirosława-pankiewicz",
+  },
+  {
+    name: "Artur Reginia",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09741.jpg",
+    link: "/specjalisci/10-artur-reginia",
+  },
+  {
+    name: "Krzysztof Rudkowski",
+    image: "/Zdjęcia dilige/dilige jpg/DSC00027.jpg",
+    link: "/specjalisci/11-krzysztof-rudkowski",
+  },
+  {
+    name: "Ewelina Skierczyńska",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09726.jpg",
+    link: "/specjalisci/12-ewelina-skierczynska",
+  },
+  {
+    name: "Agnieszka Słuczanowska",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09784.jpg",
+    link: "/specjalisci/13-agnieszka-sluczanowska",
+  },
+  {
+    name: "Daria Suchecka",
+    image: "/Zdjęcia dilige/dilige jpg/DSC09908.jpg",
+    link: "14-daria-suchecka",
+  },
 ];
 
 const infoData: personPaper[] = [
@@ -190,4 +252,4 @@ const infoData: personPaper[] = [
   },
 ];
 
-export { names, infoData, personImages };
+export { names, infoData, personBasic };
