@@ -20,19 +20,46 @@
 }
 
 .imageContainer {
-  position: relative;
-  width: 100%;
+  /* position: relative; */
+  /* width: 100%; */
   /* height: 83.3333%; */
   /* height: 100%; */
-  padding-top: 40px;
+  /* padding-top: 40px; */
 }
 
 .containerRight {
-  flex: 1;
-  padding-right: 2.5rem;
+  /* flex: 1;
+  padding-right: 2.5rem; */
 }
 
-.containerRight h1 {
+/* .containerRight h1 {
   font-size: 2.25rem;
   line-height: 2.5rem;
+} */
+
+/* 576px */
+@media screen and (min-width: 36em) {
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+}
+
+/* 992px */
+@media screen and (min-width: 62em) {
+}
+
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .containerRight {
+    /* width: 50%; */
+  }
+  .text {
+    width: 80%;
+    font-size: 1.25rem;
+  }
+}
+
+/* 1408px */
+@media screen and (min-width: 88em) {
 }
