@@ -1,4 +1,4 @@
-//"use client"; //don't think I need this
+"use client"; // need for burger
 import {
   AppShell,
   Burger,
@@ -17,8 +17,8 @@ import styles from "@/components/styles/Header.module.css";
 import { useDisclosure } from "@mantine/hooks";
 const Header = () => {
   const [burgerOpened, { toggle: burgerToggle }] = useDisclosure();
-  const [drawerOpened, { open: drawerOpen, close: drawerClose }] =
-    useDisclosure(false);
+  // const [drawerOpened, { open: drawerOpen, close: drawerClose }] =
+  //   useDisclosure(false);
   return (
     <>
       <div className={styles.header}>

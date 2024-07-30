@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 import NextImage from "next/image";
 import styles from "./page.module.css";
-import { Carousel } from "@mantine/carousel";
+// import { Carousel } from "@mantine/carousel";
 import {
   AppShell,
   BackgroundImage,
@@ -15,32 +15,25 @@ import {
 } from "@mantine/core";
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
-
-// const images: string[] = [
-//   "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-//   "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
-//   "/Zdjęcia dilige/dilige jpg/DSC09948.jpg",
-//   "/Zdjęcia dilige/dilige jpg/DSC00024.jpg",
-// ];
-
 import { personBasic } from "../data/data";
 import Link from "next/link";
+import CarouselShow from "@/components/ui/CarouselShow";
 
 export default function Home() {
-  const autoplay = useRef(Autoplay({ delay: 5000 }));
-  const slides = personBasic.map((person, index) => (
-    <Carousel.Slide key={index}>
-      <Link href={person.link}>
-        <Image
-          // component={NextImage}
-          src={person.image}
-          alt={person.name}
-          // width={"100%"}
-          // height={"100%"}
-        />
-      </Link>
-    </Carousel.Slide>
-  ));
+  // const autoplay = useRef(Autoplay({ delay: 5000 }));
+  // const slides = personBasic.map((person, index) => (
+  //   <Carousel.Slide key={index}>
+  //     <Link href={person.link}>
+  //       <Image
+  //         // component={NextImage}
+  //         src={person.image}
+  //         alt={person.name}
+  //         // width={"100%"}
+  //         // height={"100%"}
+  //       />
+  //     </Link>
+  //   </Carousel.Slide>
+  // ));
 
   const displayContent = () => {
     return (
@@ -74,7 +67,8 @@ export default function Home() {
         <div className={styles.containerRight}>
           <div className={styles.imageOuterContainer}>
             <div className={styles.imageContainer}>
-              <Carousel
+              <CarouselShow />
+              {/* <Carousel
                 m={{
                   base: rem(20),
                   xs: rem(30),
@@ -93,7 +87,7 @@ export default function Home() {
                 onMouseLeave={autoplay.current.reset}
               >
                 {slides}
-              </Carousel>
+              </Carousel> */}
             </div>
           </div>
         </div>
