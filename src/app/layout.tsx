@@ -14,6 +14,7 @@ import {
 import "@mantine/carousel/styles.css";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
+import CookiesModule from "@/components/ui/CookiesModule";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight: "300", subsets: ["latin"] });
@@ -41,6 +42,7 @@ export default function RootLayout({
             header={{ height: { base: 60, md: 80, lg: 80, xl: 80 } }}
             // footer={{ height: 400 }}
           >
+            <CookiesModule />
             <AppShellHeader>
               <Header />
             </AppShellHeader>
