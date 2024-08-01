@@ -1,0 +1,62 @@
+.text {
+  font-size: 0.6rem;
+}
+
+.title {
+  font-size: 0.85rem;
+  align-self: center;
+  text-align: center;
+}
+
+.list {
+  font-size: 0.6rem;
+}
+
+/* 576px */
+@media screen and (min-width: 36em) {
+  .text {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .list {
+    font-size: 1rem;
+  }
+}
+
+/* 768px */
+@media screen and (min-width: 48em) {
+  .text {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    align-self: center;
+    text-align: center;
+  }
+
+  .list {
+    font-size: 1rem;
+  }
+}
+
+/* 992px */
+@media screen and (min-width: 62em) {
+}
+
+/* 1200px */
+@media screen and (min-width: 75em) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+/* 1408px */
+@media screen and (min-width: 88em) {
+}
