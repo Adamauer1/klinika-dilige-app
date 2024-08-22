@@ -15,11 +15,15 @@
     "@mantine/hooks": "^7.11.1",
     "@mantine/modals": "^7.11.1",
     "@tabler/icons-react": "^3.10.0",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "axios": "^1.7.4",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
     "next": "14.2.4",
+    "node-fetch": "^3.3.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",

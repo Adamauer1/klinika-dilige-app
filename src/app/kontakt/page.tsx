@@ -1,5 +1,6 @@
 "use client";
 import NextImage from "next/image";
+import ReCAPTCHA from "react-google-recaptcha";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/kontakt/page.module.css";
 import { useForm } from "@mantine/form";
@@ -22,6 +23,7 @@ import {
   Image,
   SimpleGrid,
 } from "@mantine/core";
+import { useRef, useState } from "react";
 export default function Kontakt() {
   const form = useForm({
     mode: "uncontrolled",
@@ -31,7 +33,7 @@ export default function Kontakt() {
       topic: "",
       message: "",
       termsOfService: false,
-      captcha: false,
+      // captcha: false,
     },
 
     validate: {
@@ -39,8 +41,68 @@ export default function Kontakt() {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
       topic: (value) => (value.length != 0 ? null : "Need Topic"),
       message: (value) => (value.length != 0 ? null : "Need Message"),
+      termsOfService: (value) => (value ? null : "Accept Terms"),
+      // captcha: (value) => (value ? null : "Accept Captcha"),
     },
   });
+  const [captcha, setCaptcha] = useState(null);
+  const recaptchaRef: any = useRef(null);
+
+  const handleReCaptchaChange = (value: any) => {
+    setCaptcha(value);
+  };
+
+  const handleSubmit = async (values: any) => {
+    // event?.preventDefault();
+    if (!captcha) {
+      console.log("captcha");
+      return;
+    }
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...values,
+        recaptchaToken: captcha,
+      }),
+    });
+
+    if (response.ok) {
+      alert("Form submitted successfully!");
+    } else {
+      alert("Form submission failed!");
+    }
+    // try {
+    //   const response = await fetch("/api/contact", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       name: values.name,
+    //       email: values.email,
+    //       topic: values.topic,
+    //       message: values.message,
+    //       termsOfService: values.termsOfService,
+    //       captcha: captcha,
+    //     }),
+    //   });
+
+    //   if (response.ok) {
+    //     console.log(values);
+    //   } else {
+    //   }
+    // } catch (error) {}
+    //console.log(values);
+  };
+
+  // const asyncScriptOnLoad = () => {
+  //   console.log("Google recaptcha loaded just fine");
+  // };
+
   return (
     <>
       <Flex
@@ -109,7 +171,8 @@ export default function Kontakt() {
             <div className={styles.formContainer}>
               <form
                 className={styles.form}
-                onSubmit={form.onSubmit((values) => console.log(values))}
+                // onSubmit={form.onSubmit((values) => console.log(values))}
+                onSubmit={form.onSubmit(handleSubmit)}
               >
                 <input
                   className={styles.formInput}
@@ -142,10 +205,16 @@ export default function Kontakt() {
                   key={form.key("message")}
                   {...form.getInputProps("message")}
                 ></textarea>
-
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                  // size="invisible"
+                  onChange={handleReCaptchaChange}
+                  // asyncScriptOnLoad={asyncScriptOnLoad}
+                />
                 <Checkbox
                   mt="md"
-                  label="I agree to sell my privacy"
+                  label="Akceptuję zasady i Politykę Prywatności zgodną z RODO."
                   key={form.key("termsOfService")}
                   {...form.getInputProps("termsOfService", {
                     type: "checkbox",
@@ -381,6 +450,13 @@ export default function Kontakt() {
           <button className="ml-4 mr-4 mb-6 h-12 bg-white">Submit</button>
         </form>
       </div> */}
+      {/* <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+        size="invisible"
+        onChange={handleReCaptchaChange}
+        asyncScriptOnLoad={asyncScriptOnLoad}
+      /> */}
     </>
   );
 }
