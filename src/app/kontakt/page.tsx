@@ -22,8 +22,14 @@ import {
   Title,
   Image,
   SimpleGrid,
+  Textarea,
+  Container,
+  Dialog,
+  LoadingOverlay,
 } from "@mantine/core";
+import { notifications } from "@mantine/notifications";
 import { useRef, useState } from "react";
+import { useDisclosure } from "@mantine/hooks";
 export default function Kontakt() {
   const form = useForm({
     mode: "uncontrolled",
@@ -37,28 +43,33 @@ export default function Kontakt() {
     },
 
     validate: {
-      name: (value) => (value.length != 0 ? null : "Need Name"),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-      topic: (value) => (value.length != 0 ? null : "Need Topic"),
-      message: (value) => (value.length != 0 ? null : "Need Message"),
-      termsOfService: (value) => (value ? null : "Accept Terms"),
+      name: (value) => (value.length != 0 ? null : "Wymagane imię i nazwisko"),
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Wymagany e-mail"),
+      topic: (value) => (value.length != 0 ? null : "Wymagany temat"),
+      message: (value) =>
+        value.length != 0 ? null : "Wymagany treść wiadomości",
+      termsOfService: (value) => (value ? null : "Akceptuję warunki"),
       // captcha: (value) => (value ? null : "Accept Captcha"),
     },
   });
   const [captcha, setCaptcha] = useState(null);
+  const [captchaError, setCaptchaError] = useState(false);
   const recaptchaRef: any = useRef(null);
+  const [visible, toggle] = useDisclosure();
 
   const handleReCaptchaChange = (value: any) => {
     setCaptcha(value);
+    setCaptchaError(!value);
   };
 
   const handleSubmit = async (values: any) => {
     // event?.preventDefault();
     if (!captcha) {
       console.log("captcha");
+      setCaptchaError(true);
       return;
     }
-
+    toggle.open();
     const response = await fetch("/api/contact", {
       method: "POST",
       headers: {
@@ -69,165 +80,464 @@ export default function Kontakt() {
         recaptchaToken: captcha,
       }),
     });
-
-    if (response.ok) {
-      alert("Form submitted successfully!");
-    } else {
-      alert("Form submission failed!");
-    }
-    // try {
-    //   const response = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       name: values.name,
-    //       email: values.email,
-    //       topic: values.topic,
-    //       message: values.message,
-    //       termsOfService: values.termsOfService,
-    //       captcha: captcha,
-    //     }),
-    //   });
-
-    //   if (response.ok) {
-    //     console.log(values);
-    //   } else {
-    //   }
-    // } catch (error) {}
-    //console.log(values);
+    setTimeout(() => {
+      if (response.ok) {
+        notifications.show({
+          title: "Sent",
+          message: "Successful Submission",
+          color: "green",
+          position: "top-center",
+          styles: {
+            root: { backgroundColor: "green" },
+            description: { color: "white" },
+            title: { color: "white" },
+          },
+        });
+        form.reset();
+      } else {
+        notifications.show({
+          title: "Error",
+          message: "Submission failed",
+          color: "red",
+          position: "top-center",
+          styles: {
+            root: { backgroundColor: "red" },
+            description: { color: "white" },
+            title: { color: "white" },
+          },
+        });
+      }
+      toggle.close();
+      recaptchaRef.current.reset();
+    }, 1000);
+    // if (response.ok) {
+    //   alert("Form submitted successfully!");
+    //   form.reset();
+    // } else {
+    //   alert("Form submission failed!");
+    // }
+    // toggle;
   };
 
   // const asyncScriptOnLoad = () => {
   //   console.log("Google recaptcha loaded just fine");
   // };
 
+  // <Flex
+  //         direction={{ base: "column", lg: "row", xl: "row" }}
+  //         p={{ base: rem(20), lg: rem(60) }}
+  //         gap={{ lg: rem(50) }}
+  //         flex={{ lg: 0.8, xl: 0.8 }}
+  //         justify={{ xl: "space-around" }}
+  //         styles={{ root: { alignSelf: "center" } }}
+  //       >
+  //         <Flex
+  //           direction={{ base: "column" }}
+  //           align={{ base: "center", lg: "start" }}
+  //           gap={{ base: rem(20) }}
+  //           pb={{ base: rem(40), lg: 0 }}
+  //           classNames={{ root: styles.infoContainer }}
+  //           // flex={{ lg: 0.5, xl: 0.5 }}
+  //           //styles={{ root: { width: "40%" } }}
+  //         >
+  //           <Title
+  //             fz={{ lg: rem(60) }}
+  //             pb={{ lg: rem(30) }}
+  //             // pt={{ lg: rem(60) }}
+  //           >
+  //             Kontakt
+  //           </Title>
+  //           <Text
+  //             ta={{ base: "center", lg: "start" }}
+  //             fz={{ lg: rem(15) }}
+  //             className={styles.text}
+  //           >
+  //             Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
+  //             również za pomocą formularza wysłać prośbę o kontakt z naszej
+  //             strony.
+  //           </Text>
+  //           <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, lg: 1, xl: 1 }}>
+  //             <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //               <IconMapPin size={40} stroke={1} />
+  //               <p>
+  //                 ul. Parkowa 5A/1 <br /> 71-600 Szczecin
+  //               </p>
+  //             </Flex>
+  //             <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //               <IconMapPin size={40} stroke={1} />
+  //               <p>
+  //                 ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
+  //               </p>
+  //             </Flex>
+  //             <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //               <IconMail size={40} stroke={1} />
+  //               <p>kontakt@klinikadilige.pl</p>
+  //             </Flex>
+  //             <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //               <IconPhone size={40} stroke={1} />
+  //               <p>+48 501 023 653</p>
+  //             </Flex>
+  //           </SimpleGrid>
+  //         </Flex>
+  //         <div className={styles.formOuterContainer}>
+  //           <div className={styles.formContainer}>
+  //             <form
+  //               className={styles.form}
+  //               // onSubmit={form.onSubmit((values) => console.log(values))}
+  //               onSubmit={form.onSubmit(handleSubmit)}
+  //             >
+  //               <input
+  //                 className={styles.formInput}
+  //                 placeholder="imię i nazwisko"
+  //                 key={form.key("name")}
+  //                 {...form.getInputProps("name")}
+  //               ></input>
+  //               {/* <TextInput
+  // withAsterisk
+  // label="Email"
+  // placeholder="your@email.com"
+  // key={form.key("email")}
+  // {...form.getInputProps("email")}
+  //             /> */}
+  //               <input
+  //                 className={styles.formInput}
+  //                 placeholder="Email"
+  //                 key={form.key("email")}
+  //                 {...form.getInputProps("email")}
+  //               ></input>
+  //               <input
+  //                 className={styles.formInput}
+  //                 placeholder="Temat"
+  //                 key={form.key("topic")}
+  //                 {...form.getInputProps("topic")}
+  //               ></input>
+  //               <textarea
+  //                 className={styles.formTextArea}
+  //                 placeholder="Treść wiadomości"
+  //                 key={form.key("message")}
+  //                 {...form.getInputProps("message")}
+  //               ></textarea>
+  //               <ReCAPTCHA
+  //                 ref={recaptchaRef}
+  //                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+  //                 // size="invisible"
+  //                 onChange={handleReCaptchaChange}
+  //                 // asyncScriptOnLoad={asyncScriptOnLoad}
+  //               />
+  //               <Checkbox
+  //                 mt="md"
+  //                 label="Akceptuję zasady i Politykę Prywatności zgodną z RODO."
+  //                 key={form.key("termsOfService")}
+  //                 {...form.getInputProps("termsOfService", {
+  //                   type: "checkbox",
+  //                 })}
+  //               />
+  //               <Button type="submit">Submit</Button>
+  //               {/* <Group justify="flex-end" mt="md">
+  //               <Button type="submit">Submit</Button>
+  //             </Group> */}
+  //             </form>
+  //           </div>
+  //         </div>
+  //       </Flex>
+
+  // {/* <div>
+  //           <Flex
+  //             direction={{ base: "column", lg: "row", xl: "row" }}
+  //             m={{ base: rem(20), lg: rem(60) }}
+  //             //gap={{ lg: rem(50) }}
+  //             flex={{ lg: 0.8, xl: 0.8 }}
+  //             //justify={{ xl: "space-around" }}
+  //             justify={{ xl: "center" }}
+  //             styles={{ root: { alignSelf: "center" } }}
+  //             bg={"blue"}
+  //           >
+  //             <Flex
+  //               direction={{ base: "column" }}
+  //               align={{ base: "center", lg: "start" }}
+  //               //gap={{ base: rem(20) }}
+  //               //pb={{ base: rem(40), lg: 0 }}
+  //               classNames={{ root: styles.infoContainer }}
+  //               // flex={{ lg: 0.5, xl: 0.5 }}
+  //               //styles={{ root: { width: "40%" } }}
+  //             >
+  //               <Title
+  //                 fz={{ lg: rem(60) }}
+  //                 pb={{ lg: rem(30) }}
+  //                 // pt={{ lg: rem(60) }}
+  //               >
+  //                 Kontakt
+  //               </Title>
+  //               <Text
+  //                 ta={{ base: "center", lg: "start" }}
+  //                 fz={{ lg: rem(15) }}
+  //                 className={styles.text}
+  //               >
+  //                 Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
+  //                 również za pomocą formularza wysłać prośbę o kontakt z naszej
+  //                 strony.
+  //               </Text>
+  // <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, lg: 1, xl: 1 }}>
+  //   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //     <IconMapPin size={40} stroke={1} />
+  //     <p>
+  //       ul. Parkowa 5A/1 <br /> 71-600 Szczecin
+  //     </p>
+  //   </Flex>
+  //   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //     <IconMapPin size={40} stroke={1} />
+  //     <p>
+  //       ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
+  //     </p>
+  //   </Flex>
+  //   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //     <IconMail size={40} stroke={1} />
+  //     <p>kontakt@klinikadilige.pl</p>
+  //   </Flex>
+  //   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+  //     <IconPhone size={40} stroke={1} />
+  //     <p>+48 501 023 653</p>
+  //   </Flex>
+  // </SimpleGrid>
+  //             </Flex>
+  //             <div className={styles.formOuterContainer}>
+  //               <div className={styles.formContainer}>
+  //                 <form
+  //                   className={styles.form}
+  //                   // onSubmit={form.onSubmit((values) => console.log(values))}
+  //                   onSubmit={form.onSubmit(handleSubmit)}
+  //                 >
+  //                   <input
+  //                     className={styles.formInput}
+  // placeholder="imię i nazwisko"
+  // key={form.key("name")}
+  // {...form.getInputProps("name")}
+  //                   ></input>
+  //                   {/* <TextInput
+  // withAsterisk
+  // label="Email"
+  // placeholder="your@email.com"
+  // key={form.key("email")}
+  // {...form.getInputProps("email")}
+  //               /> */}
+  //                   <input
+  //                     className={styles.formInput}
+  //                     placeholder="Email"
+  //                     key={form.key("email")}
+  //                     {...form.getInputProps("email")}
+  //                   ></input>
+  //                   <input
+  //                     className={styles.formInput}
+  //                     placeholder="Temat"
+  //                     key={form.key("topic")}
+  //                     {...form.getInputProps("topic")}
+  //                   ></input>
+  //                   <textarea
+  //                     className={styles.formTextArea}
+  //                     placeholder="Treść wiadomości"
+  //                     key={form.key("message")}
+  //                     {...form.getInputProps("message")}
+  //                   ></textarea>
+  //                   <ReCAPTCHA
+  //                     ref={recaptchaRef}
+  //                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+  //                     // size="invisible"
+  //                     onChange={handleReCaptchaChange}
+  //                     // asyncScriptOnLoad={asyncScriptOnLoad}
+  //                   />
+  //                   <Checkbox
+  //                     mt="md"
+  //                     label="Akceptuję zasady i Politykę Prywatności zgodną z RODO."
+  //                     key={form.key("termsOfService")}
+  //                     {...form.getInputProps("termsOfService", {
+  //                       type: "checkbox",
+  //                     })}
+  //                   />
+  //                   <Button type="submit">Submit</Button>
+  //                   {/* <Group justify="flex-end" mt="md">
+  //                 <Button type="submit">Submit</Button>
+  //               </Group> */}
+  //                 </form>
+  //               </div>
+  //             </div>
+  //           </Flex>
+  //         </div> */}
+
   return (
     <>
       <Flex
         direction={{ base: "column", lg: "row", xl: "row" }}
-        h={{ lg: "100vh" }}
+        h={{ lg: "93vh" }}
 
         // align={{ base: "center" }}
       >
-        <Flex
-          direction={{ base: "column", lg: "row", xl: "row" }}
-          p={{ base: rem(20), lg: rem(60) }}
-          gap={{ lg: rem(50) }}
-          flex={{ lg: 0.8, xl: 0.8 }}
-          justify={{ xl: "space-around" }}
-          styles={{ root: { alignSelf: "center" } }}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flex: 0.8,
+            alignSelf: "center",
+            justifySelf: "center",
+          }}
         >
-          <Flex
-            direction={{ base: "column" }}
-            align={{ base: "center", lg: "start" }}
-            gap={{ base: rem(20) }}
-            pb={{ base: rem(40), lg: 0 }}
-            classNames={{ root: styles.infoContainer }}
-            // flex={{ lg: 0.5, xl: 0.5 }}
-            //styles={{ root: { width: "40%" } }}
-          >
-            <Title
-              fz={{ lg: rem(60) }}
-              pb={{ lg: rem(30) }}
-              // pt={{ lg: rem(60) }}
-            >
-              Kontakt
-            </Title>
-            <Text
-              ta={{ base: "center", lg: "start" }}
-              fz={{ lg: rem(15) }}
-              className={styles.text}
-            >
-              Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
-              również za pomocą formularza wysłać prośbę o kontakt z naszej
-              strony.
-            </Text>
-            <SimpleGrid cols={{ base: 1, xs: 2, sm: 2, lg: 1, xl: 1 }}>
-              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                <IconMapPin size={40} stroke={1} />
-                <p>
-                  ul. Parkowa 5A/1 <br /> 71-600 Szczecin
-                </p>
-              </Flex>
-              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                <IconMapPin size={40} stroke={1} />
-                <p>
-                  ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
-                </p>
-              </Flex>
-              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                <IconMail size={40} stroke={1} />
-                <p>kontakt@klinikadilige.pl</p>
-              </Flex>
-              <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                <IconPhone size={40} stroke={1} />
-                <p>+48 501 023 653</p>
-              </Flex>
+          <div className={styles.wrapper}>
+            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
+              <div>
+                <Title
+                  order={1}
+                  fz={{ lg: rem(50) }}
+                  pb={{ lg: rem(10) }}
+                  className={styles.title}
+                >
+                  Kontakt
+                </Title>
+                <Text className={styles.description} mt="sm" mb={30}>
+                  Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
+                  również za pomocą formularza wysłać prośbę o kontakt z naszej
+                  strony.
+                </Text>
+
+                {/* <ContactIconsList />
+
+              <Group mt="xl">{icons}</Group> */}
+                <SimpleGrid cols={{ base: 1, xs: 2, sm: 1, lg: 1, xl: 1 }}>
+                  <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                    <IconMapPin size={40} stroke={1} />
+                    <p>
+                      ul. Parkowa 5A/1 <br /> 71-600 Szczecin
+                    </p>
+                  </Flex>
+                  <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                    <IconMapPin size={40} stroke={1} />
+                    <p>
+                      ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
+                    </p>
+                  </Flex>
+                  <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                    <IconMail size={40} stroke={1} />
+                    <p>kontakt@klinikadilige.pl</p>
+                  </Flex>
+                  <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                    <IconPhone size={40} stroke={1} />
+                    <p>+48 501 023 653</p>
+                  </Flex>
+                </SimpleGrid>
+              </div>
+              <div className={styles.form}>
+                <LoadingOverlay
+                  visible={visible}
+                  zIndex={1000}
+                  // overlayProps={{ radius: "sm", blur: 2 }}
+                />
+                <form onSubmit={form.onSubmit(handleSubmit)}>
+                  <TextInput
+                    h={{ base: rem(70), md: rem(80) }}
+                    label="Imię i nazwisko"
+                    placeholder="imię i nazwisko"
+                    key={form.key("name")}
+                    {...form.getInputProps("name")}
+                    classNames={{
+                      input: styles.input,
+                      label: styles.inputLabel,
+                    }}
+                  />
+                  <TextInput
+                    h={{ base: rem(70), md: rem(80) }}
+                    withAsterisk
+                    label="E-mail"
+                    placeholder="your@email.com"
+                    key={form.key("email")}
+                    {...form.getInputProps("email")}
+                    mt={{ base: "md", lg: 0 }}
+                    classNames={{
+                      input: styles.input,
+                      label: styles.inputLabel,
+                    }}
+                  />
+                  <TextInput
+                    h={{ base: rem(70), md: rem(80) }}
+                    withAsterisk
+                    label="Temat"
+                    placeholder="Temat"
+                    key={form.key("topic")}
+                    {...form.getInputProps("topic")}
+                    mt={{ base: "md", lg: 0 }}
+                    classNames={{
+                      input: styles.input,
+                      label: styles.inputLabel,
+                    }}
+                  />
+                  <Textarea
+                    h={rem(230)}
+                    label="Treść wiadomości"
+                    placeholder="Treść wiadomości"
+                    key={form.key("message")}
+                    {...form.getInputProps("message")}
+                    minRows={4}
+                    mt={{ base: "md", lg: 0 }}
+                    classNames={{
+                      input: styles.textAreaInput,
+                      label: styles.inputLabel,
+                    }}
+                  />
+                  <Container
+                    hiddenFrom="md"
+                    pt={rem(10)}
+                    h={rem(150)}
+                    pl={0}
+                    styles={{ root: { borderWidth: 200 } }}
+                  >
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                      // size="invisible"
+                      size="compact"
+
+                      // asyncScriptOnLoad={asyncScriptOnLoad}
+                    />
+                  </Container>
+                  <Container
+                    visibleFrom="md"
+                    pt={rem(10)}
+                    h={rem(80)}
+                    pl={0}
+                    // style={{
+                    //   borderColor: captchaError ? "red" : "red",
+                    //   borderWidth: 2,
+                    // }}
+                  >
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                      // size="invisible"
+                      size="normal"
+                      onChange={handleReCaptchaChange}
+                      // asyncScriptOnLoad={asyncScriptOnLoad}
+                    />
+                    <Text hidden={!captchaError} c={"red"} fz={rem(12)}>
+                      Click captcha
+                    </Text>
+                  </Container>
+                  <Checkbox
+                    h={{ base: rem(20), md: rem(50) }}
+                    mt={rem(30)}
+                    mb={{ base: rem(60), md: 0 }}
+                    label="Akceptuję zasady i Politykę Prywatności zgodną z RODO."
+                    key={form.key("termsOfService")}
+                    {...form.getInputProps("termsOfService", {
+                      type: "checkbox",
+                    })}
+                  />
+                  <Group justify="flex-end" mt="md">
+                    <Button type="submit" className={styles.control}>
+                      Wyślij
+                    </Button>
+                  </Group>
+                </form>
+              </div>
             </SimpleGrid>
-          </Flex>
-          <div className={styles.formOuterContainer}>
-            <div className={styles.formContainer}>
-              <form
-                className={styles.form}
-                // onSubmit={form.onSubmit((values) => console.log(values))}
-                onSubmit={form.onSubmit(handleSubmit)}
-              >
-                <input
-                  className={styles.formInput}
-                  placeholder="imię i nazwisko"
-                  key={form.key("name")}
-                  {...form.getInputProps("name")}
-                ></input>
-                {/* <TextInput
-                withAsterisk
-                label="Email"
-                placeholder="your@email.com"
-                key={form.key("email")}
-                {...form.getInputProps("email")}
-              /> */}
-                <input
-                  className={styles.formInput}
-                  placeholder="Email"
-                  key={form.key("email")}
-                  {...form.getInputProps("email")}
-                ></input>
-                <input
-                  className={styles.formInput}
-                  placeholder="Temat"
-                  key={form.key("topic")}
-                  {...form.getInputProps("topic")}
-                ></input>
-                <textarea
-                  className={styles.formTextArea}
-                  placeholder="Treść wiadomości"
-                  key={form.key("message")}
-                  {...form.getInputProps("message")}
-                ></textarea>
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                  // size="invisible"
-                  onChange={handleReCaptchaChange}
-                  // asyncScriptOnLoad={asyncScriptOnLoad}
-                />
-                <Checkbox
-                  mt="md"
-                  label="Akceptuję zasady i Politykę Prywatności zgodną z RODO."
-                  key={form.key("termsOfService")}
-                  {...form.getInputProps("termsOfService", {
-                    type: "checkbox",
-                  })}
-                />
-                <Button type="submit">Submit</Button>
-                {/* <Group justify="flex-end" mt="md">
-                <Button type="submit">Submit</Button>
-              </Group> */}
-              </form>
-            </div>
           </div>
-        </Flex>
+        </div>
         <div className={styles.imageContainer}>
           <Image
             className="brightness-75"
@@ -238,225 +548,6 @@ export default function Kontakt() {
           />
         </div>
       </Flex>
-      {/* <div className={styles.container}>
-        <div className={styles.infoContainer}>
-          <h1 className={styles.h1}>Kontakt</h1>
-          <p>
-            Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz również
-            za pomocą formularza wysłać prośbę o kontakt z naszej strony.
-          </p>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <IconMapPin size={40} stroke={1} />
-            <ThemeIcon>
-              <IconPhoto />
-            </ThemeIcon>
-            <p>
-              ul. Parkowa 5A/1 <br /> 71-600 Szczecin
-            </p>
-          </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <IconMapPin size={40} stroke={1} />
-            <p>
-              ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
-            </p>
-          </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <IconMail size={40} stroke={1} />
-            <p>kontakt@klinikadilige.pl</p>
-          </div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <IconPhone size={40} stroke={1} />
-            <p>+48 501 023 653</p>
-          </div>
-        </div>
-        <div className={styles.formOuterContainer}>
-          <div className={styles.formContainer}>
-            <form
-              className={styles.form}
-              onSubmit={form.onSubmit((values) => console.log(values))}
-            >
-              <input
-                className={styles.formInput}
-                placeholder="imię i nazwisko"
-                key={form.key("name")}
-                {...form.getInputProps("name")}
-              ></input>
-              <TextInput
-                withAsterisk
-                label="Email"
-                placeholder="your@email.com"
-                key={form.key("email")}
-                {...form.getInputProps("email")}
-              />
-              <input
-                className={styles.formInput}
-                placeholder="Email"
-                key={form.key("email")}
-                {...form.getInputProps("email")}
-              ></input>
-              <input
-                className={styles.formInput}
-                placeholder="Temat"
-                key={form.key("topic")}
-                {...form.getInputProps("topic")}
-              ></input>
-              <textarea
-                className={styles.formTextArea}
-                placeholder="Treść wiadomości"
-                key={form.key("message")}
-                {...form.getInputProps("message")}
-              ></textarea>
-
-              <Checkbox
-                mt="md"
-                label="I agree to sell my privacy"
-                key={form.key("termsOfService")}
-                {...form.getInputProps("termsOfService", { type: "checkbox" })}
-              />
-              <Button type="submit">Submit</Button>
-              <Group justify="flex-end" mt="md">
-                <Button type="submit">Submit</Button>
-              </Group>
-            </form>
-          </div>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className="brightness-75"
-            src={stockTwo}
-            alt="Logo"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-      </div> */}
-
-      {/* <div className=" fixed z-[-10] top-0 w-screen h-screen">
-        <Image
-          className="brightness-75"
-          src="/stockOne.jpg"
-          alt="Logo"
-          fill
-          // style={{ zIndex: -10 }}
-        />
-      </div> */}
-
-      {/* <div className="flex flex-col items-center">
-        <div className="">
-          <h1>Skontaktuj się z nami</h1>
-          <p>
-            Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz również
-            za pomocą formularza wysłać prośbę o kontakt z naszej strony.
-          </p>
-        </div>
-        <div className="flex">
-          <div>
-            <div>+48 501 023 653</div>
-          </div>
-          <div>
-            <div>ul. Parkowa 5A/1 71-600 Szczecin</div>
-          </div>
-          <div>
-            <div>kontakt@klinikadilige.pl</div>
-          </div>
-        </div>
-        <div className="max-w-[500px] bg-blue-400 border border-solid border-slate-600">
-          <form className="flex flex-col">
-            <input
-              className={`${test} mt-6`}
-              placeholder="imię i nazwisko"
-            ></input>
-            <input className={test} placeholder="Email"></input>
-            <input className={test} placeholder="Temat"></input>
-            <textarea
-              className="m-4 h-44 pl-3 pt-1 border border-solid border-slate-600"
-              placeholder="Treść wiadomości"
-            ></textarea>
-            <button className="ml-4 mr-4 mb-6 h-12 bg-white">Submit</button>
-          </form>
-        </div>
-      </div> */}
-
-      {/* <div className="flex">
-        <div className="flex-1">
-          <div className="pl-14">
-            <h1 className="text-6xl">Skontaktuj się z nami</h1>
-            <p className="text-xl">
-              Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz
-              również za pomocą formularza wysłać prośbę o kontakt z naszej
-              strony.
-            </p>
-            <div className="flex flex-col">
-              <div>+48 501 023 653</div>
-              <div>ul. Parkowa 5A/1 71-600 Szczecin</div>
-              <div>kontakt@klinikadilige.pl</div>
-            </div>
-          </div>
-        </div>
-        <div className="flex-1">
-          <div className="max-w-[500px] bg-blue-400 border border-solid border-slate-600">
-            <form className="flex flex-col">
-              <input
-                className={`${test} mt-6`}
-                placeholder="imię i nazwisko"
-              ></input>
-              <input className={test} placeholder="Email"></input>
-              <input className={test} placeholder="Temat"></input>
-              <textarea
-                className="m-4 h-44 pl-3 pt-1 border border-solid border-slate-600"
-                placeholder="Treść wiadomości"
-              ></textarea>
-              <button className="ml-4 mr-4 mb-6 h-12 bg-white">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div> */}
-
-      {/* <div className="flex flex-col items-center">
-        <h1 className=" text-6xl pb-4">Skontaktuj się z nami</h1>
-        <p className="text-2xl">
-          Zadzwoń i umów się na wizytę do swojego specjalisty. Możesz również za
-          pomocą formularza wysłać prośbę o kontakt z naszej strony.
-        </p>
-      </div>
-      <div className="flex">
-        <div className="flex-1">
-          <div className="flex flex-col pl-64 py-20">
-            <div className="border">
-              <h2 className="text-3xl pb-4">Klinika Dilige</h2>
-              <div className="text-xl pb-4">+48 501 023 653</div>
-              <div className="text-xl pb-4">
-                ul. Parkowa 5A/1 71-600 Szczecin
-              </div>
-              <div className="text-xl pb-4">kontakt@klinikadilige.pl</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-1"></div>
-      </div>
-      <div className=" max-w-[500px] bg-blue-400 border border-solid border-slate-600">
-        <form className="flex flex-col">
-          <input
-            className={`${test} mt-6`}
-            placeholder="imię i nazwisko"
-          ></input>
-          <input className={test} placeholder="Email"></input>
-          <input className={test} placeholder="Temat"></input>
-          <textarea
-            className="m-4 h-44 pl-3 pt-1 border border-solid border-slate-600"
-            placeholder="Treść wiadomości"
-          ></textarea>
-          <button className="ml-4 mr-4 mb-6 h-12 bg-white">Submit</button>
-        </form>
-      </div> */}
-      {/* <ReCAPTCHA
-        ref={recaptchaRef}
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-        size="invisible"
-        onChange={handleReCaptchaChange}
-        asyncScriptOnLoad={asyncScriptOnLoad}
-      /> */}
     </>
   );
 }

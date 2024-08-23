@@ -12,6 +12,9 @@ import {
   MantineProvider,
 } from "@mantine/core";
 import "@mantine/carousel/styles.css";
+import "@mantine/notifications/styles.css";
+import { Notifications } from "@mantine/notifications";
+
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import CookiesModule from "@/components/ui/CookiesModule";
@@ -42,6 +45,7 @@ export default function RootLayout({
             header={{ height: { base: 60, md: 80, lg: 80, xl: 80 } }}
             // footer={{ height: 400 }}
           >
+            <Notifications />
             <CookiesModule />
             <AppShellHeader>
               <Header />
