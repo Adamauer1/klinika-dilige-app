@@ -1,13 +1,15 @@
 "use client";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
+import NextImage from "next/image";
 import { useRef } from "react";
 import { Carousel } from "@mantine/carousel";
 import { rem, Image } from "@mantine/core";
 import { personBasic } from "@/data/data";
+import { relative } from "path";
 
 const CarouselShow = () => {
-  const autoplay = useRef(Autoplay({ delay: 5000 }));
+  const autoplay = useRef(Autoplay({ delay: 4000, playOnInit: true }));
   const slides = personBasic.map((person, index) => (
     <Carousel.Slide key={index}>
       <Link href={person.link}>
