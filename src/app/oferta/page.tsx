@@ -1,5 +1,13 @@
 import NextImage from "next/image";
-import { Flex, Grid, Image, rem, SimpleGrid, Title } from "@mantine/core";
+import {
+  Container,
+  Flex,
+  Grid,
+  Image,
+  rem,
+  SimpleGrid,
+  Title,
+} from "@mantine/core";
 import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/oferta/page.module.css";
 import Link from "next/link";
@@ -25,46 +33,46 @@ export default function Oferta() {
             Co oferujemy?
           </Title>
           <SimpleGrid
-            cols={{ base: 2, sm: 3 }}
+            cols={{ base: 1, sm: 3 }}
             verticalSpacing={{ base: "lg", lg: "xl", xl: rem(50) }}
             spacing={{ lg: "xl", xl: rem(100) }}
           >
-            <div>
+            <Container>
               <Link href={"/oferta/psychiatra"}>
                 <Image src={"/icons/pills_507469.png"} alt="" />
               </Link>
               <p className={styles.text}>Psychiatra</p>
-            </div>
-            <div>
+            </Container>
+            <Container>
               <Link href={"/oferta/psychologia"}>
                 <Image src={"/icons/empathy_1491198.png"} alt="" />
               </Link>
               <p className={styles.text}>Psychologia</p>
-            </div>
-            <div>
+            </Container>
+            <Container>
               <Link href={"/oferta/psychoterapia"}>
                 <Image src={"/icons/autism_1491171.png"} alt="" />
               </Link>
               <p className={styles.text}>Psychoterapia</p>
-            </div>
-            <div>
+            </Container>
+            <Container>
               <Link href={"/oferta/psychoseksuologia"}>
                 <Image src={"/icons/single-bed_9828083.png"} alt="" />
               </Link>
               <p className={styles.text}>Psychoseksuologia</p>
-            </div>
-            <div>
+            </Container>
+            <Container>
               <Link href={"/oferta/terapia-uzaleznien"}>
                 <Image src={"/icons/drugs_1022360.png"} alt="" />
               </Link>
               <p className={styles.text}>Terapia uzależnień</p>
-            </div>
-            <div>
+            </Container>
+            <Container>
               <Link href={"/oferta/terapia-grupowa"}>
                 <Image src={"/icons/armchair_5376974.png"} alt="" />
               </Link>
               <p className={styles.text}>Terapia grupowa</p>
-            </div>
+            </Container>
           </SimpleGrid>
         </Flex>
         <div className={styles.containerRight}>
