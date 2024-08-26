@@ -378,7 +378,7 @@ export default function Kontakt() {
           style={{
             display: "flex",
             justifyContent: "center",
-            flex: 0.8,
+            flex: 0.6,
             alignSelf: "center",
             justifySelf: "center",
           }}
@@ -544,7 +544,8 @@ export default function Kontakt() {
         <div className={styles.imageContainer}>
           <Image
             className="brightness-75"
-            src={"/stockTwo.jpg"}
+            // src={"/stockTwo.jpg"}
+            src={"/Zdjęcia dilige/jpg przestrzenie/DSC09965.jpg"}
             alt="Logo"
             width={"100%"}
             height={"100%"}

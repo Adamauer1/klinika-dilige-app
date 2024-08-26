@@ -25,9 +25,9 @@ import { ThemeIcon } from "@mantine/core";
 import { ReactElement, ReactNode } from "react";
 const charactersList = [
   {
-    id: "psychiatra",
+    id: "psychiatria",
     image: "/icons/pills_507469.png",
-    label: "Psychiatra",
+    label: "Psychiatria",
 
     content: (
       <Container p={rem(5)}>
@@ -58,7 +58,7 @@ const charactersList = [
           }}
           className={styles.searchButton}
         >
-          Search for Spec
+          Specjaliści
         </UnstyledButton>
       </Container>
     ),
@@ -250,7 +250,7 @@ const charactersList = [
   {
     id: "terapia-uzaleznien",
     image: "/icons/drugs_1022360.png",
-    label: "Terapia uzaleznien",
+    label: "Terapia uzależnień",
     content: (
       <>
         <Container p={rem(5)}>

@@ -71,7 +71,8 @@ export default function ONas() {
         <div className={styles.containerRight}>
           <Image
             className="brightness-75"
-            src={"/stockTwo.jpg"}
+            // src={"/stockTwo.jpg"}
+            src={"/Zdjęcia dilige/jpg przestrzenie/DSC00122.jpg"}
             alt="Logo"
             width={"100%"}
             height={"100%"}

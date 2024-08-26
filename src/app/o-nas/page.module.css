@@ -95,9 +95,9 @@
   }
   .button {
     /* height: 5rem; */
-    width: 100%;
-    padding: 2rem 0;
-    font-size: 1.75rem;
+    /* width: 100%; */
+    padding: 1rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -115,8 +115,8 @@
   }
   .button {
     /* height: 5rem; */
-    width: 100%;
-    padding: 2rem 0;
-    font-size: 1.75rem;
+    /* width: 100%; */
+    padding: 1rem 1rem;
+    font-size: 1.25rem;
   }
 }

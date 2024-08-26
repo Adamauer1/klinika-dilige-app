@@ -17,11 +17,17 @@ import {
   Flex,
   Title,
   SimpleGrid,
+  Accordion,
+  AccordionControl,
+  Group,
+  Avatar,
+  AccordionPanel,
+  AccordionItem,
 } from "@mantine/core";
 import { useState, useEffect } from "react";
 
 import { names, infoData } from "../../data/data";
-import { IconSearch } from "@tabler/icons-react";
+import { IconSearch, IconSettings } from "@tabler/icons-react";
 
 export default function Specjalisci(params: {
   searchParams: any;
@@ -188,7 +194,69 @@ export default function Specjalisci(params: {
             withScrollArea={false}
           />
           {/* </Flex> */}
-          <Flex justify={"center"}>
+          <Accordion hiddenFrom="sm">
+            <AccordionItem value={"filter"}>
+              <AccordionControl>
+                <Group wrap="nowrap">
+                  {/* <Avatar src={} radius="sm" size="lg" /> */}
+                  <IconSettings />
+                  <div>
+                    <Text>Filter Settings</Text>
+                  </div>
+                </Group>
+              </AccordionControl>
+              <AccordionPanel>
+                {
+                  <Flex justify={"center"} direction={"column"}>
+                    <div>
+                      <Select
+                        placeholder="SPECJALIZACJA"
+                        defaultValue={specValue}
+                        value={specValue}
+                        onChange={setSpecValue}
+                        withScrollArea={false}
+                        data={[
+                          "Psychiatra",
+                          "Psycholog",
+                          "Pedagog Specjalny",
+                          "Neuroterapeuta",
+                          "Psychoterapeuta",
+                          "Psychoterapeuta uzależnień",
+                          "Terapeuta środowiskowy",
+                          "Specjalista terapii uzależnień",
+                          "Pedagog",
+                          "Socjoterapeuta",
+                          "Psychoseksuolog",
+                          "Terapeuta Uzależnień",
+                          // "EEG Biofeedback",
+                        ]}
+                        styles={{
+                          dropdown: { maxHeight: 200, overflowY: "auto" },
+                        }}
+                      />
+                    </div>
+                    <div>
+                      {/* <h2>PŁEĆ</h2> */}
+                      <Select
+                        placeholder="PŁEĆ"
+                        value={genderValue}
+                        onChange={setGenderValue}
+                        data={["Mężczyzna", "Kobieta"]}
+                      />
+                    </div>
+                    <UnstyledButton
+                      onClick={handleFilterReset}
+                      className={styles.button}
+                    >
+                      Reset
+                    </UnstyledButton>
+                    {/* <button onClick={handleFilterReset}>Reset</button> */}
+                  </Flex>
+                }
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+          <Flex justify={"center"} visibleFrom="sm" gap={rem(10)}>
             <div>
               {/* <h2>{specValue}</h2> */}
               <Select
@@ -196,21 +264,23 @@ export default function Specjalisci(params: {
                 defaultValue={specValue}
                 value={specValue}
                 onChange={setSpecValue}
+                withScrollArea={false}
                 data={[
                   "Psychiatra",
                   "Psycholog",
                   "Pedagog Specjalny",
                   "Neuroterapeuta",
                   "Psychoterapeuta",
-                  "Psychoterapia Uzależnień",
-                  "Terapeuta Środowiskowy",
-                  "Specjalista Terapii Uzależnień",
+                  "Psychoterapeuta uzależnień",
+                  "Terapeuta środowiskowy",
+                  "Specjalista terapii uzależnień",
                   "Pedagog",
                   "Socjoterapeuta",
                   "Psychoseksuolog",
                   "Terapeuta Uzależnień",
-                  "EEG Biofeedback",
+                  // "EEG Biofeedback",
                 ]}
+                styles={{ dropdown: { maxHeight: 200, overflowY: "auto" } }}
               />
             </div>
             <div>
@@ -222,7 +292,12 @@ export default function Specjalisci(params: {
                 data={["Mężczyzna", "Kobieta"]}
               />
             </div>
-            <button onClick={handleFilterReset}>Reset</button>
+            <UnstyledButton
+              onClick={handleFilterReset}
+              className={styles.button}
+            >
+              Reset
+            </UnstyledButton>
           </Flex>
         </Flex>
         {data.length != 0 ? createPapers() : noPapers()}

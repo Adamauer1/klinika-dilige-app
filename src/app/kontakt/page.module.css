@@ -80,6 +80,7 @@
   position: relative;
   /* width: 1000px; */
   overflow: hidden;
+  /* flex: 30%; */
   /* flex: 30%;
   position: relative;
   width: 1000px;
@@ -193,7 +194,7 @@
     width: 30%;
   }
   .imageContainer {
-    flex: 0.2;
+    flex: 0.4;
   }
   .formOuterContainer {
     width: 30rem;

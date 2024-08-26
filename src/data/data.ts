@@ -19,7 +19,7 @@ const names: string[] = [
   "Klaudia Bakunowska",
   "Tomasz Grąźlewski",
   "Agata Handzlik",
-  "Agata Bąba Kubiś",
+  "Agata Bąba-Kubiś",
   "Jolanta Kucharska-Mazur",
   "Jacek Kurpisz",
   "Alicja Kusztykiewicz",
@@ -54,7 +54,7 @@ const personBasic: PersonBasic[] = [
     link: "/specjalisci/3-agata-handzlik",
   },
   {
-    name: "Agata Bąba Kubiś",
+    name: "Agata Bąba-Kubiś",
     image: "/Zdjęcia dilige/dilige jpg/DSC09989.webp",
     link: "/specjalisci/4-agata-baba-kubis",
   },
@@ -108,6 +108,16 @@ const personBasic: PersonBasic[] = [
 const infoData: personPaper[] = [
   {
     id: 1,
+    name: "Jolanta Kucharska-Mazur",
+    specjalisci: ["psychiatra"],
+    plec: "Kobieta",
+    title: "Prof. dr hab. n. med. i n. zdr.",
+    desc: `Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur, specjalista psychiatra, specjalista psychiatrii środowiskowej.\nKieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad 20 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM.\nObroniła pracę habilitacyjną pod tytułem:"Poszukiwanie nowych markerów pierwszego epizodu psychotycznego - ocena mobilizacji komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz poziomu czynników osoczowych wpływających na ich przemieszczanie się", której efektem jest europejski patent na metodę wykrywania pierwszych epizodów psychotycznych. Autorka i współautorka 130 monografii i artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych, o łącznym IF 67,7.\nCzłonek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego Towarzystwa Psychiatrycznego, członek European Psychiatric Association i Członek założyciel Polskiego Towarzystwa Badań nad Uzależnieniami.\nMiłośniczka żeglarstwa, nurkowania, podróży i wędrówek górskich.`,
+    image: "/Zdjęcia dilige/dilige jpg/DSC09948.webp",
+    link: `5-jolanta-kucharska-mazur`,
+  },
+  {
+    id: 2,
     name: "Klaudia Bakunowska",
     specjalisci: ["Psycholog", "Psychoterapeuta"],
     plec: "Kobieta",
@@ -117,7 +127,7 @@ const infoData: personPaper[] = [
     link: "1-klaudia-bakunowska",
   },
   {
-    id: 2,
+    id: 3,
     name: "Tomasz Grąźlewski",
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
@@ -127,7 +137,7 @@ const infoData: personPaper[] = [
     link: "2-tomasz-grazlewski",
   },
   {
-    id: 3,
+    id: 4,
     name: "Agata Handzlik",
     specjalisci: [
       "specjalista terapii uzależnień",
@@ -141,24 +151,14 @@ const infoData: personPaper[] = [
     link: "3-agata-handzlik",
   },
   {
-    id: 4,
-    name: "Agata Bąba Kubiś",
+    id: 5,
+    name: "Agata Bąba-Kubiś",
     specjalisci: ["psychiatra"],
     plec: "Kobieta",
     title: "lekarz specjalista",
     desc: "Lekarz specjalista psychiatrii, na co dzień pracuje w Klinice Psychiatrii SPSK1 PUM w Szczecinie.\nSwoje doświadczenie zdobywała pracując w Oddziale Całodobowym, Dziennym oraz w Poradni Zdrowia Psychicznego.\nOd 2018 roku posiada uprawnienia I stopnia psychoterapeuty behawioralno- poznawczego (obecnie w trakcie uzyskiwania certyfikatu II stopnia na studiach podyplomowych SWPS w Poznaniu).\nW latach 2014 -2019 pracowała jako wykładowca akademicki Wydziału Nauk o Zdrowiu w zakresie psychiatrii, jest również współautorem oraz autorem artykułów w czasopismach naukowych. Przygotowuje rozprawę doktorską na temat wpływu leków przeciwpsychotycznych na mikrobiotę jelitową.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09989.webp",
     link: "4-agata-baba-kubis",
-  },
-  {
-    id: 5,
-    name: "Jolanta Kucharska-Mazur",
-    specjalisci: ["psychiatra"],
-    plec: "Kobieta",
-    title: "Prof. dr hab. n. med. i n. zdr.",
-    desc: `Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur, specjalista psychiatra, specjalista psychiatrii środowiskowej.\nKieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad 20 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM.\nObroniła pracę habilitacyjną pod tytułem:"Poszukiwanie nowych markerów pierwszego epizodu psychotycznego - ocena mobilizacji komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz poziomu czynników osoczowych wpływających na ich przemieszczanie się", której efektem jest europejski patent na metodę wykrywania pierwszych epizodów psychotycznych. Autorka i współautorka 130 monografii i artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych, o łącznym IF 67,7.\nCzłonek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego Towarzystwa Psychiatrycznego, członek European Psychiatric Association i Członek założyciel Polskiego Towarzystwa Badań nad Uzależnieniami.\nMiłośniczka żeglarstwa, nurkowania, podróży i wędrówek górskich.`,
-    image: "/Zdjęcia dilige/dilige jpg/DSC09948.webp",
-    link: `5-jolanta-kucharska-mazur`,
   },
   {
     id: 6,
