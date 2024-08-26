@@ -80,8 +80,11 @@ export default function Kontakt() {
         recaptchaToken: captcha,
       }),
     });
+    const res = response.json();
     setTimeout(() => {
-      if (response.ok) {
+      //const message: { success: string; message: string } = res.body;
+      console.log(response.status);
+      if (response.status === 200) {
         notifications.show({
           title: "Sent",
           message: "Successful Submission",
@@ -96,8 +99,8 @@ export default function Kontakt() {
         form.reset();
       } else {
         notifications.show({
-          title: "Error",
-          message: "Submission failed",
+          title: "Error: Submission failed",
+          message: response.statusText,
           color: "red",
           position: "top-center",
           styles: {
