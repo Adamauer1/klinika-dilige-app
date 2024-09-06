@@ -114,7 +114,7 @@ const infoData: personPaper[] = [
     title: "Prof. dr hab. n. med. i n. zdr.",
     desc: `Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur, specjalista psychiatra, specjalista psychiatrii środowiskowej.\nKieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad 20 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM.\nObroniła pracę habilitacyjną pod tytułem:"Poszukiwanie nowych markerów pierwszego epizodu psychotycznego - ocena mobilizacji komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz poziomu czynników osoczowych wpływających na ich przemieszczanie się", której efektem jest europejski patent na metodę wykrywania pierwszych epizodów psychotycznych. Autorka i współautorka 130 monografii i artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych, o łącznym IF 67,7.\nCzłonek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego Towarzystwa Psychiatrycznego, członek European Psychiatric Association i Członek założyciel Polskiego Towarzystwa Badań nad Uzależnieniami.\nMiłośniczka żeglarstwa, nurkowania, podróży i wędrówek górskich.`,
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.webp",
-    link: `5-jolanta-kucharska-mazur`,
+    link: `1-jolanta-kucharska-mazur`,
   },
   {
     id: 2,
@@ -124,7 +124,7 @@ const infoData: personPaper[] = [
     title: "",
     desc: "",
     image: "/Zdjęcia dilige/dilige jpg/DSC09913.webp",
-    link: "1-klaudia-bakunowska",
+    link: "2-klaudia-bakunowska",
   },
   {
     id: 3,
@@ -134,7 +134,7 @@ const infoData: personPaper[] = [
     title: "lekarz",
     desc: `Lekarz, specjalista psychiatra, pracujący na co dzień w Klinice Psychiatrii SPSK1 PUM w Szczecinie.\nWykładowca akademicki prowadzący zajęcia ze studentami Wydziału Lekarskiego oraz   Wydziału Nauk Zdrowiu. Absolwent studiów podyplomowych z zakresu podstaw psychoterapii oraz szczegółowych zagadnień psychoterapii na Uniwersytecie Jagiellońskim. Regularnie uczestniczy w szkoleniach i konferencjach związanych z tematyką psychiatryczną. Członek Polskiego Towarzystwa Psychiatrycznego.`,
     image: "/Zdjęcia dilige/dilige jpg/DSC09857.webp",
-    link: "2-tomasz-grazlewski",
+    link: "3-tomasz-grazlewski",
   },
   {
     id: 4,
@@ -148,7 +148,7 @@ const infoData: personPaper[] = [
     title: "mgr",
     desc: "Ukończyła studia z zakresu pedagogiki opiekuńczej z resocjalizacją oraz pedagogiki ogólnej. Kwalifikacje terapeutyczne zdobyła w  Studium Terapii Uzależnień oraz Studium Uzależnień rekomendowanym przez Krajowe Biuro ds. Narkomanii.\nOd  wielu lat związana z Poradnią Leczenia Uzależnienia od Alkoholu i Współuzależnienia w Szczecinie. Zajmuje się terapią osób uzależnionych od alkoholu i narkotyków. Prowadzi terapię grupową i  indywidualną, pracuje także z osobami z zaburzeniami adaptacyjnymi.\nJako pedagog i socjoterapeuta od lat pracuje z dziećmi i młodzieżą z rodzin dysfunkcyjnych. Ukończyła Krakowskie Centrum Psychodynamiczne na kierunku Socjoterapii i Treningu Interpersonalnego oraz szkolenie Podstaw Psychoterapii Psychodynamicznej. Prowadzi Specjalistyczno - Opiekuńczą Placówkę Wsparcia Dziennego dla dzieci i młodzieży.\nCzas wolny spędza w gronie najbliższych w górach. Lubi muzykę orientalną.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09977.webp",
-    link: "3-agata-handzlik",
+    link: "4-agata-handzlik",
   },
   {
     id: 5,
@@ -158,7 +158,7 @@ const infoData: personPaper[] = [
     title: "lekarz specjalista",
     desc: "Lekarz specjalista psychiatrii, na co dzień pracuje w Klinice Psychiatrii SPSK1 PUM w Szczecinie.\nSwoje doświadczenie zdobywała pracując w Oddziale Całodobowym, Dziennym oraz w Poradni Zdrowia Psychicznego.\nOd 2018 roku posiada uprawnienia I stopnia psychoterapeuty behawioralno- poznawczego (obecnie w trakcie uzyskiwania certyfikatu II stopnia na studiach podyplomowych SWPS w Poznaniu).\nW latach 2014 -2019 pracowała jako wykładowca akademicki Wydziału Nauk o Zdrowiu w zakresie psychiatrii, jest również współautorem oraz autorem artykułów w czasopismach naukowych. Przygotowuje rozprawę doktorską na temat wpływu leków przeciwpsychotycznych na mikrobiotę jelitową.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09989.webp",
-    link: "4-agata-baba-kubis",
+    link: "5-agata-baba-kubis",
   },
   {
     id: 6,
