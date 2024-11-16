@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -21,10 +21,10 @@
     "axios": "^1.7.7",
     "embla-carousel-autoplay": "^7.1.0",
     "embla-carousel-react": "^7.1.0",
-    "next": "14.2.4",
+    "next": "^15.0.3",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.15",
-    "react": "^18.3.1",
+    "react": "^19.0.0-rc.1",
     "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0",
     "sharp": "^0.33.5"
@@ -34,7 +34,7 @@
     "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.4",
+    "eslint-config-next": "^15.0.3",
     "postcss": "^8.4.47",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
