@@ -132,45 +132,6 @@ export default function Home() {
       >
         {displayContent()}
       </Flex>
-      {/* <Group
-        visibleFrom="lg"
-        justify="space-between"
-        //gap={"xl"}
-        align="center"
-        wrap="nowrap"
-        //classNames={{ root: styles.containerLeft }}
-      >
-        {displayContent()}
-      </Group>
-      <Stack hiddenFrom="lg">{displayContent()}</Stack> */}
-      {/* <div className={styles.container}>
-        <div className={styles.containerLeft}>
-          <Title order={1} c={{ base: "black", md: "white" }} size="h1">
-            Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
-          </Title>
-          <h1 className={styles.h1}>
-            Kompleksowa, specjalistyczna opieka nad zdrowiem psychicznym
-          </h1>
-        </div>
-        <div className={styles.containerRight}>
-          <div className={styles.imageOuterContainer}>
-            <div className={styles.imageContainer}>
-              <Carousel
-                m={{ md: rem(30), lg: rem(30), xl: rem(50) }}
-                styles={{
-                  root: { height: "100%" },
-                  viewport: { height: "100%" },
-                }}
-                loop={true}
-                plugins={[autoplay.current]}
-                withControls={false}
-              >
-                {slides}
-              </Carousel>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 }

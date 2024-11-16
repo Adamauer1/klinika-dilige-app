@@ -101,7 +101,7 @@ export default function Specjalisci(params: {
                 href={`/specjalisci/${person.link}`}
                 className={styles.dataProfileButton}
               >
-                Profile
+                Profil
               </UnstyledButton>
               {/* <button className={styles.dataProfileButton}>Profile</button> */}
               <Image
@@ -122,7 +122,7 @@ export default function Specjalisci(params: {
   };
 
   const noPapers = () => {
-    return <Text ta={"center"}>No results found</Text>;
+    return <Text ta={"center"}>Nie znaleziono wyników</Text>;
   };
 
   return (
@@ -136,7 +136,7 @@ export default function Specjalisci(params: {
           align={"center"}
         >
           <Title order={1} ta={"center"} textWrap="balance">
-            Search for Specjalisci
+            Wyszukiwanie specjalistów
           </Title>
           {/* <Flex> */}
           <Autocomplete
@@ -186,7 +186,7 @@ export default function Specjalisci(params: {
                 <IconSearch />
               </ActionIcon>
             }
-            placeholder="Search"
+            placeholder="Wyszukiwanie"
             data={names}
             value={searchValue}
             onChange={setSearchValue}
@@ -201,13 +201,13 @@ export default function Specjalisci(params: {
                   {/* <Avatar src={} radius="sm" size="lg" /> */}
                   <IconSettings />
                   <div>
-                    <Text>Filter Settings</Text>
+                    <Text>Ustawienia filtra</Text>
                   </div>
                 </Group>
               </AccordionControl>
               <AccordionPanel>
                 {
-                  <Flex justify={"center"} direction={"column"}>
+                  <Flex justify={"center"} direction={"column"} gap={rem(10)}>
                     <div>
                       <Select
                         placeholder="SPECJALIZACJA"
@@ -248,7 +248,7 @@ export default function Specjalisci(params: {
                       onClick={handleFilterReset}
                       className={styles.button}
                     >
-                      Reset
+                      Wyczyść
                     </UnstyledButton>
                     {/* <button onClick={handleFilterReset}>Reset</button> */}
                   </Flex>
@@ -296,7 +296,7 @@ export default function Specjalisci(params: {
               onClick={handleFilterReset}
               className={styles.button}
             >
-              Reset
+              Wyczyść
             </UnstyledButton>
           </Flex>
         </Flex>
@@ -309,150 +309,6 @@ export default function Specjalisci(params: {
           {data.length != 0 ? createPapers() : noPapers()}
         </SimpleGrid> */}
       </Flex>
-      {/* <div
-        className={styles.container}
-        // style={{
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   alignItems: "center",
-        //   justifyContent: "center",
-        //   width: "100vw",
-        // }}
-      >
-        <div
-          // style={{
-          //   display: "flex",
-          //   flexDirection: "column",
-          //   alignItems: "center",
-          //   width: "100%",
-          //   paddingBottom: 50,
-          // }}
-          className={styles.searchContainer}
-        >
-          <h1>Search for Specjalisci</h1>
-          <div
-            className={styles.searchInputContainer}
-            //style={{ display: "flex", width: "40%", paddingBottom: 5 }}
-          >
-            <Autocomplete
-              styles={{
-                root: {
-                  width: "100%",
-                  height: 45,
-                },
-                input: {
-                  borderRadius: "30px",
-                  // borderTopLeftRadius: "30px",
-                  // borderBottomLeftRadius: "30px",
-                  height: 45,
-                },
-                section: {
-                  width: 100,
-                  // paddingRight: 10,
-                },
-                // wrapper: { height: "3rem", width: "100%" },
-              }}
-              rightSection={
-                <ActionIcon
-                  //onClick={handleFilterData}
-                  onClick={() => {
-                    setData(handleFilterData());
-                  }}
-                  variant="filled"
-                  color="#7cc1d8"
-                  styles={{
-                    root: {
-                      height: 45,
-                      width: "100%",
-                      borderTopRightRadius: 30,
-                      borderBottomRightRadius: 30,
-                    },
-                    icon: { height: 45 },
-                  }}
-                >
-                  <IconSearch size={36} />
-                  <IconSearch />
-                </ActionIcon>
-              }
-              placeholder="Search"
-              data={names}
-              value={searchValue}
-              onChange={setSearchValue}
-              defaultDropdownOpened={false}
-              withScrollArea={false}
-            />
-            <div>
-                <UnstyledButton>
-                  <IconSearch
-                    style={{ width: rem(1), height: rem(1) }}
-                  ></IconSearch>
-                </UnstyledButton>
-              </div>
-            <ActionIcon
-                onClick={handleFilterData}
-                styles={{
-                  root: { height: 45 },
-                  icon: { height: 45 },
-                }}
-              >
-                <IconSearch size={36} />
-                <IconSearch style={{ height: 45, width: 45 }} />
-              </ActionIcon>
-            <button onClick={handleFilterData}>Search</button>
-          </div>
-          <div
-            className={styles.filterContainer}
-            //style={{ display: "flex" }}
-          >
-            <div>
-              <h2>{specValue}</h2>
-              <Select
-                placeholder="SPECJALIZACJA"
-                defaultValue={specValue}
-                value={specValue}
-                onChange={setSpecValue}
-                data={[
-                  "Psychiatra",
-                  "Psycholog",
-                  "Pedagog Specjalny",
-                  "Neuroterapeuta",
-                  "Psychoterapeuta",
-                  "Psychoterapia Uzależnień",
-                  "Terapeuta Środowiskowy",
-                  "Specjalista Terapii Uzależnień",
-                  "Pedagog",
-                  "Socjoterapeuta",
-                  "Psychoseksuolog",
-                  "Terapeuta Uzależnień",
-                  "EEG Biofeedback",
-                ]}
-              />
-            </div>
-            <div>
-              <h2>PŁEĆ</h2>
-              <Select
-                placeholder="PŁEĆ"
-                value={genderValue}
-                onChange={setGenderValue}
-                data={["Mężczyzna", "Kobieta"]}
-              />
-            </div>
-            <button onClick={handleFilterReset}>Reset</button>
-          </div>
-        </div>
-        <div
-          className={styles.dataContainer}
-          // style={{
-          //   display: "flex",
-          //   gap: 20,
-          //   flexWrap: "wrap",
-          //   justifyContent: "center",
-          // }}
-        >
-          {data.length != 0 ? createPapers() : noPapers()}
-          {createPapers()}
-        </div>
-      </div> */}
     </>
   );
 }
