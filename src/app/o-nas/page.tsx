@@ -38,12 +38,11 @@ export default function ONas() {
             </Title>
             <Text fz={{ xs: rem(20) }}>
               Zapraszamy do Kliniki Dilige, która oferuje kompleksową pomoc
-              medyczną, psychologiczną, psychoterapeutyczną, fizjoterapeutyczną
-              i dietetyczną. Nasi specjaliści mają duże doświadczenie kliniczne,
-              ale są także nauczycielami akademickimi, szkoleniowcami,
-              naukowcami. Stale rozszerzają swoją wiedzę, doskonalą swoje
-              umiejętności i kompetencje. Zachęcamy do zapoznania się z naszą
-              ofertą.
+              medyczną, psychologiczną, psychoterapeutyczną. Nasi specjaliści
+              mają duże doświadczenie kliniczne, ale są także nauczycielami
+              akademickimi, szkoleniowcami, naukowcami. Stale rozszerzają swoją
+              wiedzę, doskonalą swoje umiejętności i kompetencje. Zachęcamy do
+              zapoznania się z naszą ofertą.
             </Text>
             <Title
               order={3}

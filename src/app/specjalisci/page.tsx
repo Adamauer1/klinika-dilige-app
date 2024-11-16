@@ -227,7 +227,7 @@ export default function Specjalisci(params: {
                           "Pedagog",
                           "Socjoterapeuta",
                           "Psychoseksuolog",
-                          "Terapeuta Uzależnień",
+                          //"Terapeuta Uzależnień",
                           // "EEG Biofeedback",
                         ]}
                         styles={{
@@ -277,7 +277,7 @@ export default function Specjalisci(params: {
                   "Pedagog",
                   "Socjoterapeuta",
                   "Psychoseksuolog",
-                  "Terapeuta Uzależnień",
+                  // "Terapeuta Uzależnień",
                   // "EEG Biofeedback",
                 ]}
                 styles={{ dropdown: { maxHeight: 200, overflowY: "auto" } }}

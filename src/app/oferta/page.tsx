@@ -49,6 +49,10 @@ const charactersList = [
             <ListItem>Zaburzenia odżywiania się</ListItem>
             <ListItem>Zaburzenia psychiczne wieku podeszłego</ListItem>
           </List>
+          <Text>
+            Prosimy o kontakt telefoniczny z naszą rejestracją celem wyboru
+            najlepszego specjalisty,który pomoże rozwiązać Państwa problem
+          </Text>
         </div>
         <UnstyledButton
           component={Link}
@@ -58,7 +62,7 @@ const charactersList = [
           }}
           className={styles.searchButton}
         >
-          Specjaliści
+          Wyszukiwanie specjalistów
         </UnstyledButton>
       </Container>
     ),
@@ -71,7 +75,31 @@ const charactersList = [
 
     content: (
       <>
-        <div></div>
+        <Container p={rem(5)}>
+          <div style={{ paddingBottom: rem(20) }}>
+            <Text>
+              Wśród naszych profesjonalistów są psychologowie o różnych
+              specjalizacjach. Jeśli poszukują Państwo psychoterapii, proszę
+              przejść do zakładki Psychoterapia. Ponadto oferujemy:
+            </Text>
+            <List>
+              <ListItem>badania neuropsychologiczne</ListItem>
+              <ListItem>badania w kierunku ADHD</ListItem>
+              <ListItem>badania osobowości</ListItem>
+              <ListItem>badania formalnych zaburzeń myślenia</ListItem>
+            </List>
+          </div>
+          <UnstyledButton
+            component={Link}
+            href={{
+              pathname: "/specjalisci",
+              query: { spec: "Psycholog" },
+            }}
+            className={styles.searchButton}
+          >
+            Wyszukiwanie specjalistów
+          </UnstyledButton>
+        </Container>
       </>
     ),
   },
@@ -96,6 +124,7 @@ const charactersList = [
             </Text>
 
             <List withPadding>
+              <ListItem>dysforia płciowa</ListItem>
               <ListItem>
                 emocjonalne, poznawcze i społeczne podłoże dysfunkcji
                 seksualnych - pożądania, uzyskiwania podniecenia i prawidłowej
@@ -121,7 +150,7 @@ const charactersList = [
             }}
             className={styles.searchButton}
           >
-            Search for Spec
+            Wyszukiwanie specjalistów
           </UnstyledButton>
         </Container>
       </>
@@ -215,6 +244,12 @@ const charactersList = [
                 ustrukturyzowaną, krótkoterminową, zmierzającą do realizacji
                 ustalonych celów, poprzez zmianę schematów myślenia i działania.
               </Text>
+              <Text>
+                Proponujemy także terapię schematów, będącą rozszerzeniem
+                klasycznej terapii behawioralno-poznawczej. Jest ona dedykowana
+                szczególnie dla pacjentów z nieprawidłowym rozwojem osobowości
+                lub z zaburzeniami osobowości.
+              </Text>
               <ListItem>
                 <Title order={4}>Terapia par</Title>
               </ListItem>
@@ -241,7 +276,7 @@ const charactersList = [
             }}
             className={styles.searchButton}
           >
-            Search for Spec
+            Wyszukiwanie specjalistów
           </UnstyledButton>
         </Container>
       </>
@@ -268,7 +303,8 @@ const charactersList = [
                 pracoholizm, zakupoholizm, uzależnienie od opalania się i inne)
               </ListItem>
               <ListItem>
-                sesje indywidualne dla osób współuzależnionych
+                sesje indywidualne dla osób współuzależnionych i osób DDA -
+                dorosłe dziecko alkoholika
               </ListItem>
               <ListItem>
                 sesje indywidualne dla osób z uzależnieniem mieszanym
@@ -286,11 +322,11 @@ const charactersList = [
             component={Link}
             href={{
               pathname: "/specjalisci",
-              query: { spec: "Terapeuta uzależnień" },
+              query: { spec: "Specjalista terapii uzależnień" },
             }}
             className={styles.searchButton}
           >
-            Search for Spec
+            Wyszukiwanie specjalistów
           </UnstyledButton>
         </Container>
       </>
@@ -300,7 +336,38 @@ const charactersList = [
     id: "terapia-grupowa",
     image: "/icons/armchair_5376974.png",
     label: "Terapia grupowa",
-    content: <></>,
+    content: (
+      <>
+        <Container p={rem(5)}>
+          <div style={{ paddingBottom: rem(20) }}>
+            <Text>
+              terapia grupowa dla osób współuzależnionych, prowadzona przez
+              specjalistę terapii uzależnień, w małych grupach terapeutycznych.
+              Spotkania odbywają się co tydzień, każde spotkanie składa się z
+              trzech sesji terapii.
+            </Text>
+            {/* <List>
+              <ListItem>
+                terapia grupowa dla osób współuzależnionych, prowadzona przez
+                specjalistę terapii uzależnień, w małych grupach
+                terapeutycznych. Spotkania odbywają się co tydzień, każde
+                spotkanie składa się z trzech sesji terapii.
+              </ListItem>
+            </List> */}
+          </div>
+          <UnstyledButton
+            component={Link}
+            href={{
+              pathname: "/specjalisci",
+              query: { spec: "Terapeuta środowiskowy" },
+            }}
+            className={styles.searchButton}
+          >
+            Wyszukiwanie specjalistów
+          </UnstyledButton>
+        </Container>
+      </>
+    ),
   },
 ];
 export default function Oferta() {

@@ -19,21 +19,26 @@ const Footer = () => {
             height={80}
             priority
           />
+          <p className={styles.p}>Infolinia - +48 501 023 653</p>
           <p className={styles.p}>ul. Parkowa 5A/1 71-600 Szczecin</p>
           <p className={styles.p}>
             Terapia i zajęcia grupowe <br /> ul. Piłsudskiego 20/2 70-462
             Szczecin
           </p>
-          <p className={styles.p}>Infolinia - +48 501 023 653</p>
+          <p className={styles.p}>+48 690 077 653</p>
           <p className={styles.p}>kontakt@klinikadilige.pl</p>
         </div>
         <div className={styles.section}>
           <h3 className={styles.title}>Godziny otwarcia</h3>
-          <p className={styles.p}>Poniedziałek : od 14.00</p>
+          <p className={styles.p}>
+            Od poniedziałku do piątku w dni robocze. Godzina wizyty - po
+            uprzednim ustaleniu.
+          </p>
+          {/* <p className={styles.p}>Poniedziałek : od 14.00</p>
           <p className={styles.p}>Wtorek : od 14.00</p>
           <p className={styles.p}>Środa : od 14.00</p>
           <p className={styles.p}>Czwartek : od 14.00</p>
-          <p className={styles.p}>Piątek : od 14.00</p>
+          <p className={styles.p}>Piątek : od 14.00</p> */}
         </div>
         <div className={styles.section}>
           <h3 className={styles.title}>Na skróty</h3>

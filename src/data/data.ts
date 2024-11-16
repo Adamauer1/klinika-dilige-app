@@ -112,7 +112,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psychiatra"],
     plec: "Kobieta",
     title: "Prof. dr hab. n. med. i n. zdr.",
-    desc: `Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur, specjalista psychiatra, specjalista psychiatrii środowiskowej.\nKieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad 20 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM.\nObroniła pracę habilitacyjną pod tytułem:"Poszukiwanie nowych markerów pierwszego epizodu psychotycznego - ocena mobilizacji komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz poziomu czynników osoczowych wpływających na ich przemieszczanie się", której efektem jest europejski patent na metodę wykrywania pierwszych epizodów psychotycznych. Autorka i współautorka 130 monografii i artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych, o łącznym IF 67,7.\nCzłonek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego Towarzystwa Psychiatrycznego, członek European Psychiatric Association i Członek założyciel Polskiego Towarzystwa Badań nad Uzależnieniami.\nMiłośniczka żeglarstwa, nurkowania, podróży i wędrówek górskich.`,
+    desc: `Prof. dr hab. n. med. i n. zdr. Jolanta Kucharska-Mazur, specjalista psychiatra, specjalista psychiatrii środowiskowej.\nKieruje Oddziałem Całodobowym CD Kliniki Psychatrii PUM. Od ponad 30 lat prowadzi zajęcia ze studentami Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM.\nObroniła pracę habilitacyjną pod tytułem:"Poszukiwanie nowych markerów pierwszego epizodu psychotycznego - ocena mobilizacji komórek macierzystych ze szpiku kostnego do krwi obwodowej oraz poziomu czynników osoczowych wpływających na ich przemieszczanie się", której efektem jest europejski patent na metodę wykrywania pierwszych epizodów psychotycznych. Autorka i współautorka 150 monografii i artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych, o łącznym IF 67,7.\nCzłonek Zarządu Oddziału Szczecińskiego Polskiego Towarzystwa Psychiatrycznego, członek Głównego Sądu Koleżeńskiego Polskiego Towarzystwa Psychiatrycznego, członek European Psychiatric Association i Członek założyciel Polskiego Towarzystwa Badań nad Uzależnieniami.\nMiłośniczka żeglarstwa, nurkowania, podróży i wędrówek górskich.`,
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.webp",
     link: `1-jolanta-kucharska-mazur`,
   },
@@ -173,7 +173,11 @@ const infoData: personPaper[] = [
   {
     id: 7,
     name: "Alicja Kusztykiewicz",
-    specjalisci: ["psychoterapia uzależnień", "terapeuta środowiskowy"],
+    specjalisci: [
+      "psychoterapia uzależnień",
+      "terapeuta środowiskowy",
+      "psychoterapeuta uzależnień",
+    ],
     plec: "Kobieta",
     title: "psychoterapeuta",
     desc: "Specjalista psychoterapii uzależnień i terapeuta środowiskowy.\nUkończyła studia z zakresu diagnozy i terapii pedagogicznej, pedagogiki opiekuńczo-wychowawczej oraz Szkołę Psychoterapii Uzależnień.\nZajmuje się terapią osób uzależnionych od alkoholu i narkotyków oraz terapią uzależnień behawioralnych (w tym: uzależnienia od hazardu, uzależnienia od internetu, uzależnienia od telefonu i gier komputerowych, uzależnienia od seksu, uzależnienia od pracy, uzależnienia od jedzenia, uzależnienia od zakupów), jak również pracą z osobami współuzależnionymi, syndromem DDA i DDD.\nSystematycznie pogłębia wiedzę o technikach terapii poznawczo-behawioralnej, będącej podstawą psychoterapii uzależnień oraz pracuje w duchu dialogu motywującego.\nPracuje w Stowarzyszeniu MONAR - Ośrodku Leczenia, Terapii i Rehabilitacji.\nW ramach rozwoju zawodowego uczestniczy w superwizji i szkoleniach podnoszących walifikacje zawodowe. Jest członkiem Polskiego Towarzystwa Psychiatrycznego, Sekcji Psychiatrii Środowiskowej i Rehabilitacji, Polskiego Towarzystwa Psychologicznego i Stowarzyszenia Terapeutów Uzależnień.\nPrywatnie miłośniczka wędrówek górskich, jazdy na rolkach oraz zumby.  Wolny czas poświęca aktywnościom fizycznym oraz spędza czas z rodziną i przyjaciółmi.",

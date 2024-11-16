@@ -411,18 +411,22 @@ export default function Kontakt() {
                     </p>
                   </Flex>
                   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
+                    <IconPhone size={40} stroke={1} />
+                    <p>+48 501 023 653</p>
+                  </Flex>
+                  <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
                     <IconMapPin size={40} stroke={1} />
                     <p>
                       ul. Piłsudskiego 20/2 <br /> 70-462 Szczecin
                     </p>
                   </Flex>
                   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                    <IconMail size={40} stroke={1} />
-                    <p>kontakt@klinikadilige.pl</p>
+                    <IconPhone size={40} stroke={1} />
+                    <p>+48 690 077 653</p>
                   </Flex>
                   <Flex align={{ base: "center" }} gap={{ base: rem(10) }}>
-                    <IconPhone size={40} stroke={1} />
-                    <p>+48 501 023 653</p>
+                    <IconMail size={40} stroke={1} />
+                    <p>kontakt@klinikadilige.pl</p>
                   </Flex>
                 </SimpleGrid>
               </div>
