@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/components/styles/Footer.module.css";
+import styles from "@/components/styles/footer.module.css";
 import { AppShell } from "@mantine/core";
 
 const Footer = () => {

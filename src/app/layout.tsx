@@ -24,7 +24,8 @@ const poppins = Poppins({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Klinika Dilige",
-  description: "Klinika Dilige Website",
+  description:
+    "Klinika Dilige, Profesjonalne centrum medyczne w Szczecinie. Psychiatra, psycholog, psychoterapeuta, seksuolog.",
 };
 
 export default function RootLayout({
