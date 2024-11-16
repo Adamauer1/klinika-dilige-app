@@ -65,7 +65,7 @@ export default function Kontakt() {
   const handleSubmit = async (values: any) => {
     // event?.preventDefault();
     if (!captcha) {
-      console.log("captcha");
+      // console.log("captcha");
       setCaptchaError(true);
       return;
     }
@@ -86,8 +86,8 @@ export default function Kontakt() {
       console.log(response.status);
       if (response.status === 200) {
         notifications.show({
-          title: "Sent",
-          message: "Successful Submission",
+          title: "Wysłany",
+          message: "Pomyślne przesłanie",
           color: "green",
           position: "top-center",
           styles: {
@@ -99,7 +99,7 @@ export default function Kontakt() {
         form.reset();
       } else {
         notifications.show({
-          title: "Error: Submission failed",
+          title: "Błąd: Wiadomość nie powiodła się",
           message: response.statusText,
           color: "red",
           position: "top-center",
@@ -258,6 +258,9 @@ export default function Kontakt() {
 
                       // asyncScriptOnLoad={asyncScriptOnLoad}
                     />
+                    <Text hidden={!captchaError} c={"red"} fz={rem(12)}>
+                      Kliknij captcha
+                    </Text>
                   </Container>
                   <Container
                     visibleFrom="md"
