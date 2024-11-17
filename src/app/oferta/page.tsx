@@ -9,6 +9,8 @@ import {
   Flex,
   Grid,
   Group,
+  HoverCard,
+  HoverCardTarget,
   Image,
   List,
   ListItem,
@@ -64,6 +66,18 @@ const charactersList = [
         >
           Wyszukiwanie specjalistów
         </UnstyledButton>
+        <div style={{ marginTop: rem(15) }}>
+          <a
+            href="https://www.freepik.com/icon/pills_507469#fromView=search&page=1&position=43&uuid=ea63215e-2e07-4148-a78a-1e68b961ec42"
+            style={{
+              textDecoration: "none",
+              color: "black",
+              fontSize: rem(10),
+            }}
+          >
+            Ikona według Dreamstale
+          </a>
+        </div>
       </Container>
     ),
   },
@@ -99,6 +113,18 @@ const charactersList = [
           >
             Wyszukiwanie specjalistów
           </UnstyledButton>
+          <div style={{ marginTop: rem(15) }}>
+            <a
+              href="https://www.freepik.com/icon/empathy_1491198#fromView=family&page=1&position=48&uuid=5cdb57e2-f005-4d2d-b2f9-6c01a676a084"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontSize: rem(10),
+              }}
+            >
+              Ikona według Smashicons
+            </a>
+          </div>
         </Container>
       </>
     ),
@@ -152,6 +178,18 @@ const charactersList = [
           >
             Wyszukiwanie specjalistów
           </UnstyledButton>
+          <div style={{ marginTop: rem(15) }}>
+            <a
+              href="https://www.freepik.com/icon/drugs_1022360#fromView=search&page=1&position=5&uuid=4f47d283-db6d-433d-a2b9-408bbf41cad4"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontSize: rem(10),
+              }}
+            >
+              Ikona według Freepik
+            </a>
+          </div>
         </Container>
       </>
     ),
@@ -278,6 +316,18 @@ const charactersList = [
           >
             Wyszukiwanie specjalistów
           </UnstyledButton>
+          <div style={{ marginTop: rem(15) }}>
+            <a
+              href="https://www.freepik.com/icon/single-bed_9828083#fromView=search&page=1&position=52&uuid=97ceed06-3bf6-4bb7-baf5-9d6ed73ddb2a"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontSize: rem(10),
+              }}
+            >
+              Ikona według Mayor Icons
+            </a>
+          </div>
         </Container>
       </>
     ),
@@ -328,6 +378,18 @@ const charactersList = [
           >
             Wyszukiwanie specjalistów
           </UnstyledButton>
+          <div style={{ marginTop: rem(15) }}>
+            <a
+              href="https://www.freepik.com/icon/autism_1491171#fromView=search&page=1&position=24&uuid=2a21dd56-3eb0-43ff-83df-8c1db541f4db"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontSize: rem(10),
+              }}
+            >
+              Ikona według Smashicons
+            </a>
+          </div>
         </Container>
       </>
     ),
@@ -365,6 +427,18 @@ const charactersList = [
           >
             Wyszukiwanie specjalistów
           </UnstyledButton>
+          <div style={{ marginTop: rem(15) }}>
+            <a
+              href="https://www.freepik.com/icon/pills_507469#fromView=search&page=1&position=43&uuid=ea63215e-2e07-4148-a78a-1e68b961ec42"
+              style={{
+                textDecoration: "none",
+                color: "black",
+                fontSize: rem(10),
+              }}
+            >
+              Ikona według Freepik
+            </a>
+          </div>
         </Container>
       </>
     ),
@@ -374,8 +448,8 @@ export default function Oferta() {
   const items = charactersList.map((item) => (
     <AccordionItem value={item.id} key={item.label}>
       <AccordionControl>
-        <Group wrap="nowrap">
-          <Avatar src={item.image} radius="sm" size="lg" />
+        <Group wrap="nowrap" display={"flex"}>
+          <Avatar src={item.image} alt="test" radius="sm" size="lg" />
           <div>
             <Text>{item.label}</Text>
           </div>

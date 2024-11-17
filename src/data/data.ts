@@ -30,33 +30,35 @@ const names: string[] = [
   "Ewelina Skierczyńska",
   "Agnieszka Słuczanowska",
   "Daria Suchecka",
+  "Beata Trześniowska-Drukała",
+  "Adam Jędrzejewski",
 ];
 
 const personBasic: PersonBasic[] = [
   {
     name: "Jolanta Kucharska-Mazur",
     image: "/Zdjęcia dilige/dilige jpg/DSC09948.webp",
-    link: "/specjalisci/5-jolanta-kucharska-mazur",
+    link: "/specjalisci/1-jolanta-kucharska-mazur",
   },
   {
     name: "Klaudia Bakunowska",
     image: "/Zdjęcia dilige/dilige jpg/DSC09913.webp",
-    link: "/specjalisci/1-klaudia-bakunowska",
+    link: "/specjalisci/2-klaudia-bakunowska",
   },
   {
     name: "Tomasz Grąźlewski",
     image: "/Zdjęcia dilige/dilige jpg/DSC09857.webp",
-    link: "/specjalisci/2-tomasz-grazlewski",
+    link: "/specjalisci/3-tomasz-grazlewski",
   },
   {
     name: "Agata Handzlik",
     image: "/Zdjęcia dilige/dilige jpg/DSC09977.webp",
-    link: "/specjalisci/3-agata-handzlik",
+    link: "/specjalisci/4-agata-handzlik",
   },
   {
     name: "Agata Bąba-Kubiś",
     image: "/Zdjęcia dilige/dilige jpg/DSC09989.webp",
-    link: "/specjalisci/4-agata-baba-kubis",
+    link: "/specjalisci/5-agata-baba-kubis",
   },
   {
     name: "Jacek Kurpisz",
@@ -101,8 +103,18 @@ const personBasic: PersonBasic[] = [
   {
     name: "Daria Suchecka",
     image: "/Zdjęcia dilige/dilige jpg/DSC09908.webp",
-    link: "14-daria-suchecka",
+    link: "/specjalisci/14-daria-suchecka",
   },
+  {
+    name: "Beata Trześniowska-Drukała",
+    image: "/Zdjęcia dilige/dilige jpg/deata-trzesniowska-drukala-image.jpg",
+    link: "/specjalisci/15-beata-trzesniowska-drukala",
+  },
+  // {
+  //   name: "Adam Jędrzejewski",
+  //   image: "/Zdjęcia dilige/dilige jpg/deata-trzesniowska-drukala-image.jpg", //change
+  //   link: "/specjalisci/16-adam-jedrzejewski",
+  // },
 ];
 
 const infoData: personPaper[] = [
@@ -119,10 +131,10 @@ const infoData: personPaper[] = [
   {
     id: 2,
     name: "Klaudia Bakunowska",
-    specjalisci: ["Psycholog", "Psychoterapeuta"],
+    specjalisci: ["psycholog", "psychoterapeuta"],
     plec: "Kobieta",
-    title: "",
-    desc: "",
+    title: "psychoterapeuta",
+    desc: "Jestem psychologiem, psychoterapeutą w trakcie szkolenia certyfikowanego w nurcie poznawczo-behawioralnym.  Należę do Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej. W trakcie studiów  realizowałam specjalność z zakresu psychologii klinicznej.\nSwoje doświadczenie zawodowe zdobywałam podczas staży na Oddziale Ogólnopsychiatrycznym z Pododdziałem Zaburzeń Afektywnych, Oddziale Dziennym Leczenia Nerwic SPS ZOZ Zdroje oraz podczas wolontariatów w formie wsparcia psychologicznego dla osób zmagających się z chorobami przewlekłymi oraz ich bliskimi.\nNa codzień pracuje w Klinice Psychiatrii USK1 PUM w Szczecinie oraz w gabinecie prywatnym. Swoją pracę poddaje regularnej  superwizji. Systematycznie poszerzam swoją wiedzę i umiejętności biorąc udział w szkoleniach i warsztatach.\nW pracy terapeutycznej korzystam z technik poznawczo-behawioralnych, które poszerzam o elementy terapii akceptacji i zaangażowania (ACT) oraz terapii schematów, w zależności od indywidualnych potrzeb pacjenta.\nCzas wolny poświęcam aktywności fizycznej, szczególnie treningom siłowym, jodze i tańcu. Interesują mnie alternatywne metody parzenia kawy oraz smakowanie jej w gronie najbliższych.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09913.webp",
     link: "2-klaudia-bakunowska",
   },
@@ -200,7 +212,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psycholog"],
     plec: "Kobieta",
     title: "Psycholog",
-    desc: "*** Look at og",
+    desc: "Jest absolwentką psychologii na Uniwersytecie im. A. Mickiewicza w Poznaniu. Od czasu ukończenia studiów wyższych podnosi swoje kwalifikacje zawodowe dbając o poszerzanie zakresu posiadanej wiedzy specjalistycznej zarówno w aspekcie teoretycznym, jak i praktycznym. Regularnie uczestniczy w szkoleniach i konferencjach o tematyce psychologicznej.\nW obszarze zainteresowań zawodowych znajdują się:\n- psychologia kliniczna człowieka dorosłego\n- psychoterapia\n- neuropsychologia\n- psychologia rozwojowa\n- psychologia sportu\n- seksuologia\nPosiada kwalifikacje oraz doświadczenie w pracy diagnostycznej i terapeutycznej zarówno z dziećmi, jak i osobami dorosłymi.\nInteresuje  się również sportem, a szczególnie judo. Wielokrotna medalistka Mistrzostw Polski i instruktorka w tej dyscyplinie sportowej. Wie, co oznacza trening sportowy i jakim psychologicznym wymaganiom musi sprostać zawodnik, by osiągnąć zamierzony cel.\nW pracy z klientem ważne jest dla niej przestrzeganie zasad etycznych zebranych w Kodeksie Etycznym Psychologa, w tym pełna dyskrecja na każdym etapie współpracy.\nWykształcenie i certyfikaty\nmagister psychologii Uniwersytet im. A. Mickiewicza w Poznaniu\npraktyk dialogu motywacyjnego\nukończone szkolenie specjalizacyjne z zakresu psychologii klinicznej oraz podstaw terapii systemowej indywidualnej i rodzin.\nukończone studia podyplomowe w zakresie pomocy psychologicznej w dziedzinie seksuologii oraz terapii pedagogicznej nadające kwalifikacje pedagoga-terapeuty.\nUkończone szkolenia z zakresu:\n- interpretacji zachowania i podejmowania interwencji w oparciu o koncepcję E.H. Eriksona;\n- poznawczo-behawioralnej terapii par i małżeństw;\n- diagnozy i podstaw terapii zaburzeń psychicznych dzieci i młodzieży;\n- psychoonkologii.\nUkończone kursy w zakresie diagnozy psychologicznej:\n- MMPI-2 w diagnozie psychologicznej;\n- Test Apercepcji Tematycznej w diagnozie klinicznej i seksuologicznej;\n- Psychorysunek w diagnozie klinicznej i seksuologicznej;\n- Kurs nadający uprawnienia diagnostyczne Skalą Inteligencji Stanford - Binet 5.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09924.webp",
     link: "9-mirosława-pankiewicz",
   },
@@ -210,7 +222,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
     title: "Dr n.med.",
-    desc: "Dr n. med. Artur Reginia, specjalista psychiatra, asystent w Katedrze i Klinice Psychiatrii PUM w Szczecinie, koordynator Oddziału Dziennego, konsultant psychiatryczny oddziałów somatycznych SPSK nr 1 w Szczecinie.\nZ psychiatrią związany od czasów studiów na Wydziale Lekarskim Pomorskiego Uniwersytetu Medycznego w Szczecinie. Doświadczenie zawodowe zdobywał początkowo w całodobowym oddziale psychiatrycznym, następnie w lecznictwie ambulatoryjnym i środowiskowym. Zaangażowany w pracę naukową i dydaktyczną w Katedrze i Klinice Psychiatrii PUM, autor licznych publikacji naukowych. W 2017 r. obronił pracę doktorską zatytułowaną: Ocena mobilizacji komórek macierzystych do krwi obwodowej u pacjentów z chorobą afektywną dwubiegunową w okresie wyrównanego nastroju, nieleczonych solami litu.\nW czasie wolnym uwielbia podróże, jazdę na rowerze, pływanie. Miłośnik kotów, od kilku lat pasjonat języka francuskiego, biegle włada także językiem angielskim i niemieckim.",
+    desc: "Dr n. med. Artur Reginia, specjalista psychiatra, asystent w Katedrze i Klinice Psychiatrii PUM w Szczecinie.\nZ psychiatrią związany od czasów studiów na Wydziale Lekarskim Pomorskiego Uniwersytetu Medycznego w Szczecinie. Doświadczenie zawodowe zdobywał początkowo w całodobowym oddziale psychiatrycznym, następnie w lecznictwie ambulatoryjnym i środowiskowym oraz jako konsultant psychiatryczny w oddziałach somatycznych USK 1 w Szczecinie. Zaangażowany w pracę naukową i dydaktyczną w Katedrze i Klinice Psychiatrii PUM, autor licznych publikacji naukowych. W 2017 r. obronił pracę doktorską zatytułowaną: Ocena mobilizacji komórek macierzystych do krwi obwodowej u pacjentów z chorobą afektywną dwubiegunową w okresie wyrównanego nastroju, nieleczonych solami litu.\nW czasie wolnym uwielbia podróże, jazdę na rowerze, pływanie. Miłośnik kotów, od kilku lat pasjonat języka francuskiego, biegle włada także językiem angielskim i niemieckim.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09741.webp",
     link: "10-artur-reginia",
   },
@@ -249,10 +261,30 @@ const infoData: personPaper[] = [
     name: "Daria Suchecka",
     specjalisci: ["psycholog"],
     plec: "Kobieta",
-    title: "",
-    desc: "",
+    title: "Psycholog",
+    desc: "Psycholog, specjalista psychoterapii uzależnień, nauczyciel akademicki.\nPrzez wiele lat zawodowo związana była ze Stowarzyszeniem MONAR – Ośrodkiem Leczenia, Terapii i Rehabilitacji Uzależnień (w tym pełniąc funkcję dyrektora), a także współpracując ze szczecińskimi świetlicami środowiskowymi oraz pełniąc funkcję psychologa szkolnego.\nZdobywała doświadczenie w Mazowieckim Centrum Neuropsychiatrii, SPZOZ Nowy Dworek, Klinice Psychiatrii SPSK1 PUM, na oddziałach Psychiatrii Dziecięcej i Młodzieżowej oraz Terapii Uzależnienia od Alkoholu w Centrum SPZOZ „Zdroje”, a także w Samodzielnym Publicznym Wojewódzkim Szpitalu Zespolonym w Szczecinie.\nPosiada doświadczenie w pracy diagnostycznej i terapeutycznej z dziećmi, młodzieżą i osobami dorosłymi.\nProwadzi zajęcia profilaktyczne i psychoedukacyjne dla młodzieży i dorosłych. Prelegentka na konferencjach naukowych o tematyce psychologicznej. Autorka i współautorka artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych.\nAktualizuje wiedzę regularnie szkoląc się i poddając swoją pracę superwizji. Jej zainteresowania naukowe oscylują wokół problematyki uzależnień od substancji psychoaktywnych, uzależnień behawioralnych, neuropsychologii, psychopatologii i obszarów pokrewnych.\nCzłonkini Polskiego Towarzystwa Psychiatrycznego, Polskiego Towarzystwa Psychologicznego i Ogólnopolskiego Związku Zawodowego Psychologów.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09908.webp",
     link: "14-daria-suchecka",
+  },
+  {
+    id: 15,
+    name: "Beata Trześniowska-Drukała",
+    specjalisci: ["psychiatra"],
+    plec: "Kobieta",
+    title: "Dr n. med.",
+    desc: "Dr n. med. Beata Trześniowska-Drukała, od 2014r. lekarz specjalista w dziedzinie psychiatrii. W 2015r. uzyskała tytuł doktora nauk medycznych.\nAbsolwentka studiów podyplomowych w zakresie pedagogiki, ukończyła kurs terapii systemowej (podstawowy i dla zaawansowanych) w Wielkopolskim Towarzystwie Terapii Systemowej w Poznaniu. Posiada również certyfikat terapeuty środowiskowego.\nDoświadczenie zawodowe zdobyła pracując w oddziale całodobowym i Zespole Lecznictwa Środowiskowego Kliniki Psychiatrii Pomorskiego Uniwersytetu Medycznego w Szczecinie. Przez kilka lat kierowała Oddziałem Dziennym tejże Kliniki. Prowadziła zajęcia dydaktyczne dla studentów Wydziału Lekarskiego oraz Wydziału Nauk o Zdrowiu PUM. Autorka i współautorka artykułów naukowych, publikowanych w czasopismach krajowych i zagranicznych.\nOd wielu lat prowadzi praktykę prywatną. Pracuje także jako Lekarz Orzecznik w Powiatowym i Wojewódzkim Zespole ds. Orzekania o Niepełnosprawności w Szczecinie oraz jako Lekarz Orzecznik ZUS.\nStale dokształca się biorąc udział w licznych konferencjach, kursach i szkoleniach, aby móc leczyć zgodnie z najnowszą wiedzą medyczną. W opiece nad pacjentami ważne jest dla niej podejście holistyczne do człowieka i jego rodziny oraz przestrzeganie zasad etyki zawodu lekarza.\nPosiada bogate doświadczenie życiowe i zawodowe. Prywatnie matka dwóch synów, mężatka, uwielbia zwierzęta.",
+    image: "/Zdjęcia dilige/dilige jpg/deata-trzesniowska-drukala-image.jpg",
+    link: "15-beata-trzesniowska-drukala",
+  },
+  {
+    id: 16,
+    name: "Adam Jędrzejewski",
+    specjalisci: ["psycholog", "psychoterapeuta"],
+    plec: "Mężczyzna",
+    title: "psychoterapeuta",
+    desc: "Jestem absolwentem psychologii na Uniwersytecie Szczecińskim. Zawodowo związany z Kliniką Psychiatrii USK1 PUM w Szczecinie, gdzie w ramach swojej pracy udzielam pomocy psychologicznej pacjentom grupy rehabilitacyjnej na Oddziale Dziennym. Równolegle jestem zatrudniony w Zakładzie Psychologii Zdrowia Katedry Psychiatrii PUM gdzie zajmuje stanowisko asystenta, pełniąc obowiązki naukowe i dydaktyczne.\nObecnie jestem w trakcie szkolenia na psychoterapeutę w nurcie poznawczo-behawioralnym, które realizuję w ramach Szkoły Psychoterapii Poznawczo-Behawioralnej Uniwersytetu SWPS. Jestem też członkiem Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.\nSpecjalizuję się w leczeniu zaburzeń lękowych i depresyjnych. W swojej pracy silnie opieram się na zrozumieniu perspektywy klienta i dostrzeganiu jego podmiotowości.  Jednocześnie bardzo ważne jest dla mnie bazowanie na zasadach EBM i Kodeksie Etycznym Psychologa oraz Kodeksie Etycznym Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.",
+    image: "/Zdjęcia dilige/jpg przestrzenie/DSC000061.jpg", //change
+    link: "16-adam-jedrzejewski",
   },
 ];
 

@@ -114,7 +114,9 @@ export default function Specjalisci(params: {
                 // width={"400"}
               />
             </div>
-            <Text styles={{ root: { margin: 10 } }}>{person.name}</Text>
+            <Text styles={{ root: { margin: 10, alignSelf: "center" } }}>
+              {person.name}
+            </Text>
           </Paper>
         ))}
       </SimpleGrid>

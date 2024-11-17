@@ -88,12 +88,15 @@
 }
 
 .dataPaper {
-  /* width: 400px; */
+  /* min-width: 400px; */
   /* height: 550px; */
   /* height: 25rem; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  /* border-style: solid;
+  border-width: 4px;
+  border-color: red; */
 }
 
 .dataImageContainer {
@@ -181,6 +184,11 @@
 }
 /* 1200px */
 @media screen and (min-width: 75em) {
+  .dataPaper {
+    /* min-width: 15rem; */
+    /* height: 550px; */
+    /* height: 25rem; */
+  }
   .autoComplete_Root {
     width: 60%;
   }
@@ -189,5 +197,11 @@
 @media screen and (min-width: 88em) {
   .autoComplete_Root {
     width: 50%;
+  }
+  .dataPaper {
+    /* min-width: 330px;
+    min-height: 482px; */
+    /* height: 550px; */
+    /* height: 25rem; */
   }
 }
