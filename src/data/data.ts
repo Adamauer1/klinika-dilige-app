@@ -110,11 +110,11 @@ const personBasic: PersonBasic[] = [
     image: "/Zdjęcia dilige/dilige jpg/deata-trzesniowska-drukala-image.jpg",
     link: "/specjalisci/15-beata-trzesniowska-drukala",
   },
-  // {
-  //   name: "Adam Jędrzejewski",
-  //   image: "/Zdjęcia dilige/dilige jpg/deata-trzesniowska-drukala-image.jpg", //change
-  //   link: "/specjalisci/16-adam-jedrzejewski",
-  // },
+  {
+    name: "Adam Jędrzejewski",
+    image: "/Zdjęcia dilige/dilige jpg/adam-jedrzejewski-image.webp", //change
+    link: "/specjalisci/16-adam-jedrzejewski",
+  },
 ];
 
 const infoData: personPaper[] = [
@@ -134,7 +134,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psycholog", "psychoterapeuta"],
     plec: "Kobieta",
     title: "psychoterapeuta",
-    desc: "Jestem psychologiem, psychoterapeutą w trakcie szkolenia certyfikowanego w nurcie poznawczo-behawioralnym.  Należę do Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej. W trakcie studiów  realizowałam specjalność z zakresu psychologii klinicznej.\nSwoje doświadczenie zawodowe zdobywałam podczas staży na Oddziale Ogólnopsychiatrycznym z Pododdziałem Zaburzeń Afektywnych, Oddziale Dziennym Leczenia Nerwic SPS ZOZ Zdroje oraz podczas wolontariatów w formie wsparcia psychologicznego dla osób zmagających się z chorobami przewlekłymi oraz ich bliskimi.\nNa codzień pracuje w Klinice Psychiatrii USK1 PUM w Szczecinie oraz w gabinecie prywatnym. Swoją pracę poddaje regularnej  superwizji. Systematycznie poszerzam swoją wiedzę i umiejętności biorąc udział w szkoleniach i warsztatach.\nW pracy terapeutycznej korzystam z technik poznawczo-behawioralnych, które poszerzam o elementy terapii akceptacji i zaangażowania (ACT) oraz terapii schematów, w zależności od indywidualnych potrzeb pacjenta.\nCzas wolny poświęcam aktywności fizycznej, szczególnie treningom siłowym, jodze i tańcu. Interesują mnie alternatywne metody parzenia kawy oraz smakowanie jej w gronie najbliższych.",
+    desc: "Mgr psychologii, absolwentka psychologii Uniwersytetu Szczecińskiego. Obecnie w trakcie czteroletniego szkolenia certyfikowanego w nurcie poznawczo-behawioralnym. Ukończyła szkolenie z terapii schematów akredytowane przez ISST (International Society of Schema Therapy).\nSwoje doświadczenie zawodowe zdobywała podczas staży na Oddziale Ogólnopsychiatrycznym z Pododdziałem Zaburzeń Afektywnych, Oddziale Dziennym Leczenia Nerwic SPS ZOZ Zdroje oraz podczas wolontariatów w formie wsparcia psychologicznego dla osób zmagających się z chorobami przewlekłymi.\nNa codzień pracuje w Klinice Psychiatrii USK1 PUM w Szczecinie oraz w gabinecie prywatnym. Pracuje pod stałą superwizją certyfikowanych superwizorów PTTPB oraz ISST. Należy do Polskiego Towarzystwa Psychoterapii Poznawczo – Behawioralnej. Systematycznie poszerza swoją wiedzę i umiejętności biorąc udział w szkoleniach m.in. Praca z przewlekłym wstydem, Protokół Krótkoterminowej Terapii Schematu, Techniki doświadczeniowe w Terapii Schematu.\nPrywatnie czas wolny poświęca aktywności fizycznej, szczególnie treningom siłowym, jodze i tańcowi oraz nauce i testowaniu alternatywnych metod parzenia kawy.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09913.webp",
     link: "2-klaudia-bakunowska",
   },
@@ -178,7 +178,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psycholog", "psychoseksuolog"],
     plec: "Mężczyzna",
     title: "dr n. zdr.",
-    desc: "Psycholog, nauczyciel akademicki i badacz seksualności. Zajmuje się poradnictwem psychologicznym, psychoseksuologicznym, terapią oraz edukacją w zakresie zdrowia psychicznego i seksualnego, psychologią kliniczną oraz psychoterapią w nurcie systemowym.\nJest autorem kilkunastu publikacji na temat psychologicznych aspektów ludzkiej seksualności.\nUkończył Podyplomowe Studium Pomocy Psychologicznej w Dziedzinie Seksuologii (UAM, Poznań) oraz obronił pracę doktorską na temat seksualnego funkcjonowania mężczyzn (PUM, Szczecin).\nRegularnie uczestniczy w warsztatach i konferencjach dotyczących zdrowia seksualnego.\nJest członkiem Polskiego Towarzystwa Seksuologicznego, Polskiego Towarzystwa Psychiatrycznego oraz Stowarzyszenia Lambda Szczecin.",
+    desc: "Dr n. o zdr., psycholog, specjalista psychologii klinicznej. W Klinice Dilige zajmuje się kliniczną diagnozą psychologiczną (w tym osobowości, neuropsychologiczną), psychoterapią osób dorosłych w nurcie systemowym, terapią par, poradnictwem psychologicznym i psychoseksuologicznym. Prowadzi również psychologiczne opiniowanie osób z dysforią płciową na potrzeby procesu korekty płci.\nJacek Kurpisz jest absolwentem kierunku psychologia na UAM w Poznaniu. Doktorat w dziedzinie nauk o zdrowiu obronił na Wydziale Nauk o Zdrowiu PUM w Szczecinie. Dotychczas ukończył kurs zaawansowany psychoterapii systemowej, podyplomowe studium pomocy psychologicznej w dziedzinie seksuologii oraz inne kursy doskonalące kompetencje zawodowe z zakresu pomocy psychologicznej oraz psychoseksuologicznej. Posiada tytuł specjalisty w dziedzinie psychologii klinicznej człowieka dorosłego (Nr 006/2022.2/171, wpisany na Listę psychologów klinicznych konsultanta krajowego ds. psychologii klinicznej). Uzyskał również certyfikat EuroPsy (PL-065978-202012). Jest członkiem Polskiego Towarzystwa Psychiatrycznego, Polskiego Towarzystwa Psychologicznego, Polskiego Towarzystwa Seksuologicznego oraz Wielkopolskiego Towarzystwa Terapii Systemowej.\nJest autorem wielu publikacji naukowych oraz popularnonaukowych z zakresu zdrowia psychicznego i seksualnego. Posiada wieloletnie doświadczenie jako nauczyciel akademicki. Działa na rzecz popularyzacji wiedzy w tych dziedzinach poprzez aktywny udział w konferencjach naukowych, warsztatach szkoleniowych – zarówno dla profesjonalistów, jak i dla pacjentów i ich rodzin.",
     image: "/Zdjęcia dilige/dilige jpg/DSC09953.webp",
     link: "6-jacek-kurpisz",
   },
@@ -282,8 +282,8 @@ const infoData: personPaper[] = [
     specjalisci: ["psycholog", "psychoterapeuta"],
     plec: "Mężczyzna",
     title: "psychoterapeuta",
-    desc: "Jestem absolwentem psychologii na Uniwersytecie Szczecińskim. Zawodowo związany z Kliniką Psychiatrii USK1 PUM w Szczecinie, gdzie w ramach swojej pracy udzielam pomocy psychologicznej pacjentom grupy rehabilitacyjnej na Oddziale Dziennym. Równolegle jestem zatrudniony w Zakładzie Psychologii Zdrowia Katedry Psychiatrii PUM gdzie zajmuje stanowisko asystenta, pełniąc obowiązki naukowe i dydaktyczne.\nObecnie jestem w trakcie szkolenia na psychoterapeutę w nurcie poznawczo-behawioralnym, które realizuję w ramach Szkoły Psychoterapii Poznawczo-Behawioralnej Uniwersytetu SWPS. Jestem też członkiem Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.\nSpecjalizuję się w leczeniu zaburzeń lękowych i depresyjnych. W swojej pracy silnie opieram się na zrozumieniu perspektywy klienta i dostrzeganiu jego podmiotowości.  Jednocześnie bardzo ważne jest dla mnie bazowanie na zasadach EBM i Kodeksie Etycznym Psychologa oraz Kodeksie Etycznym Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.",
-    image: "/Zdjęcia dilige/jpg przestrzenie/DSC000061.jpg", //change
+    desc: "Jestem absolwentem psychologii na Uniwersytecie Szczecińskim. Zawodowo związany z Kliniką Psychiatrii USK1 PUM w Szczecinie, gdzie w ramach swojej pracy udzielam pomocy psychologicznej pacjentom grupy rehabilitacyjnej na Oddziale Dziennym. Równolegle jestem zatrudniony w Zakładzie Psychologii Zdrowia Katedry Psychiatrii PUM gdzie zajmuje stanowisko asystenta, pełniąc obowiązki naukowe i dydaktyczne.\nDoświadczenie kliniczne zdobywałem w ramach staży, praktyk i pracy zawodowej m.in.  w Zakładzie Karnym w Nowogardzie, Biurze Osób Niepełnosprawnych PUM, w Poradni oraz na Oddziałach Całodobowym i Dziennym Kliniki Psychiatrii PUM.\nObecnie jestem w trakcie szkolenia na psychoterapeutę w nurcie poznawczo-behawioralnym, które realizuję w ramach Szkoły Psychoterapii Poznawczo-Behawioralnej Uniwersytetu SWPS. Jestem też członkiem Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.\nSpecjalizuję się w leczeniu zaburzeń lękowych i depresyjnych. W swojej pracy silnie opieram się na zrozumieniu perspektywy klienta i dostrzeganiu jego podmiotowości.  Jednocześnie bardzo ważne jest dla mnie bazowanie na zasadach EBM i Kodeksie Etycznym Psychologa oraz Kodeksie Etycznym Polskiego Towarzystwa Terapii Poznawczej i Behawioralnej.",
+    image: "/Zdjęcia dilige/dilige jpg/adam-jedrzejewski-image.webp", //change
     link: "16-adam-jedrzejewski",
   },
 ];

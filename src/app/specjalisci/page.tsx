@@ -43,25 +43,25 @@ export default function Specjalisci(params: {
     let newData = infoData;
     //console.log(newData);
     if (specValue) {
-      console.log("t1");
+      // console.log("t1");
       newData = newData.filter((person) =>
         person.specjalisci.includes(specValue.toLowerCase() as string)
       );
     }
     if (genderValue) {
-      console.log("t2");
+      // console.log("t2");
       newData = newData.filter((person) => person.plec == genderValue);
     }
 
     if (searchValue) {
-      console.log("t3");
+      // console.log("t3");
       const regex = RegExp(searchValue, "i");
       newData = newData.filter((person) => regex.test(person.name));
     }
     //console.log(searchValue);
     //console.log(specValue);
     //console.log(genderValue);
-    console.log(newData);
+    // console.log(newData);
     // setData(newData);
     return newData;
   };

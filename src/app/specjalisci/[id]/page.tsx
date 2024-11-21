@@ -25,6 +25,7 @@ export default function SpecjalisciPage({
           align={{ base: "center", lg: "start" }}
           //justify={{ lg: "space-around" }}
           p={{ base: rem(20), lg: rem(50), xl: rem(100) }}
+          // pt={{ base: rem(20), lg: rem(50), xl: rem(60) }}
           gap={{ base: rem(30) }}
         >
           <Title order={1} hiddenFrom="lg">
