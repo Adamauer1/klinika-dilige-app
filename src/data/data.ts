@@ -144,7 +144,7 @@ const infoData: personPaper[] = [
     specjalisci: ["psychiatra"],
     plec: "Mężczyzna",
     title: "lekarz",
-    desc: `Lekarz, specjalista psychiatra, pracujący na co dzień w Klinice Psychiatrii SPSK1 PUM w Szczecinie.\nWykładowca akademicki prowadzący zajęcia ze studentami Wydziału Lekarskiego oraz   Wydziału Nauk Zdrowiu. Absolwent studiów podyplomowych z zakresu podstaw psychoterapii oraz szczegółowych zagadnień psychoterapii na Uniwersytecie Jagiellońskim. Regularnie uczestniczy w szkoleniach i konferencjach związanych z tematyką psychiatryczną. Członek Polskiego Towarzystwa Psychiatrycznego.`,
+    desc: `Lekarz, specjalista psychiatra z wieloletnim doświadczeniem, na co dzień pracujący w  Klinice Psychiatrii PUM w Szczecinie. Konsultant Uniwersyteckiego Szpitala Klinicznego nr 2. Absolwent studiów podyplomowych z zakresu psychoterapii na Uniwersytecie Jagiellońskim. Specjalizuje się w diagnostyce i leczeniu szerokiego spektrum zaburzeń psychicznych, takich jak depresja, zaburzenia afektywne dwubiegunowe, zaburzenia lękowe, PTSD, zaburzenia obsesyjno-kompulsyjne, problemy związane z ciążą czy porodem, schizofrenia i inne zaburzenia psychotyczne, a także zaburzenia snu, odżywiania i uzależnienia.\n Dzięki połączeniu wiedzy psychiatrycznej z umiejętnościami terapeutycznymi oferuje holistyczne podejście, które uwzględnia zarówno aspekty psychiczne, jak i emocjonalne. Każdy pacjent otrzymuje indywidualnie dopasowany plan leczenia, który pozwala odzyskać równowagę i poprawić jakość życia.\nJako doktorant Pomorskiego Uniwersytetu Medycznego oraz autor licznych publikacji naukowych, stale poszerza swoją wiedzę, uczestnicząc w szkoleniach i konferencjach.  Jego praktyka opiera się na aktualnych standardach medycznych oraz empatycznym podejściu do każdego pacjenta. Członek Polskiego Towarzystwa Psychiatrycznego, zaangażowany w rozwój psychiatrii w Polsce.`,
     image: "/Zdjęcia dilige/dilige jpg/DSC09857.webp",
     link: "3-tomasz-grazlewski",
   },
@@ -199,7 +199,7 @@ const infoData: personPaper[] = [
   {
     id: 8,
     name: "Aleksandra Mazur",
-    specjalisci: [],
+    specjalisci: ["psycholog", "psychoterapeuta"],
     plec: "Kobieta",
     title: "psycholog",
     desc: "Magister psychologii, absolwentka psychologii ogólnej Uniwersytetu Gdańskiego. Obecnie w trakcie 4-letniego całościowego kursu psychoterapii prowadzonego przez Katedrę Psychoterapii UJ CM w Krakowie. Ukończyła szkolenie przygotowujące do prowadzenia dialogu motywującego oraz liczne szkolenia z zakresu diagnostyki psychologicznej. \nObecnie pracuje w Centrum Zdrowia Psychicznego USK nr 1 PUM w Szczecinie. Swoją pracę poddaje regularnej superwizji u certyfikowanych superwizorów Polskiego Towarzystwa Psychiatrycznego. Zajmuje się tłumaczeniem artykułów naukowych, oraz pracuje jako nauczyciel akademicki, prowadząc zajęcia w j. angielskim. Członek Polskiego Towarzystwa Psychiatrycznego.",
