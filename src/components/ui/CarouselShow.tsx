@@ -11,14 +11,16 @@ import { relative } from "path";
 const CarouselShow = () => {
   const autoplay = useRef(Autoplay({ delay: 4000, playOnInit: true }));
   const slides = personBasic.map((person, index) => (
-    <Carousel.Slide key={index}>
+    <Carousel.Slide key={index} style={{ height: "100%", position: 'relative', }}>
       <Link href={person.link}>
         <Image
-          // component={NextImage}
+            component={NextImage}
           src={person.image}
           alt={person.name}
-          // width={"100%"}
-          // height={"100%"}
+            width={3693}
+            height={4924}
+            style={{height:"auto"}}
+            priority
         />
       </Link>
     </Carousel.Slide>

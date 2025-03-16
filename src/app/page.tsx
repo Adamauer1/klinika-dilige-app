@@ -14,10 +14,10 @@ import {
   Flex,
   Transition,
 } from "@mantine/core";
-import { useEffect, useRef, useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import { personBasic } from "../data/data";
-import Link from "next/link";
+// import { useEffect, useRef, useState } from "react";
+// import Autoplay from "embla-carousel-autoplay";
+// import { personBasic } from "../data/data";
+// import Link from "next/link";
 import CarouselShow from "@/components/ui/CarouselShow";
 
 export default function Home() {
