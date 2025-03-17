@@ -14,11 +14,12 @@ import {
   Flex,
   Transition,
 } from "@mantine/core";
-import { useEffect, useRef, useState } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import { personBasic } from "../data/data";
-import Link from "next/link";
+// import { useEffect, useRef, useState } from "react";
+// import Autoplay from "embla-carousel-autoplay";
+// import { personBasic } from "../data/data";
+// import Link from "next/link";
 import CarouselShow from "@/components/ui/CarouselShow";
+import ContactPopup from "@/components/ui/ContactPopup";
 
 export default function Home() {
   // const autoplay = useRef(Autoplay({ delay: 4000 }));
@@ -44,6 +45,7 @@ export default function Home() {
   const displayContent = () => {
     return (
       <>
+          <ContactPopup/>
         <div className={styles.containerLeft}>
           <Title
             order={1}

@@ -1,0 +1,48 @@
+.container {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.panel {
+    position: fixed;
+    top: 50%;
+    left: -200px; /* Start hidden */
+    transform: translateY(-50%);
+    width: 200px;
+    background: white;
+    padding: 16px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px 0;
+    transition: left 0.3s ease-in-out;
+}
+
+.panel.open {
+    left: 0; /* Slide into view */
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    /*left: -60px; /* Start hidden with panel */
+    transform: translateY(-50%);
+    background: #0070f3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: left 0.3s ease-in-out;
+}
+
+.buttonOpen {
+    /*left: 140px; /* Move button with panel */
+}
+
+.button:hover {
+    background: #005bb5;
+}
