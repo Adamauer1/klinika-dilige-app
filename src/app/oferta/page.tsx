@@ -20,7 +20,6 @@ import {
   Title,
   UnstyledButton,
 } from "@mantine/core";
-import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/oferta/page.module.css";
 import Link from "next/link";
 import { ThemeIcon } from "@mantine/core";

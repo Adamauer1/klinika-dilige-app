@@ -1,7 +1,6 @@
 "use client";
 import NextImage from "next/image";
 import ReCAPTCHA from "react-google-recaptcha";
-import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/kontakt/page.module.css";
 import { useForm } from "@mantine/form";
 import {

@@ -1,4 +1,3 @@
-// "use client";
 import NextImage from "next/image";
 import styles from "./page.module.css";
 import { Carousel } from "@mantine/carousel";
@@ -14,32 +13,10 @@ import {
   Flex,
   Transition,
 } from "@mantine/core";
-// import { useEffect, useRef, useState } from "react";
-// import Autoplay from "embla-carousel-autoplay";
-// import { personBasic } from "../data/data";
-// import Link from "next/link";
+
 import CarouselShow from "@/components/ui/CarouselShow";
 
 export default function Home() {
-  // const autoplay = useRef(Autoplay({ delay: 4000 }));
-  // //const [embla, setEmbla] = useState(null);
-  // // autoplay.current.play(true);
-  // useEffect(() => {
-  //   autoplay?.current.play;
-  // }, []);
-  // const slides = personBasic.map((person, index) => (
-  //   <Carousel.Slide key={index}>
-  //     <Link href={person.link}>
-  //       <Image
-  //         // component={NextImage}
-  //         src={person.image}
-  //         alt={person.name}
-  //         // width={"100%"}
-  //         // height={"100%"}
-  //       />
-  //     </Link>
-  //   </Carousel.Slide>
-  // ));
 
   const displayContent = () => {
     return (
@@ -74,28 +51,6 @@ export default function Home() {
           <div className={styles.imageOuterContainer}>
             <div className={styles.imageContainer}>
               <CarouselShow />
-
-              {/* <Carousel
-                m={{
-                  base: rem(20),
-                  xs: rem(30),
-                  md: rem(40),
-                  lg: rem(40),
-                  xl: rem(40),
-                }}
-                // styles={{
-                //   root: { height: "100%" },
-                //   viewport: { height: "100%" },
-                // }}
-                loop={true}
-                plugins={[autoplay.current]}
-                withControls={false}
-                onMouseEnter={autoplay.current.stop}
-                onMouseLeave={autoplay.current.reset}
-                // getEmblaApi={setEmbla}
-              >
-                {slides}
-              </Carousel> */}
             </div>
           </div>
         </div>
