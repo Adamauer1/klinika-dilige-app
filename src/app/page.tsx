@@ -71,11 +71,15 @@ export default function Home() {
         <Image
           src={"/stockOne.jpg"}
           alt="background"
+          component={NextImage}
           //
           // w={{ base: 200, sm: 400, lg: 500 }}
           //w={"auto"}
           //h={533}
           //visibleFrom="md"
+          width = {6000}
+          height = {4000}
+          style={{height:"auto"}}
           classNames={{ root: styles.backgroundImage }}
         />
       </div>

@@ -72,8 +72,12 @@ export default function ONas() {
             // src={"/stockTwo.jpg"}
             src={"/Zdjęcia dilige/jpg przestrzenie/DSC00122.jpg"}
             alt="Logo"
-            width={"100%"}
-            height={"100%"}
+            component={NextImage}
+            width={6000}
+            height={4000}
+            style={{height:"100%"}}
+            // width={"100%"}
+            // height={"100%"}
           />
         </div>
       </Flex>

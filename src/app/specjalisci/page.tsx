@@ -105,11 +105,14 @@ export default function Specjalisci(params: {
               </UnstyledButton>
               {/* <button className={styles.dataProfileButton}>Profile</button> */}
               <Image
-                // component={NextImage}
+                component={NextImage}
                 className={styles.dataImage}
                 // style={{ borderRadius: 20 }}
                 src={person.image}
                 alt="image"
+                width={3711}
+                height={4948}
+                style={{height:"auto"}}
                 // height={"500"}
                 // width={"400"}
               />
