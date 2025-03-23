@@ -14,7 +14,7 @@ import {
 import "@mantine/carousel/styles.css";
 import "@mantine/notifications/styles.css";
 import { Notifications } from "@mantine/notifications";
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import CookiesModule from "@/components/ui/CookiesModule";
@@ -58,6 +58,7 @@ export default function RootLayout({
           </AppShell>
         </MantineProvider>
       </body>
+      <GoogleAnalytics gaId="G-XYZ" />
     </html>
   );
 }

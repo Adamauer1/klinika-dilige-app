@@ -22,8 +22,7 @@ import {
 } from "@mantine/core";
 import styles from "@/app/oferta/page.module.css";
 import Link from "next/link";
-import { ThemeIcon } from "@mantine/core";
-import { ReactElement, ReactNode } from "react";
+import {Metadata} from "next";
 const charactersList = [
   {
     id: "psychiatria",
@@ -87,7 +86,6 @@ const charactersList = [
     label: "Psychologia",
 
     content: (
-      <>
         <Container p={rem(5)}>
           <div style={{ paddingBottom: rem(20) }}>
             <Text>
@@ -125,7 +123,6 @@ const charactersList = [
             </a>
           </div>
         </Container>
-      </>
     ),
   },
 
@@ -134,7 +131,6 @@ const charactersList = [
     image: "/icons/single-bed_9828083.png",
     label: "Psychoseksuologia",
     content: (
-      <>
         <Container p={rem(5)}>
           <div style={{ paddingBottom: rem(20) }}>
             <Title order={4}>Poradnictwo i terapia psychoseksuologiczna</Title>
@@ -190,7 +186,6 @@ const charactersList = [
             </a>
           </div>
         </Container>
-      </>
     ),
   },
   {
@@ -198,7 +193,6 @@ const charactersList = [
     image: "/icons/autism_1491171.png",
     label: "Psychoterapia",
     content: (
-      <>
         <Container p={rem(5)}>
           <div style={{ paddingBottom: rem(20) }}>
             <List type="ordered">
@@ -328,7 +322,6 @@ const charactersList = [
             </a>
           </div>
         </Container>
-      </>
     ),
   },
   {
@@ -336,7 +329,6 @@ const charactersList = [
     image: "/icons/drugs_1022360.png",
     label: "Terapia uzależnień",
     content: (
-      <>
         <Container p={rem(5)}>
           <div style={{ paddingBottom: rem(20) }}>
             <List>
@@ -390,7 +382,6 @@ const charactersList = [
             </a>
           </div>
         </Container>
-      </>
     ),
   },
   {
@@ -398,7 +389,6 @@ const charactersList = [
     image: "/icons/armchair_5376974.png",
     label: "Terapia grupowa",
     content: (
-      <>
         <Container p={rem(5)}>
           <div style={{ paddingBottom: rem(20) }}>
             <Text>
@@ -439,10 +429,15 @@ const charactersList = [
             </a>
           </div>
         </Container>
-      </>
     ),
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Klinika Dilige - Co oferujemy?",
+  description: "Co oferujemy? Oferujemy usługi z zakresu psychiatrii, psychologii, psychoseksuologii, psychoterapii, terapii uzależnień i terapii grupowej.",
+}
+
 export default function Oferta() {
   const items = charactersList.map((item) => (
     <AccordionItem value={item.id} key={item.label}>
@@ -450,7 +445,7 @@ export default function Oferta() {
         <Group wrap="nowrap" display={"flex"}>
           <Avatar src={item.image} alt="test" radius="sm" size="lg" />
           <div>
-            <Text>{item.label}</Text>
+            <Title size={"xl"}>{item.label}</Title>
           </div>
         </Group>
       </AccordionControl>
@@ -458,7 +453,6 @@ export default function Oferta() {
     </AccordionItem>
   ));
   return (
-    <>
       <Flex
         direction={"column"}
         align={"center"}
@@ -480,6 +474,5 @@ export default function Oferta() {
           {items}
         </Accordion>
       </Flex>
-    </>
   );
 }
