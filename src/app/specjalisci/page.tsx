@@ -28,6 +28,7 @@ import { useState, useEffect } from "react";
 
 import { names, infoData } from "../../data/data";
 import { IconSearch, IconSettings } from "@tabler/icons-react";
+import { use } from "react";
 
 export default function Specjalisci(params: {
   searchParams: any;

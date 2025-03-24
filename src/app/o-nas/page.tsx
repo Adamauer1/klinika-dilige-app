@@ -70,7 +70,7 @@ export default function ONas() {
           <Image
             className="brightness-75"
             // src={"/stockTwo.jpg"}
-            src={"/Zdjęcia dilige/jpg przestrzenie/DSC00122.jpg"}
+            src={"/Zdjecia-dilige/jpg przestrzenie/DSC00122.jpg"}
             alt="Logo"
             component={NextImage}
             width={6000}

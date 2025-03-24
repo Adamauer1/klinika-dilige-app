@@ -122,7 +122,6 @@ export default function Kontakt() {
   };
 
   return (
-    <>
       <Flex
         direction={{ base: "column", lg: "row", xl: "row" }}
         h={{ lg: "93vh" }}
@@ -307,13 +306,13 @@ export default function Kontakt() {
           <Image
             className="brightness-75"
             // src={"/stockTwo.jpg"}
-            src={"/Zdjęcia dilige/jpg przestrzenie/DSC09965.jpg"}
+            src={"/Zdjecia-dilige/jpg przestrzenie/DSC09965.jpg"}
             alt="Logo"
             width={"100%"}
             height={"100%"}
           />
         </div>
       </Flex>
-    </>
+
   );
 }

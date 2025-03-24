@@ -2,14 +2,16 @@ import NextImage from "next/image";
 import { AspectRatio, Flex, Image, rem, Text, Title } from "@mantine/core";
 import styles from "@/app/specjalisci/[id]/page.module.css";
 import { infoData } from "../../../data/data";
+import { use } from "react";
 
 export default function SpecjalisciPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const extractId = () => {
-    return parseInt(params.id.split("-")[0]);
+  params
+}: Readonly<{
+  params: Promise<{ id: string }>;
+}>) {
+  const {id} = use(params)
+  const extractId =  () => {
+    return parseInt(id.split("-")[0]);
   };
   const findInfoFromId = () => {
     return infoData.find((person) => person.id == extractId());
@@ -19,7 +21,7 @@ export default function SpecjalisciPage({
   return (
     <>
       {/* <div>{data?.id}</div> */}
-      <>
+
         <Flex
           direction={{ base: "column", lg: "row" }}
           align={{ base: "center", lg: "start" }}
@@ -72,6 +74,5 @@ export default function SpecjalisciPage({
           </Flex>
         </Flex>
       </>
-    </>
   );
 }

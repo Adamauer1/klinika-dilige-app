@@ -58,7 +58,7 @@ export default function RootLayout({
           </AppShell>
         </MantineProvider>
       </body>
-      <GoogleAnalytics gaId="G-XYZ" />
+      <GoogleAnalytics gaId={process.env.GID || ""} />
     </html>
   );
 }
