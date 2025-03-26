@@ -64,11 +64,11 @@ const Footer = () => {
                   Specjaliści
                 </Link>
               </li>
-              <li className={styles.li}>
-                <Link className={styles.link} href={"aktualnosci"}>
-                  Aktualności
-                </Link>
-              </li>
+              {/*<li className={styles.li}>*/}
+              {/*  <Link className={styles.link} href={"aktualnosci"}>*/}
+              {/*    Aktualności*/}
+              {/*  </Link>*/}
+              {/*</li>*/}
               <li className={styles.li}>
                 <Link className={styles.link} href={"kontakt"}>
                   Kontakt

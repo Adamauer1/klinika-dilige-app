@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import {
@@ -19,7 +19,7 @@ import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
 import CookiesModule from "@/components/ui/CookiesModule";
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight: "300", subsets: ["latin"] });
 
 export const metadata: Metadata = {
