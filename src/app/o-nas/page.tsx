@@ -69,13 +69,12 @@ export default function ONas() {
         <div className={styles.containerRight}>
           <Image
             className="brightness-75"
-            // src={"/stockTwo.jpg"}
-            src={"/Zdjecia-dilige/jpg przestrzenie/DSC00122.jpg"}
-            alt="Logo"
+            src={"/images/DSC00122.jpg"}
+            alt="Wizerunek trzech wazonów"
             component={NextImage}
             width={6000}
             height={4000}
-            style={{height:"100%"}}
+            style={{ height: "100%" }}
             // width={"100%"}
             // height={"100%"}
           />

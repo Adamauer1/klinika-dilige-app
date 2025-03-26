@@ -47,7 +47,7 @@ export default function SpecjalisciPage({
                 // height={4983}
                 w={{ lg: rem(400), xl: rem(500) }}
                 // h={"auto"}
-                alt="person"
+                alt={data?.name || ""}
                 width={3711}
                 height={4948}
                 style={{height:"auto"}}

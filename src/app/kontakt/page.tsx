@@ -304,12 +304,13 @@ export default function Kontakt() {
         </div>
         <div className={styles.imageContainer}>
           <Image
+            component={NextImage}
             className="brightness-75"
-            // src={"/stockTwo.jpg"}
-            src={"/Zdjecia-dilige/jpg przestrzenie/DSC09965.jpg"}
-            alt="Logo"
-            width={"100%"}
-            height={"100%"}
+            src={"/images/DSC09965.webp"}
+            alt="Obraz biurka i czerwonego krzesła"
+            width={4810}
+            height={3206}
+            style={{height:"100%"}}
           />
         </div>
       </Flex>

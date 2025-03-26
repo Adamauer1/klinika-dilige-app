@@ -26,7 +26,7 @@ const Header = () => {
           <Link href={"/"}>
             <Image
               className=""
-              src="/logo.png"
+              src="/images/logo.png"
               alt="Logo"
               w={{ base: 120, md: 180, lg: 180, xl: 180 }}
               h={{ base: 60, md: 80, lg: 80, xl: 80 }}

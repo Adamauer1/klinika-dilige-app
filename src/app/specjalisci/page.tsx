@@ -1,6 +1,5 @@
 "use client";
 import NextImage from "next/image";
-//import stockTwo from "/public/stockTwo.jpg";
 import styles from "@/app/specjalisci/page.module.css";
 import Link from "next/link";
 import {
@@ -31,12 +30,15 @@ import { IconSearch, IconSettings } from "@tabler/icons-react";
 import { use } from "react";
 
 export default function Specjalisci(params: {
-  searchParams: any;
-  params: any;
+  searchParams: Promise<any>;
+  //params: Promise<{ id: string }>;
 }) {
+  //const {id} = use(params.params)
+  const sp = use(params.searchParams)
   const [searchValue, setSearchValue] = useState<string | undefined>();
   const [specValue, setSpecValue] = useState<string | null>(
-    params.searchParams.spec
+    //params.searchParams.spec
+    sp.spec
   );
   const [genderValue, setGenderValue] = useState<string | null>();
   //console.log(specValue);
@@ -110,7 +112,7 @@ export default function Specjalisci(params: {
                 className={styles.dataImage}
                 // style={{ borderRadius: 20 }}
                 src={person.image}
-                alt="image"
+                alt={person.name}
                 width={3711}
                 height={4948}
                 style={{height:"auto"}}

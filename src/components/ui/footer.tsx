@@ -13,7 +13,7 @@ const Footer = () => {
         <div className={styles.section}>
           <Image
             className=""
-            src="/logo.png"
+            src="/images/logo.png"
             alt="Logo"
             width={180}
             height={80}

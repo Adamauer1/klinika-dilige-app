@@ -69,16 +69,16 @@ export default function Home() {
           // style={{ zIndex: -10 }}
         /> */}
         <Image
-          src={"/stockOne.jpg"}
-          alt="background"
-          //component={NextImage}
+          src={"/images/stockOne.webp"}
+          alt="Obraz tła"
+          component={NextImage}
           //
           //w={{ base: 200, sm: 400, lg: 500 }}
           // w={"auto"}
           // h={533}
           //visibleFrom="md"
-          // width = {6000}
-          // height = {4000}
+          width = {6000}
+          height = {4000}
           // style={{height:"auto"}}
           classNames={{ root: styles.backgroundImage }}
         />
