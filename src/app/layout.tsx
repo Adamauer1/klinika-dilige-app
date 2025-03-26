@@ -38,6 +38,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
+      <GoogleAnalytics gaId={process.env.GAID || ""} />
       <body className={poppins.className}>
         <MantineProvider>
           <AppShell
@@ -58,7 +59,6 @@ export default function RootLayout({
           </AppShell>
         </MantineProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.GID || ""} />
     </html>
   );
 }
