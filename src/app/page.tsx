@@ -79,6 +79,7 @@ export default function Home() {
           //visibleFrom="md"
           width = {6000}
           height = {4000}
+          priority
           // style={{height:"auto"}}
           classNames={{ root: styles.backgroundImage }}
         />

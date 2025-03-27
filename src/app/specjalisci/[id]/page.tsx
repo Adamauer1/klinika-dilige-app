@@ -51,6 +51,7 @@ export default function SpecjalisciPage({
                 width={3711}
                 height={4948}
                 style={{height:"auto"}}
+                priority
                 // fill={true}
               />
               {/* </AspectRatio> */}

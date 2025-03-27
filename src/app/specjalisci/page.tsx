@@ -116,6 +116,7 @@ export default function Specjalisci(params: {
                 width={3711}
                 height={4948}
                 style={{height:"auto"}}
+                priority
                 // height={"500"}
                 // width={"400"}
               />

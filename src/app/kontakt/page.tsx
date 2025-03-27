@@ -311,6 +311,7 @@ export default function Kontakt() {
             width={4810}
             height={3206}
             style={{height:"100%"}}
+            priority
           />
         </div>
       </Flex>

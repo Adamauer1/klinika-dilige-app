@@ -75,6 +75,7 @@ export default function ONas() {
             width={6000}
             height={4000}
             style={{ height: "100%" }}
+            priority
             // width={"100%"}
             // height={"100%"}
           />
