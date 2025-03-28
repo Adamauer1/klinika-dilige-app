@@ -144,7 +144,7 @@ export default function Kontakt() {
                   order={1}
                   fz={{ lg: rem(50) }}
                   pb={{ lg: rem(10) }}
-                  className={styles.title}
+                  //className={styles.title}
                 >
                   Kontakt
                 </Title>

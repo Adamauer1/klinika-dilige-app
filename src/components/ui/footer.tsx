@@ -1,12 +1,12 @@
-"use client";
+//"use client";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/styles/footer.module.css";
 import { AppShell, Text } from "@mantine/core";
 
 const Footer = () => {
-  let pStyle: string = "pb-1 text-base text-white";
-  let h3Style: string = "font-bold mb-3 mt-7 text-lg text-white";
+  // let pStyle: string = "pb-1 text-base text-white";
+  // let h3Style: string = "font-bold mb-3 mt-7 text-lg text-white";
   return (
     <>
       <div className={styles.footer}>

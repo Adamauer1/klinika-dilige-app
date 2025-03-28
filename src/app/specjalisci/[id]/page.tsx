@@ -38,7 +38,7 @@ export default function SpecjalisciPage({
             gap={{ base: rem(10) }}
             flex={{ lg: 0.5 }}
           >
-            <div className={styles.imageContainer}>
+            <div>
               {/* <AspectRatio ratio={9 / 16}> */}
               <Image
                 component={NextImage}
@@ -61,7 +61,7 @@ export default function SpecjalisciPage({
             <Title order={3}>{data?.title}</Title>
           </Flex>
           <Flex direction={{ base: "column" }} flex={{ lg: 0.5 }}>
-            <div className={styles.containerRight}>
+            <div>
               <Title order={1} visibleFrom="lg" fz={{ xl: rem(60) }} m={0}>
                 O specjaliście
               </Title>

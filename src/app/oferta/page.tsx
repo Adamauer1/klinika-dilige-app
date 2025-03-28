@@ -1,4 +1,3 @@
-import NextImage from "next/image";
 import {
   Accordion,
   AccordionControl,
@@ -7,15 +6,10 @@ import {
   Avatar,
   Container,
   Flex,
-  Grid,
   Group,
-  HoverCard,
-  HoverCardTarget,
-  Image,
   List,
   ListItem,
   rem,
-  SimpleGrid,
   Text,
   Title,
   UnstyledButton,

@@ -1,17 +1,8 @@
 .footer {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   text-align: center;
-  /* position: relative; */
-  /* justify-content: space-evenly; */
-  /* margin-left: 11rem;
-  margin-right: 11rem;
-  margin-top: 2.5rem;
-  margin-bottom: 0.125rem; */
   background-color: black;
-  /* border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem; */
 }
 
 @media (min-width: 74em) {
@@ -27,7 +18,6 @@
 
 .ul {
   display: flex;
-  /* margin-right: 3.5rem; */
   flex-direction: column;
   padding: 0;
 }
@@ -47,10 +37,8 @@
 
 .title {
   font-weight: bold;
-  /* margin-bottom: 0.75rem; */
   margin-bottom: 2rem;
   margin-top: 1.75rem;
-  /* font-size: 1.125rem; */
   font-size: 1.5rem;
   line-height: 1.75rem;
   color: white;

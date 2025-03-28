@@ -49,7 +49,7 @@ export default function Home() {
         </div>
         <div className={styles.containerRight}>
           <div className={styles.imageOuterContainer}>
-            <div className={styles.imageContainer}>
+            <div>
               <CarouselShow />
             </div>
           </div>
@@ -60,14 +60,6 @@ export default function Home() {
   return (
     <>
       <div className={styles.backgroundImageContainer}>
-        {/* <BackgroundImage src="/stockOne.jpg" /> */}
-        {/* <NextImage
-          className={styles.backgroundImage}
-          src="/stockOne.jpg"
-          alt="Logo"
-          fill
-          // style={{ zIndex: -10 }}
-        /> */}
         <Image
           src={"/images/stockOne.webp"}
           alt="Obraz tła"

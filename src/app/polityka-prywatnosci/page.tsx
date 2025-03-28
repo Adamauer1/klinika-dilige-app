@@ -1,5 +1,4 @@
-"use client";
-import { Flex, List, rem, Text, Title } from "@mantine/core";
+import {Flex, List, ListItem, rem, Text, Title} from "@mantine/core";
 import styles from "./page.module.css";
 
 const PolitykaPrywatnosci = () => {
@@ -62,21 +61,21 @@ const PolitykaPrywatnosci = () => {
           <br />
         </Text>
         <List type="ordered" classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Podstawą przetwarzania danych osobowych przez Administratora w
               celu
             </Text>
             <List size="xs">
-              <List.Item>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   - rejestracji konta w serwisie jest art. 6 ust. 1 lit. a RODO,
                   tj. wyraźna zgoda Użytkownika na przetwarzanie tych danych,
                   Wspomniana zgoda potwierdzana jest poprzez akceptację treści
                   warunków korzystania z serwisu,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   - niezbędnym do wypełnienia uzasadnionych interesów
                   Administratora w tym prowadzenia działań marketingowych i
@@ -86,10 +85,10 @@ const PolitykaPrywatnosci = () => {
                   Użytkownika na przetwarzanie tych danych udzielana przez
                   formularze umieszczone na stronie serwisu,
                 </Text>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Administrator przetwarza dane osobowe dobrowolnie podane przez
               Użytkowników oraz zbierane automatycznie dane na temat sposobu
@@ -103,8 +102,8 @@ const PolitykaPrywatnosci = () => {
               przetwarzanie nie będzie naruszać praw i wolności osób, których
               dane dotyczą.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Dane osobowe podawane dobrowolnie przez Użytkownika nie są łączone
               ze zbieranymi automatycznie danymi na temat sposobu korzystania
@@ -117,8 +116,8 @@ const PolitykaPrywatnosci = () => {
               funkcji Serwisu i oraz w celu tworzenia statystyk na wew. potrzeby
               Administratora.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Za odrębnie wyrażonymi zgodami Użytkownika, jego dane osobowe mogą
               być przetwarzane w celu przesyłania mu drogą elektroniczną
@@ -127,23 +126,23 @@ const PolitykaPrywatnosci = () => {
               handlowych drogą elektroniczną lub zaprzestania wykorzystywania
               jego numeru telefonu do celów marketingu bezpośredniego.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Dane przetwarzane dla celów Rejestracji w serwisie będą
               przetwarzane do czasu ewentualnego usunięcia konta serwisowego
               (czego skutkiem będzie rozwiązanie umowy o świadczenie Usług
               Elektronicznych).
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Dane przetwarzane w celach marketingowych Spółki drogą
               elektroniczną lub telefoniczną będą przetwarzane do czasu
               ewentualnego cofnięcia odpowiednich zgód.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Dane osobowe dla celów kontaktu z Administratorem będą
               przetwarzane w okresie prowadzenia tego kontaktu, a później będą
@@ -151,141 +150,141 @@ const PolitykaPrywatnosci = () => {
               uzasadnione koniecznością odtworzenie treści takiego kontaktu w
               związku z dochodzeniem ewentualnych roszczeń.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Dane przetwarzane w związku z dochodzeniem ewentualnych roszczeń,
               jak również w celach archiwizacyjnych będą przetwarzane przez 3
               lata od zakończenia umowy.
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Title order={2} classNames={{ root: styles.title }}>
           Cel i zakres zbierania danych oraz odbiorcy danych
         </Title>
         <List type="ordered" classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               {`Każdorazowo cel, zakres oraz odbiorcy danych przetwarzanych przez Administratora wynikają ze zgody Użytkownika lub przepisów prawa oraz doprecyzowywane są w wyniku działań podejmowanych przez Użytkownika w Serwisie lub w ramach innych kanałów komunikacji z Użytkownikiem.2. Administrator dokłada szczególnej staranności w celu ochrony interesów osób, których dane dotyczą, a w szczególności zapewnia, że zbierane przez niego dane są przetwarzane:`}
             </Text>
             <List type="ordered" classNames={{ root: styles.list }}>
-              <List.Item>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`zgodnie z prawem, rzetelnie i w sposób przejrzysty dla osoby, której dane dotyczą („zgodność z prawem, rzetelność i przejrzystość”);`}</Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`w konkretnych, wyraźnych i prawnie uzasadnionych celach i nieprzetwarzane dalej w sposób niezgodny z tymi celami (,,ograniczenie celu’’);`}</Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`adekwatnie, stosownie oraz ograniczone do tego, co niezbędne do celów, w których są przetwarzane („minimalizacja danych”);`}</Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`prawidłowo, a w razie potrzeby dane osobowe są uaktualniane („prawidłowość”);`}</Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`w formie umożliwiającej identyfikację osoby, której dane dotyczą, przez okres nie dłuższy, niż jest to niezbędne do celów, w których dane te są przetwarzane. („ograniczenie przechowywania”);`}</Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text
                   classNames={{ root: styles.text }}
                 >{`w sposób zapewniający odpowiednie bezpieczeństwo danych osobowych, w tym ochronę przed niedozwolonym lub niezgodnym z prawem przetwarzaniem oraz przypadkową utratą, zniszczeniem lub uszkodzeniem, za pomocą odpowiednich środków technicznych lub organizacyjnych („integralność i poufność”).`}</Text>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Użytkownik podaje następujące dane osobowe:
             </Text>
             <List classNames={{ root: styles.list }}>
-              <List.Item>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   w procesie rejestracji w Serwisie: adres e-mail, imię,
                   nazwisko, adres oraz numer telefonu.
                 </Text>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Możliwe cele zbierania danych osobowych Użytkowników przez
               Administratora:
             </Text>
             <List type="ordered" classNames={{ root: styles.list }}>
-              <List.Item>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   zakładanie konta Użytkownika w Serwisie
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   realizacji działań marketingowych własnych produktów i usług
                   (w formie elektronicznej lub telefonicznej), za odrębnie
                   wyrażoną zgodą Użytkownika
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   realizacji działań marketingowych produktów i usług partnera
                   Administratora (w formie elektronicznej lub telefonicznej), za
                   odrębnie wyrażoną zgodą Użytkownika
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   budowanie i realizacja rankingów przy akceptacji regulaminu
                   danego wydarzenia
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   realizacja konkursów przy akceptacji regulaminu danego
                   wydarzenia
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   przygotowanie i realizacja konferencji i szkoleń przy
                   akceptacji regulaminu danego wydarzenia
                 </Text>
                 <List classNames={{ root: styles.list }}>
-                  <List.Item>
+                  <ListItem>
                     <Text classNames={{ root: styles.text }}>
                       Dane osobowe na tej stronie pobierane są tylko w
                       technicznie koniecznym zakresie. W żadnym wypadku pobrane
                       dane nie są sprzedawane ani przekazywane podmiotom trzecim
                       w innych celach niż opisane w niniejszym dokumencie.
                     </Text>
-                  </List.Item>
+                  </ListItem>
                 </List>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Możliwi odbiorcy danych osobowych Użytkowników:
         </Text>
         <List classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               pracownicy i współpracownicy Administratora,
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               podmioty uprawnione do ich otrzymania na mocy obowiązujących
               przepisów prawa,
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               firmy bądź osoby na podstawie odpowiednich umów tj. umowy
               powierzenia danych m.in. w celu ich archiwizacji, niszczenia,
@@ -293,7 +292,7 @@ const PolitykaPrywatnosci = () => {
               utrzymania relacji z Użytkownikami w imieniu Administratora lub
               partnerów handlowych Administratora.
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Podmioty, którym powierzono przetwarzanie danych osobowych na mocy
@@ -320,31 +319,31 @@ const PolitykaPrywatnosci = () => {
           informacje:
         </Text>
         <List classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Typ/wersja przeglądarki
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Stosowany system operacyjny
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               URL (wcześniej odwiedzona strona)
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Nazwa hosta komputera (adres IP)
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Godzina zapytania serwera
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Spersonalizowany zapis wyżej wskazanych danych nie następuje. Nie ma
@@ -375,18 +374,18 @@ const PolitykaPrywatnosci = () => {
           wyrażenie zgody:
         </Text>
         <List classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               na przesyłanie informacji handlowej , w tym Newslettera;
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               na przetwarzanie danych osobowych w zakresie podanego adresu
               e-mail przez Prowend.com w celach związanych z wysyłką Newslettera
               i informacji handlowej.
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Oczywiście w każdym czasie mają Państwo możliwość dostępu do treści
@@ -413,51 +412,51 @@ const PolitykaPrywatnosci = () => {
           Prawa Użytkowników
         </Title>
         <List type="ordered" classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Każdej osobie, której dane osobowe dotyczą, przysługuje prawo:
             </Text>
             <List type="ordered" classNames={{ root: styles.list }}>
-              <List.Item>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   dostępu do danych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   sprostowania danych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   usunięcia danych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   ograniczenia przetwarzania danych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   prawo sprzeciwu wobec przetwarzania danych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   prawo wniesienia skargi do organu nadzorczego.
                 </Text>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Odwołanie lub sprzeciw w zakresie przetwarzania danych osobowych
               następuje poprzez wysłanie wiadomości e-mail na adres:
               kontakt@klinikadilige.pl
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Po odwołaniu zgody lub wyrażeniu sprzeciwu, dane osobowe
               Użytkownika nie będą więcej używane do tych celów.
@@ -465,43 +464,43 @@ const PolitykaPrywatnosci = () => {
               w drodze przesłania wniosku e-mail na adres:
               kontakt@klinikadilige.pl
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               W przypadku stwierdzenia nieprawidłowości w stosunku do
               przetwarzania danych przez Administratora Użytkownik ma prawo
               wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Kontakt z osobą nadzorującą przetwarzanie danych osobowych w
               organizacji Administratora jest możliwy drogą elektroniczną pod
               adresem e-mail:kontakt@klinikadilige.pl
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Kontakt z Administratorem i Inspektorem Danych Osobowych
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Użytkownik W każdej chwili ma możliwość bezpośredniego kontaktu z
               Administratorem poprzez przesłanie stosownej wiadomości pisemnie
               lub pocztą elektroniczną na adres Administratora wskazany na
               wstępie Polityki Prywatności.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Użytkownik w każdej chwili ma możliwość bezpośredniego kontaktu z
               Inspektorem Ochrony Danych poprzez przesłanie stosownej wiadomości
               pisemnie, adres korespondencyjny Klinika Dilige ul. Parkowa 5a
               Szczecin lub e-mail: kontakt@klinikadilige.pl
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Administrator przechowuje korespondencję z Użytkownikiem w celach
               statystycznych oraz jak najlepszej i najszybszej reakcji na
@@ -512,8 +511,8 @@ const PolitykaPrywatnosci = () => {
               do komunikacji z Użytkownikiem w celu innym niż realizacja
               zgłoszenia.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Gdy Użytkownik kontaktuje się w celu dokonania danych czynności,
               Administrator może ponownie zwrócić się do Użytkownika o
@@ -526,7 +525,7 @@ const PolitykaPrywatnosci = () => {
               jest obowiązkowe, lecz może być niezbędne do dokonania czynności
               lub uzyskania informacji, które interesują Użytkownika.
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Title order={2} classNames={{ root: styles.title }}>
           Zabezpieczenia
@@ -543,7 +542,7 @@ const PolitykaPrywatnosci = () => {
           w dolnym pasku stanu przeglądarki.
         </Text>
         <List type="ordered" classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Administrator stosuje odpowiednie środki techniczne i
               organizacyjne zapewniające bezpieczeństwo ochrony przetwarzanych
@@ -553,8 +552,8 @@ const PolitykaPrywatnosci = () => {
               nieuprawnioną, przetwarzaniem z naruszeniem obowiązujących
               przepisów oraz zmianą, utratą, uszkodzeniem lub zniszczeniem.
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Uwzględniając stan wiedzy technicznej, koszt wdrażania oraz
               charakter, zakres, kontekst i cele przetwarzania oraz ryzyko
@@ -565,32 +564,32 @@ const PolitykaPrywatnosci = () => {
               innymi w stosownym przypadku:
             </Text>
             <List type="ordered" classNames={{ root: styles.list }}>
-              <List.Item>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   szyfrowanie danych osobowych,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   zdolność do ciągłego zapewnienia poufności, integralności,
                   dostępności i odporności systemów i usług przetwarzania,
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   zdolność do szybkiego przywrócenia dostępności danych
                   osobowych i dostępu do nich w razie
                 </Text>
-              </List.Item>
-              <List.Item>
+              </ListItem>
+              <ListItem>
                 <Text classNames={{ root: styles.text }}>
                   incydentu fizycznego lub technicznego, regularne testowanie,
                   mierzenie i ocenianie skuteczności środków technicznych i
                   organizacyjnych mających zapewnić bezpieczeństwo przetwarzania
                 </Text>
-              </List.Item>
+              </ListItem>
             </List>
-          </List.Item>
+          </ListItem>
         </List>
         <Title order={2} classNames={{ root: styles.title }}>
           Polityka Cookies
@@ -602,36 +601,36 @@ const PolitykaPrywatnosci = () => {
           wykorzystywania plików Cookies przez Serwis jest:
         </Text>
         <List classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               przystosowanie zawartości strony do indywidualnych potrzeb i
               preferencji Użytkownika;
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               utrzymanie sesji zalogowanego Użytkownika tak, aby na
               poszczególnych podstronach Serwisu nie było konieczne ponowne
               logowanie się;
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               prezentowanie reklam dostosowanych do preferencji Użytkownika;
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               tworzenie analiz, raportów i statystyk dotyczących sposobów
               korzystania ze strony przez Użytkowników;
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               popularyzacja sklepu internetowego za pomocą serwisu
               społecznościowego Facebook.
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Podczas odwiedzin Serwisu, system Serwisu wysyła do komputera
@@ -672,33 +671,33 @@ const PolitykaPrywatnosci = () => {
           przeglądarkom:
         </Text>
         <List classNames={{ root: styles.list }}>
-          <List.Item>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Firefox: http://support.mozilla.org/pl/kb/ciasteczka
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Internet Explorer: http://support.microsoft.com/kb/196955/pl
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Chrome:
               http://support.google.com/chrome/bin/answer.py?hl=pl&answer=95647
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Opera: http://help.opera.com/Linux/12.10/pl/cookies.html
             </Text>
-          </List.Item>
-          <List.Item>
+          </ListItem>
+          <ListItem>
             <Text classNames={{ root: styles.text }}>
               Safari:
               http://support.apple.com/kb/HT1677?viewlocale=pl_PL&locale=pl_PL
             </Text>
-          </List.Item>
+          </ListItem>
         </List>
         <Text classNames={{ root: styles.text }}>
           Postanowienia końcowe

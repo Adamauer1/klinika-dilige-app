@@ -15,11 +15,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* height: "auto"; */
-  /* height: 100%; */
-  /* flex: 1; */
-  /* height: 100vh; */
 }
 
 .containerLeft {
@@ -27,17 +22,9 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
-  /* align-items: center; */
-  /* flex-basis: 60%; */
-  /* flex: 1; */
-  /* flex-shrink: 5; */
-  /* height: 100%; */
 }
 
 .h1 {
-  /* width: 50%; */
-  /* margin-right: 15rem; */
-  /* color: blue; */
   font-weight: bold;
   font-size: 2rem;
   line-height: 1.625;
@@ -50,30 +37,16 @@
 
 .containerRight {
   display: flex;
-  /* flex-shrink: 1; */
-  /* flex-basis: 40%; */
-  /* flex: 1; */
   justify-content: center;
-  /* align-items: center; */
   padding-bottom: 2rem;
 }
 
 .imageOuterContainer {
   width: 75%;
-  /* height: 83.3333%; */
   height: auto;
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   background-color: white;
   border-radius: 1.5rem;
-}
-
-.imageContainer {
-  /* position: relative; */
-  /* margin: 5rem; */
-  /* width: 83.3333%;
-  height: 83.3333%; */
 }
 
 @media screen and (min-width: 36em) {
@@ -91,14 +64,6 @@
 }
 
 @media screen and (min-width: 62em) {
-  /* .backgroundImageContainer {
-    position: fixed;
-  }
-  .container {
-    flex-direction: row;
-    justify-content: center;
-  }
-    */
   .h1 {
     font-size: 3.5rem;
     margin-right: 4rem;

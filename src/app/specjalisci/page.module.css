@@ -4,19 +4,15 @@
   align-items: center;
   width: 95vw;
   padding-left: 5vw;
-  /* height: 100vh; */
   padding-top: 1.25rem;
   flex-wrap: nowrap;
 }
 
 .button {
-  /* align-self: center; */
   text-align: center;
   cursor: pointer;
   padding: 0.7em 2em;
-  /* margin-bottom: 3em; */
   font-size: 12px;
-  /* text-transform: uppercase; */
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #000;
@@ -30,9 +26,7 @@
 
 .button:hover {
   background-color: rgb(124, 193, 216);
-  /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
   color: #fff;
-  /* transform: translateY(-7px); */
 }
 
 .searchContainer {
@@ -63,8 +57,6 @@
 
 .autoComplete_Section {
   width: 3rem;
-  /* width: 100%;
-  height: 45; */
 }
 
 .actionIconRoot {
@@ -88,15 +80,8 @@
 }
 
 .dataPaper {
-  /* min-width: 400px; */
-  /* height: 550px; */
-  /* height: 25rem; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* border-style: solid;
-  border-width: 4px;
-  border-color: red; */
 }
 
 .dataImageContainer {
@@ -139,14 +124,9 @@
 
 .dataProfileButton:hover {
   background-color: rgb(124, 193, 216);
-  /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
   color: #fff;
-  /* transform: translateY(-7px); */
 }
 
-.dataProfileButton:active {
-  /* transform: translateY(-1px); */
-}
 
 .dataImageContainer:hover .dataProfileButton,
 .dataProfileButton:hover {
@@ -170,25 +150,16 @@
   }
   .autoComplete_Section {
     width: 4rem;
-    /* width: 100%;
-    height: 45; */
   }
 }
 /* 992px */
 @media screen and (min-width: 62em) {
   .autoComplete_Section {
     width: 5rem;
-    /* width: 100%;
-    height: 45; */
   }
 }
 /* 1200px */
 @media screen and (min-width: 75em) {
-  .dataPaper {
-    /* min-width: 15rem; */
-    /* height: 550px; */
-    /* height: 25rem; */
-  }
   .autoComplete_Root {
     width: 60%;
   }
@@ -197,11 +168,5 @@
 @media screen and (min-width: 88em) {
   .autoComplete_Root {
     width: 50%;
-  }
-  .dataPaper {
-    /* min-width: 330px;
-    min-height: 482px; */
-    /* height: 550px; */
-    /* height: 25rem; */
   }
 }
