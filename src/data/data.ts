@@ -253,7 +253,7 @@ const infoData: personPaper[] = [
     plec: "Kobieta",
     title: "psychoterapeuta",
     desc: "Agnieszka Słuczanowska- pedagog specjalny, neuroterapeuta, psychoterapeuta.\nAbsolwentka Uniwersytetu Szczecińskiego na kierunku Pedagogika Rewalidacyjna, Uniwersytetu Jagiellońskiego na kierunku Podstawy oddziaływań terapeutycznych w wieku rozwojowym, oraz 4-letniego kursu psychoterapii organizowanego przy Katedrze Psychoterapii Collegium Medicum Uniwersytetu Jagiellońskiego akredytowanego przez Polskie Towarzystwo Psychiatryczne.\nUkończyła studia podyplomowe o kierunku „Edukacja i terapia osób ze spektrum autyzmu”\nSpecjalista z zakresu teorii i praktyki neuroterapii EEGBiofeedback.\nPedagog i psychoterapeuta pracujący z dziećmi i osobami dorosłymi, zajmuje się  leczeniem zaburzeń nerwicowych, zaburzeń nastroju, zaburzeń odżywiania, wielopłaszczyznowym  wspomaganiem rozwoju dzieci, terapią par i rodzin.\nDoświadczenie oraz wiedzę pogłębia regularnie uczestnicząc w szkoleniach, oraz poddając procesy terapeutyczne regularnej superwizji.",
-    image: "/images/DSC09784.webp",
+    image: "/images/DSC09784_TEST.webp",
     link: "13-agnieszka-sluczanowska",
   },
   {

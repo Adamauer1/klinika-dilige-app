@@ -4,6 +4,8 @@ const nextConfig = {
     optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
   },
   images: {
+    formats: ['image/webp'],
+    minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: "https",

@@ -80,6 +80,7 @@ export default function Home() {
           width = {6000}
           height = {4000}
           priority
+          loading={"eager"}
           // style={{height:"auto"}}
           classNames={{ root: styles.backgroundImage }}
         />

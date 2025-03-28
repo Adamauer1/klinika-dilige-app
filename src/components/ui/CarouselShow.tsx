@@ -17,8 +17,8 @@ const CarouselShow = () => {
             component={NextImage}
           src={person.image}
           alt={person.name}
-            width={3693}
-            height={4924}
+            width={1901} //3693
+            height={2534} //4924
             style={{height:"auto"}}
             priority
         />
